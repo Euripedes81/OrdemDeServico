@@ -37,7 +37,7 @@ namespace OrdemDeServico.Views
             this.funcionarioTsmi = new System.Windows.Forms.ToolStripMenuItem();
             this.maquinaTsmi = new System.Windows.Forms.ToolStripMenuItem();
             this.oSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.abriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.abrirOsTsmi = new System.Windows.Forms.ToolStripMenuItem();
             this.fecharToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oSAbertaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,18 +100,18 @@ namespace OrdemDeServico.Views
             // oSToolStripMenuItem
             // 
             this.oSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.abriToolStripMenuItem,
+            this.abrirOsTsmi,
             this.fecharToolStripMenuItem});
             this.oSToolStripMenuItem.Name = "oSToolStripMenuItem";
             this.oSToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.oSToolStripMenuItem.Text = "O.S";
             // 
-            // abriToolStripMenuItem
+            // abrirOsTsmi
             // 
-            this.abriToolStripMenuItem.Name = "abriToolStripMenuItem";
-            this.abriToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.abriToolStripMenuItem.Text = "Abrir";
-            this.abriToolStripMenuItem.Click += new System.EventHandler(this.abriToolStripMenuItem_Click);
+            this.abrirOsTsmi.Name = "abrirOsTsmi";
+            this.abrirOsTsmi.Size = new System.Drawing.Size(180, 22);
+            this.abrirOsTsmi.Text = "Abrir";
+            this.abrirOsTsmi.Click += new System.EventHandler(this.abrirOsTsmi_Click);
             // 
             // fecharToolStripMenuItem
             // 
@@ -131,13 +131,13 @@ namespace OrdemDeServico.Views
             // oSAbertaToolStripMenuItem
             // 
             this.oSAbertaToolStripMenuItem.Name = "oSAbertaToolStripMenuItem";
-            this.oSAbertaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.oSAbertaToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.oSAbertaToolStripMenuItem.Text = "O.S Aberta";
             // 
             // oSFechadaToolStripMenuItem
             // 
             this.oSFechadaToolStripMenuItem.Name = "oSFechadaToolStripMenuItem";
-            this.oSFechadaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.oSFechadaToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.oSFechadaToolStripMenuItem.Text = "O.S Fechada";
             // 
             // FrmPrincipal
@@ -168,7 +168,7 @@ namespace OrdemDeServico.Views
         private System.Windows.Forms.ToolStripMenuItem funcionarioTsmi;
         private System.Windows.Forms.ToolStripMenuItem maquinaTsmi;
         private System.Windows.Forms.ToolStripMenuItem oSToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem abriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem abrirOsTsmi;
         private System.Windows.Forms.ToolStripMenuItem fecharToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem oSAbertaToolStripMenuItem;

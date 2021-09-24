@@ -32,8 +32,9 @@ namespace OrdemDeServico.Views.OS.NsAbrir
 
         private void tsbAdicionar_Click(object sender, EventArgs e)
         {
-            FrmAddOs frmAddOs = new FrmAddOs();       
-            frmAddOs.ShowDialog();
-        }
+            FrmAddOs frmAddOs = new FrmAddOs();
+            frmAddOs.MdiParent = FrmPrincipal.ActiveForm;
+            frmAddOs.Show();
+        }    
     }
 }

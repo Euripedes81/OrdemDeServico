@@ -25,7 +25,8 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
         private void tsbAdicionar_Click(object sender, EventArgs e)
         {
             FrmAddMaquina frmAddMaquina = new FrmAddMaquina();
-            frmAddMaquina.ShowDialog();
+            frmAddMaquina.MdiParent = FrmPrincipal.ActiveForm;
+            frmAddMaquina.Show();
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -41,10 +42,19 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
             if (ObterLinhaDgv())
             {
                 FrmEdtMaquina frmEdtMaquina = new FrmEdtMaquina(maquina);
-                frmEdtMaquina.ShowDialog();
+                frmEdtMaquina.MdiParent = FrmPrincipal.ActiveForm;
+                frmEdtMaquina.Show();
             }
         }
+        private void dgv_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (ObterLinhaDgv())
+            {
+                FrmRelatorioMaquina relatorioMaquina = new FrmRelatorioMaquina(maquina);
+                relatorioMaquina.ShowDialog();
 
+            }
+        }
         private void tsbExcluir_Click(object sender, EventArgs e)
         {
             if(ObterLinhaDgv())
@@ -127,14 +137,6 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
             timer1.Enabled = true;            
         }
 
-        private void dgv_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (ObterLinhaDgv())
-            {
-                FrmRelatorioMaquina relatorioMaquina = new FrmRelatorioMaquina(maquina);
-                relatorioMaquina.ShowDialog();
-                
-            }
-        }
+        
     }
 }

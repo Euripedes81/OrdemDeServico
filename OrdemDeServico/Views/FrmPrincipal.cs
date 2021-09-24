@@ -43,9 +43,9 @@ namespace OrdemDeServico.Views
             frmMaquina.Show();
         }
 
-        private void abriToolStripMenuItem_Click(object sender, EventArgs e)
+        private void abrirOsTsmi_Click(object sender, EventArgs e)
         {
-            FrmAbreOs frmAbreOs = new FrmAbreOs();
+            FrmAbreOs frmAbreOs = new FrmAbreOs();            
             frmAbreOs.MdiParent = this;
             frmAbreOs.Show();
         }
