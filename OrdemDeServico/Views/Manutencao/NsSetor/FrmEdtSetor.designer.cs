@@ -42,17 +42,17 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(13, 33);
+            this.txtId.Location = new System.Drawing.Point(11, 29);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(42, 23);
+            this.txtId.Size = new System.Drawing.Size(37, 20);
             this.txtId.TabIndex = 23;
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(152, 212);
+            this.btnSalvar.Location = new System.Drawing.Point(130, 184);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(80, 38);
+            this.btnSalvar.Size = new System.Drawing.Size(69, 33);
             this.btnSalvar.TabIndex = 22;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -61,68 +61,68 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 144);
+            this.label2.Location = new System.Drawing.Point(10, 125);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 15);
+            this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 20;
             this.label2.Text = "Descrição";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(61, 15);
+            this.label1.Location = new System.Drawing.Point(52, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 15);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 18;
             this.label1.Text = "Nome";
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(12, 162);
+            this.txtDescricao.Location = new System.Drawing.Point(10, 140);
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(385, 23);
+            this.txtDescricao.Size = new System.Drawing.Size(331, 20);
             this.txtDescricao.TabIndex = 19;
             this.txtDescricao.TextChanged += new System.EventHandler(this.txtDescricao_TextChanged);
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(61, 33);
+            this.txtNome.Location = new System.Drawing.Point(52, 29);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(337, 23);
+            this.txtNome.Size = new System.Drawing.Size(289, 20);
             this.txtNome.TabIndex = 16;
             this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 15);
+            this.label4.Location = new System.Drawing.Point(11, 13);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(17, 15);
+            this.label4.Size = new System.Drawing.Size(16, 13);
             this.label4.TabIndex = 24;
             this.label4.Text = "Id";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 76);
+            this.label3.Location = new System.Drawing.Point(11, 66);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 15);
+            this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 26;
             this.label3.Text = "Secretaria";
             // 
             // cbSecretaria
             // 
             this.cbSecretaria.FormattingEnabled = true;
-            this.cbSecretaria.Location = new System.Drawing.Point(13, 94);
+            this.cbSecretaria.Location = new System.Drawing.Point(11, 81);
             this.cbSecretaria.Name = "cbSecretaria";
-            this.cbSecretaria.Size = new System.Drawing.Size(387, 23);
+            this.cbSecretaria.Size = new System.Drawing.Size(332, 21);
             this.cbSecretaria.TabIndex = 25;
             // 
             // FrmEdtSetor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 280);
+            this.ClientSize = new System.Drawing.Size(368, 250);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbSecretaria);
             this.Controls.Add(this.label4);
@@ -132,6 +132,10 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.txtNome);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(384, 289);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(384, 289);
             this.Name = "FrmEdtSetor";
             this.Text = "Editar";
             this.Load += new System.EventHandler(this.FrmEdtSetor_Load);

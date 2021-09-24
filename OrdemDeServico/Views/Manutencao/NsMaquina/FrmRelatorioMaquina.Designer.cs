@@ -31,10 +31,14 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.maquinaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.maquinaBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // maquinaBindingSource
+            // 
+            this.maquinaBindingSource.DataSource = typeof(OrdemDeServico.Model.Maquina);
             // 
             // reportViewer1
             // 
@@ -47,18 +51,14 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(973, 534);
+            this.reportViewer1.Size = new System.Drawing.Size(973, 567);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // maquinaBindingSource
-            // 
-            this.maquinaBindingSource.DataSource = typeof(OrdemDeServico.Model.Maquina);
             // 
             // FrmRelatorioMaquina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(973, 534);
+            this.ClientSize = new System.Drawing.Size(973, 567);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmRelatorioMaquina";
             this.Text = "Relatório Maquina";

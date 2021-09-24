@@ -17,7 +17,8 @@ namespace OrdemDeServico.Views.Manutencao.NsSecretaria
         private void tsbAdicionar_Click(object sender, System.EventArgs e)
         {
             FrmAddSecreteria frmAdicionar = new FrmAddSecreteria();
-            frmAdicionar.ShowDialog();
+            frmAdicionar.MdiParent = FrmPrincipal.ActiveForm;
+            frmAdicionar.Show();
         }
 
         private void btnPesquisar_Click(object sender, System.EventArgs e)
@@ -30,7 +31,8 @@ namespace OrdemDeServico.Views.Manutencao.NsSecretaria
             if (ObterLinhaDgv())
             {
                 FrmEdtSecretaria frmEditar = new FrmEdtSecretaria(secretaria);
-                frmEditar.ShowDialog();
+                frmEditar.MdiParent = FrmPrincipal.ActiveForm;
+                frmEditar.Show();
             }
         }
 

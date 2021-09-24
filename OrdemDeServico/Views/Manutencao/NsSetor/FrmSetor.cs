@@ -24,7 +24,8 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
         private void tsbAdicionar_Click(object sender, EventArgs e)
         {
             FrmAddSetor frmAdicionar = new FrmAddSetor();
-            frmAdicionar.ShowDialog();
+            frmAdicionar.MdiParent = FrmPrincipal.ActiveForm;
+            frmAdicionar.Show();
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)
@@ -32,7 +33,8 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
             if (ObterLinhaDgv())
             {
                 FrmEdtSetor frmEditar = new FrmEdtSetor(setor);
-                frmEditar.ShowDialog();
+                frmEditar.MdiParent = FrmPrincipal.ActiveForm;
+                frmEditar.Show();
             }
         }
         private void tsbExcluir_Click(object sender, EventArgs e)

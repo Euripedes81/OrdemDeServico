@@ -42,12 +42,13 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
             // 
             // toolStrip1
             // 
+            this.toolStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbAdicionar,
             this.tsbEditar,
             this.tsbExcluir});
-            this.toolStrip1.Location = new System.Drawing.Point(14, 352);
+            this.toolStrip1.Location = new System.Drawing.Point(14, 427);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(161, 25);
             this.toolStrip1.TabIndex = 7;
@@ -80,6 +81,9 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
             // dgv
             // 
             this.dgv.AllowUserToAddRows = false;
+            this.dgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Location = new System.Drawing.Point(14, 43);
             this.dgv.MultiSelect = false;
@@ -87,12 +91,13 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
             this.dgv.ReadOnly = true;
             this.dgv.RowTemplate.Height = 25;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(658, 293);
+            this.dgv.Size = new System.Drawing.Size(758, 371);
             this.dgv.TabIndex = 6;
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(608, 16);
+            this.btnPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPesquisar.Location = new System.Drawing.Point(708, 18);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(64, 23);
             this.btnPesquisar.TabIndex = 5;
@@ -102,16 +107,18 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
             // 
             // txtPesquisar
             // 
+            this.txtPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPesquisar.Location = new System.Drawing.Point(14, 18);
             this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(589, 20);
+            this.txtPesquisar.Size = new System.Drawing.Size(688, 20);
             this.txtPesquisar.TabIndex = 4;
             // 
             // FrmSetor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 390);
+            this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.btnPesquisar);

@@ -51,7 +51,7 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
             this.tsbAdicionar,
             this.tsbEditar,
             this.tsbExcluir});
-            this.toolStrip1.Location = new System.Drawing.Point(10, 341);
+            this.toolStrip1.Location = new System.Drawing.Point(10, 422);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(161, 25);
             this.toolStrip1.TabIndex = 15;
@@ -94,14 +94,14 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
             this.dgv.ReadOnly = true;
             this.dgv.RowTemplate.Height = 25;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(658, 280);
+            this.dgv.Size = new System.Drawing.Size(768, 361);
             this.dgv.TabIndex = 14;
             this.dgv.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentDoubleClick);
             // 
             // btnPesquisar
             // 
             this.btnPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPesquisar.Location = new System.Drawing.Point(605, 21);
+            this.btnPesquisar.Location = new System.Drawing.Point(715, 21);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(64, 23);
             this.btnPesquisar.TabIndex = 13;
@@ -115,7 +115,7 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPesquisar.Location = new System.Drawing.Point(10, 23);
             this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(589, 20);
+            this.txtPesquisar.Size = new System.Drawing.Size(699, 20);
             this.txtPesquisar.TabIndex = 12;
             this.txtPesquisar.TextChanged += new System.EventHandler(this.txtPesquisar_TextChanged);
             this.txtPesquisar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesquisar_KeyPress);
@@ -137,7 +137,7 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 380);
+            this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dgv);

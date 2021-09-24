@@ -41,25 +41,25 @@ namespace OrdemDeServico.Views.Manutencao.NsSolicitante
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 83);
+            this.label3.Location = new System.Drawing.Point(12, 71);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 15);
+            this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 22;
             this.label3.Text = "Setor";
             // 
             // cbSetor
             // 
             this.cbSetor.FormattingEnabled = true;
-            this.cbSetor.Location = new System.Drawing.Point(25, 101);
+            this.cbSetor.Location = new System.Drawing.Point(12, 87);
             this.cbSetor.Name = "cbSetor";
-            this.cbSetor.Size = new System.Drawing.Size(387, 23);
+            this.cbSetor.Size = new System.Drawing.Size(344, 21);
             this.cbSetor.TabIndex = 21;
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(158, 220);
+            this.btnSalvar.Location = new System.Drawing.Point(132, 188);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(80, 38);
+            this.btnSalvar.Size = new System.Drawing.Size(69, 33);
             this.btnSalvar.TabIndex = 20;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -68,42 +68,42 @@ namespace OrdemDeServico.Views.Manutencao.NsSolicitante
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 154);
+            this.label2.Location = new System.Drawing.Point(12, 132);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 15);
+            this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 19;
             this.label2.Text = "Descrição";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 16);
+            this.label1.Location = new System.Drawing.Point(12, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 15);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 17;
             this.label1.Text = "Nome";
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(25, 172);
+            this.txtDescricao.Location = new System.Drawing.Point(12, 148);
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(387, 23);
+            this.txtDescricao.Size = new System.Drawing.Size(344, 20);
             this.txtDescricao.TabIndex = 18;
             this.txtDescricao.TextChanged += new System.EventHandler(this.txtDescricao_TextChanged);
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(25, 34);
+            this.txtNome.Location = new System.Drawing.Point(12, 28);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(387, 23);
+            this.txtNome.Size = new System.Drawing.Size(344, 20);
             this.txtNome.TabIndex = 16;
             this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // FrmAddSolicitante
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(440, 291);
+            this.ClientSize = new System.Drawing.Size(368, 250);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbSetor);
             this.Controls.Add(this.btnSalvar);
@@ -111,6 +111,10 @@ namespace OrdemDeServico.Views.Manutencao.NsSolicitante
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.txtNome);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(384, 289);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(384, 289);
             this.Name = "FrmAddSolicitante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Adicionar Solicitante";

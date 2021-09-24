@@ -25,7 +25,8 @@ namespace OrdemDeServico.Views.Manutencao.NsSolicitante
         private void tsbAdicionar_Click(object sender, EventArgs e)
         {
             FrmAddSolicitante frmAddSolicitante = new FrmAddSolicitante();
-            frmAddSolicitante.ShowDialog();
+            frmAddSolicitante.MdiParent = FrmPrincipal.ActiveForm;
+            frmAddSolicitante.Show();
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -39,7 +40,8 @@ namespace OrdemDeServico.Views.Manutencao.NsSolicitante
             if (ObterLinhaDgv())
             {
                 FrmEdtSolicitante frmEdtSolicitante = new FrmEdtSolicitante(solicitante);
-                frmEdtSolicitante.ShowDialog();
+                frmEdtSolicitante.MdiParent = FrmPrincipal.ActiveForm;
+                frmEdtSolicitante.Show();
             }
         }
 
