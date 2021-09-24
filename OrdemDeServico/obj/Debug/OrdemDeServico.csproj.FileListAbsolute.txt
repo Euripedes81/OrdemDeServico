@@ -102,3 +102,4 @@ C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\RdlCom
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\RdlCompile.compiled
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.OS.NsAbrir.FrmAbreOs.resources
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.OS.NsAbrir.FrmAddOs.resources
+C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.OS.NsAbrir.FrmSolicitanteOs.resources

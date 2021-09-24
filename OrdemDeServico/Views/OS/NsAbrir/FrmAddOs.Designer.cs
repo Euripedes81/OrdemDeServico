@@ -63,7 +63,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.tsbPesquisarSolicitante});
             this.toolStrip1.Location = new System.Drawing.Point(510, 38);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(35, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(66, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -75,6 +75,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.tsbPesquisarSolicitante.Name = "tsbPesquisarSolicitante";
             this.tsbPesquisarSolicitante.Size = new System.Drawing.Size(23, 22);
             this.tsbPesquisarSolicitante.Text = "Pesquisar";
+            this.tsbPesquisarSolicitante.Click += new System.EventHandler(this.tsbPesquisarSolicitante_Click);
             // 
             // toolStrip2
             // 
