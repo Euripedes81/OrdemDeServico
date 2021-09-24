@@ -54,7 +54,7 @@ namespace OrdemDeServico.Views
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(984, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1126, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -72,28 +72,28 @@ namespace OrdemDeServico.Views
             // secretariaTsmi
             // 
             this.secretariaTsmi.Name = "secretariaTsmi";
-            this.secretariaTsmi.Size = new System.Drawing.Size(180, 22);
+            this.secretariaTsmi.Size = new System.Drawing.Size(129, 22);
             this.secretariaTsmi.Text = "Secretaria";
             this.secretariaTsmi.Click += new System.EventHandler(this.secretariaTsmi_Click);
             // 
             // setorTsmi
             // 
             this.setorTsmi.Name = "setorTsmi";
-            this.setorTsmi.Size = new System.Drawing.Size(180, 22);
+            this.setorTsmi.Size = new System.Drawing.Size(129, 22);
             this.setorTsmi.Text = "Setor";
             this.setorTsmi.Click += new System.EventHandler(this.setorTsmi_Click);
             // 
             // funcionarioTsmi
             // 
             this.funcionarioTsmi.Name = "funcionarioTsmi";
-            this.funcionarioTsmi.Size = new System.Drawing.Size(180, 22);
+            this.funcionarioTsmi.Size = new System.Drawing.Size(129, 22);
             this.funcionarioTsmi.Text = "Solicitante";
             this.funcionarioTsmi.Click += new System.EventHandler(this.funcionarioTsmi_Click);
             // 
             // maquinaTsmi
             // 
             this.maquinaTsmi.Name = "maquinaTsmi";
-            this.maquinaTsmi.Size = new System.Drawing.Size(180, 22);
+            this.maquinaTsmi.Size = new System.Drawing.Size(129, 22);
             this.maquinaTsmi.Text = "Maquina";
             this.maquinaTsmi.Click += new System.EventHandler(this.maquinaTsmi_Click);
             // 
@@ -109,14 +109,14 @@ namespace OrdemDeServico.Views
             // abrirOsTsmi
             // 
             this.abrirOsTsmi.Name = "abrirOsTsmi";
-            this.abrirOsTsmi.Size = new System.Drawing.Size(180, 22);
+            this.abrirOsTsmi.Size = new System.Drawing.Size(109, 22);
             this.abrirOsTsmi.Text = "Abrir";
             this.abrirOsTsmi.Click += new System.EventHandler(this.abrirOsTsmi_Click);
             // 
             // fecharToolStripMenuItem
             // 
             this.fecharToolStripMenuItem.Name = "fecharToolStripMenuItem";
-            this.fecharToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fecharToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.fecharToolStripMenuItem.Text = "Fechar";
             // 
             // consultaToolStripMenuItem
@@ -144,7 +144,7 @@ namespace OrdemDeServico.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 560);
+            this.ClientSize = new System.Drawing.Size(1126, 669);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;

@@ -13,7 +13,8 @@ namespace OrdemDeServico.Views.OS.NsAbrir
 {
     public partial class FrmAddOs : Form
     {
-        Solicitante solicitante = new Solicitante();
+        private Solicitante solicitante = new Solicitante();
+        private Maquina maquina = new Maquina();
         public FrmAddOs()
         {
             InitializeComponent();
@@ -24,6 +25,13 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             FrmSolicitanteOs frmSolicitanteOs = new FrmSolicitanteOs(txtSolicitante, solicitante);
             frmSolicitanteOs.MdiParent = FrmPrincipal.ActiveForm;
             frmSolicitanteOs.Show();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            FrmMaquinaOs frmMaquinaOs = new FrmMaquinaOs(txtPatrimonio, txtDescricaoMaquina, maquina);
+            frmMaquinaOs.MdiParent = FrmPrincipal.ActiveForm;
+            frmMaquinaOs.Show();
         }
     }
 }

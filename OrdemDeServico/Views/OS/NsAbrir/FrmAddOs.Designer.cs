@@ -31,9 +31,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         {
             this.txtSolicitante = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsbPesquisarSolicitante = new System.Windows.Forms.ToolStripButton();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.txtPatrimonio = new System.Windows.Forms.TextBox();
             this.txtDescricaoMaquina = new System.Windows.Forms.TextBox();
             this.dtpAberturaOs = new System.Windows.Forms.DateTimePicker();
@@ -44,6 +42,8 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.tsbPesquisarSolicitante = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -63,19 +63,9 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.tsbPesquisarSolicitante});
             this.toolStrip1.Location = new System.Drawing.Point(510, 38);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(66, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(35, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tsbPesquisarSolicitante
-            // 
-            this.tsbPesquisarSolicitante.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbPesquisarSolicitante.Image = global::OrdemDeServico.Properties.Resources.icons8_pesquisar_26;
-            this.tsbPesquisarSolicitante.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbPesquisarSolicitante.Name = "tsbPesquisarSolicitante";
-            this.tsbPesquisarSolicitante.Size = new System.Drawing.Size(23, 22);
-            this.tsbPesquisarSolicitante.Text = "Pesquisar";
-            this.tsbPesquisarSolicitante.Click += new System.EventHandler(this.tsbPesquisarSolicitante_Click);
             // 
             // toolStrip2
             // 
@@ -84,18 +74,9 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.toolStripButton1});
             this.toolStrip2.Location = new System.Drawing.Point(510, 88);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(35, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(66, 25);
             this.toolStrip2.TabIndex = 3;
             this.toolStrip2.Text = "toolStrip2";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::OrdemDeServico.Properties.Resources.icons8_pesquisar_26;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "Pesquisar";
             // 
             // txtPatrimonio
             // 
@@ -183,6 +164,26 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.btnSalvar.TabIndex = 14;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::OrdemDeServico.Properties.Resources.icons8_pesquisar_26;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "Pesquisar";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // tsbPesquisarSolicitante
+            // 
+            this.tsbPesquisarSolicitante.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbPesquisarSolicitante.Image = global::OrdemDeServico.Properties.Resources.icons8_pesquisar_26;
+            this.tsbPesquisarSolicitante.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbPesquisarSolicitante.Name = "tsbPesquisarSolicitante";
+            this.tsbPesquisarSolicitante.Size = new System.Drawing.Size(23, 22);
+            this.tsbPesquisarSolicitante.Text = "Pesquisar";
+            this.tsbPesquisarSolicitante.Click += new System.EventHandler(this.tsbPesquisarSolicitante_Click);
             // 
             // FrmAddOs
             // 
