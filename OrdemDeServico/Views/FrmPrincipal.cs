@@ -2,6 +2,7 @@
 using OrdemDeServico.Views.Manutencao.NsSecretaria;
 using OrdemDeServico.Views.Manutencao.NsSetor;
 using OrdemDeServico.Views.Manutencao.NsSolicitante;
+using OrdemDeServico.Views.OS.NsAbrir;
 using System;
 using System.Windows.Forms;
 
@@ -40,6 +41,13 @@ namespace OrdemDeServico.Views
             FrmMaquina frmMaquina = new FrmMaquina();
             frmMaquina.MdiParent = this;
             frmMaquina.Show();
+        }
+
+        private void abriToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAbreOs frmAbreOs = new FrmAbreOs();
+            frmAbreOs.MdiParent = this;
+            frmAbreOs.Show();
         }
     }
 }

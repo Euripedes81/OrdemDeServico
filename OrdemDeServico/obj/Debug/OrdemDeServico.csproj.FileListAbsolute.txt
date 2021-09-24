@@ -100,3 +100,5 @@ C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\bin\Debug\zh-CHT
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.Manutencao.NsMaquina.FrmRelatorioMaquina.resources
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\RdlCompile.cache
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\RdlCompile.compiled
+C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.OS.NsAbrir.FrmAbreOs.resources
+C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.OS.NsAbrir.FrmAddOs.resources
