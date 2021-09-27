@@ -12,10 +12,12 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         private List<Solicitante> solicitantes = new List<Solicitante>();
         private Setor setor;
         TextBox txtSolicitante;
-        public FrmSolicitanteOs(TextBox txtSolicitante, Solicitante solicitante)
+        TextBox txtDescricaoSolicitante;
+        public FrmSolicitanteOs(TextBox txtSolicitante, TextBox txtDescricaoSolicitante, Solicitante solicitante)
         {
             InitializeComponent();
             this.txtSolicitante = txtSolicitante;
+            this.txtDescricaoSolicitante = txtDescricaoSolicitante;
             this.solicitante = solicitante;
         }
         public FrmSolicitanteOs()
@@ -27,6 +29,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         {
             AdicionaDgvHelper.ObterLinhaDgv(dgv, solicitante);
             txtSolicitante.Text = solicitante.Nome;
+            txtDescricaoSolicitante.Text = solicitante.Descricao;
             this.Close();
         }
 
