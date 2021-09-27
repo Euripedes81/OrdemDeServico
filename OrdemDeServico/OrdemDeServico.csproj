@@ -111,6 +111,7 @@
     <Compile Include="DAO\ConexaoBancoDAO.cs" />
     <Compile Include="DAO\ICrud.cs" />
     <Compile Include="DAO\MaquinaDAO.cs" />
+    <Compile Include="DAO\OrdemServicoDAO.cs" />
     <Compile Include="DAO\SecretariaDAO.cs" />
     <Compile Include="DAO\SetorDAO.cs" />
     <Compile Include="DAO\SolicitanteDAO.cs" />
@@ -119,7 +120,9 @@
     <Compile Include="Helpers\CrudHelper.cs" />
     <Compile Include="Helpers\PesquisadorHelper.cs" />
     <Compile Include="Helpers\Validador.cs" />
+    <Compile Include="Model\Atendente.cs" />
     <Compile Include="Model\Maquina.cs" />
+    <Compile Include="Model\OrdemServico.cs" />
     <Compile Include="Model\Secretaria.cs" />
     <Compile Include="Model\Setor.cs" />
     <Compile Include="Model\Solicitante.cs" />

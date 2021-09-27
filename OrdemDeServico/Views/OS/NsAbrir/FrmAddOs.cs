@@ -42,6 +42,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             txtDescricaoSolicitante.Text = "";
             txtPatrimonio.Text = "";
             txtDescricaoMaquina.Text = "";
+            txtDiagnostico.Text = "";
         }
 
         private void txtDiagnostico_KeyPress(object sender, KeyPressEventArgs e)
