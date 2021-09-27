@@ -42,11 +42,11 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
             // 
             // mtxtNumPatrimonio
             // 
-            this.mtxtNumPatrimonio.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxtNumPatrimonio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtNumPatrimonio.Location = new System.Drawing.Point(10, 23);
             this.mtxtNumPatrimonio.Mask = "000000";
             this.mtxtNumPatrimonio.Name = "mtxtNumPatrimonio";
-            this.mtxtNumPatrimonio.Size = new System.Drawing.Size(72, 22);
+            this.mtxtNumPatrimonio.Size = new System.Drawing.Size(72, 23);
             this.mtxtNumPatrimonio.TabIndex = 32;
             // 
             // label4

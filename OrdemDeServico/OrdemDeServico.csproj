@@ -114,6 +114,7 @@
     <Compile Include="DAO\SecretariaDAO.cs" />
     <Compile Include="DAO\SetorDAO.cs" />
     <Compile Include="DAO\SolicitanteDAO.cs" />
+    <Compile Include="Helpers\AdicionaDgvHelper.cs" />
     <Compile Include="Helpers\Criador.cs" />
     <Compile Include="Helpers\CrudHelper.cs" />
     <Compile Include="Helpers\PesquisadorHelper.cs" />
