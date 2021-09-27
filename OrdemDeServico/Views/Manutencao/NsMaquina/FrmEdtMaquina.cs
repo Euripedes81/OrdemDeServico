@@ -28,7 +28,7 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
                         maquina.Patrimonio = Convert.ToInt32(mtxtNumPatrimonio.Text);
                         maquina.Tipo = txtTipo.Text;
                         maquina.Descricao = txtDescricao.Text;
-                        maquina.setor.Id = setores[cbSetor.SelectedIndex].Id;
+                        maquina.SetorMqn.Id = setores[cbSetor.SelectedIndex].Id;
                         CrudHelper.Inserir(maquina);
                         this.Close();
                     }
@@ -47,7 +47,7 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
             mtxtNumPatrimonio.Text = Convert.ToString(maquina.Patrimonio);
             txtTipo.Text = maquina.Tipo;
             txtDescricao.Text = maquina.Descricao;
-            cbSetor.SelectedIndex = cbSetor.Items.IndexOf(maquina.setor.Nome);
+            cbSetor.SelectedIndex = cbSetor.Items.IndexOf(maquina.SetorMqn.Nome);
         }
        
         private void Limpar()

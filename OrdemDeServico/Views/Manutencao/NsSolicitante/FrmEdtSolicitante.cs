@@ -22,7 +22,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSolicitante
             txtId.Text = Convert.ToString(solicitante.Id);
             txtNome.Text = solicitante.Nome;
             txtDescricao.Text = solicitante.Descricao;
-            cbSetor.SelectedIndex = cbSetor.Items.IndexOf(solicitante.setor.Nome);
+            cbSetor.SelectedIndex = cbSetor.Items.IndexOf(solicitante.SetorSlc.Nome);
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSolicitante
                         solicitante.Id = Convert.ToInt32(txtId.Text);
                         solicitante.Nome = txtNome.Text;
                         solicitante.Descricao = txtDescricao.Text;
-                        solicitante.setor.Id = setores[cbSetor.SelectedIndex].Id;
+                        solicitante.SetorSlc.Id = setores[cbSetor.SelectedIndex].Id;
                         CrudHelper.Inserir(solicitante);
                         this.Close();
                     }

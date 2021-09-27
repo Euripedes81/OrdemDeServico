@@ -36,7 +36,7 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
                         maquina.Patrimonio = Convert.ToInt32(mtxtNumPatrimonio.Text);
                         maquina.Tipo = txtTipo.Text;
                         maquina.Descricao = txtDescricao.Text;
-                        maquina.setor.Id = setores[cbSetor.SelectedIndex].Id;
+                        maquina.SetorMqn.Id = setores[cbSetor.SelectedIndex].Id;
                         CrudHelper.Inserir(maquina);
                         Limpar();
                     }

@@ -26,7 +26,7 @@ namespace OrdemDeServico.DAO
             comando.CommandText = "INSERT INTO Setor (Nome, Descricao, IdSecretaria) VALUES (@Nome, @Descricao, @IdSecretaria) ";
             comando.Parameters.AddWithValue("Nome", setor.Nome);
             comando.Parameters.AddWithValue("Descricao", setor.Descricao);
-            comando.Parameters.AddWithValue("IdSecretaria", setor.secretaria.Id);
+            comando.Parameters.AddWithValue("IdSecretaria", setor.SecretariaStr.Id);
             ConexaoBancoDAO.CRUD(comando);
         }
 
@@ -39,7 +39,7 @@ namespace OrdemDeServico.DAO
             comando.Parameters.AddWithValue("Id", setor.Id);
             comando.Parameters.AddWithValue("Nome", setor.Nome);
             comando.Parameters.AddWithValue("Descricao", setor.Descricao);
-            comando.Parameters.AddWithValue("IdSecretaria", setor.secretaria.Id);
+            comando.Parameters.AddWithValue("IdSecretaria", setor.SecretariaStr.Id);
             ConexaoBancoDAO.CRUD(comando);
         }
 
@@ -59,7 +59,7 @@ namespace OrdemDeServico.DAO
                     setor.Id = Convert.ToInt32(dr["Id"]);
                     setor.Nome = Convert.ToString(dr["Nome"]);
                     setor.Descricao = Convert.ToString(dr["Descricao"]);
-                    setor.secretaria.Id = Convert.ToInt16(dr["IdSecretaria"]);
+                    setor.SecretariaStr.Id = Convert.ToInt16(dr["IdSecretaria"]);
                     setores.Add(setor);
                 }
             }
@@ -84,7 +84,7 @@ namespace OrdemDeServico.DAO
                 setor.Id = Convert.ToInt32(dr["Id"]);
                 setor.Nome = Convert.ToString(dr["Nome"]);
                 setor.Descricao = Convert.ToString(dr["Descricao"]);
-                setor.secretaria.Id = Convert.ToInt16(dr["IdSecretaria"]);                
+                setor.SecretariaStr.Id = Convert.ToInt16(dr["IdSecretaria"]);                
             }
             else
             {

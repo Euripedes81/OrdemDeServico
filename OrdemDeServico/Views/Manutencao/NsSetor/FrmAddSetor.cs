@@ -30,7 +30,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
                         Setor setor = new Setor();
                         setor.Nome = txtNome.Text;
                         setor.Descricao = txtDescricao.Text;
-                        setor.secretaria.Id = secretarias[cbSecretaria.SelectedIndex].Id;
+                        setor.SecretariaStr.Id = secretarias[cbSecretaria.SelectedIndex].Id;
                         CrudHelper.Inserir(setor);
                         Limpar();
                     }

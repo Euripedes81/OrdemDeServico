@@ -21,7 +21,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
             txtId.Text = Convert.ToString(setor.Id);
             txtNome.Text = setor.Nome;
             txtDescricao.Text = setor.Descricao;
-            cbSecretaria.SelectedIndex = cbSecretaria.Items.IndexOf(setor.secretaria.Nome);
+            cbSecretaria.SelectedIndex = cbSecretaria.Items.IndexOf(setor.SecretariaStr.Nome);
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
@@ -35,7 +35,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
                         setor.Id = Convert.ToInt32(txtId.Text);
                         setor.Nome = txtNome.Text;
                         setor.Descricao = txtDescricao.Text;
-                        setor.secretaria.Id = secretarias[cbSecretaria.SelectedIndex].Id;
+                        setor.SecretariaStr.Id = secretarias[cbSecretaria.SelectedIndex].Id;
                         CrudHelper.Inserir(setor);
                         this.Close();
                     }

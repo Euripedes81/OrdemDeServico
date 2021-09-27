@@ -27,7 +27,7 @@ namespace OrdemDeServico.DAO
             comando.Parameters.AddWithValue("Patrimonio", maquina.Patrimonio);
             comando.Parameters.AddWithValue("Tipo", maquina.Tipo);
             comando.Parameters.AddWithValue("Descricao", maquina.Descricao);
-            comando.Parameters.AddWithValue("IdSetor", maquina.setor.Id);
+            comando.Parameters.AddWithValue("IdSetor", maquina.SetorMqn.Id);
             ConexaoBancoDAO.CRUD(comando);
         }
 
@@ -41,7 +41,7 @@ namespace OrdemDeServico.DAO
             comando.Parameters.AddWithValue("Patrimonio", maquina.Patrimonio);
             comando.Parameters.AddWithValue("Tipo", maquina.Tipo);
             comando.Parameters.AddWithValue("Descricao", maquina.Descricao);
-            comando.Parameters.AddWithValue("IdSetor", maquina.setor.Id);
+            comando.Parameters.AddWithValue("IdSetor", maquina.SetorMqn.Id);
             ConexaoBancoDAO.CRUD(comando);
         }
 
@@ -62,7 +62,7 @@ namespace OrdemDeServico.DAO
                     maquina.Patrimonio = Convert.ToInt32(dr["Patrimonio"]);
                     maquina.Tipo = Convert.ToString(dr["Tipo"]);
                     maquina.Descricao = Convert.ToString(dr["Descricao"]);
-                    maquina.setor.Id = Convert.ToInt16(dr["IdSetor"]);
+                    maquina.SetorMqn.Id = Convert.ToInt16(dr["IdSetor"]);
                     maquinas.Add(maquina);
                 }
             }

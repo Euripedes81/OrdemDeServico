@@ -64,11 +64,11 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
             {
                 foreach (Setor setor in setores)
                 {
-                    if ((secretaria = PesquisadorHelper.PesquisarSecretaria(setor.secretaria.Id)) != null)
+                    if ((secretaria = PesquisadorHelper.PesquisarSecretaria(setor.SecretariaStr.Id)) != null)
                     {
 
-                        setor.secretaria = secretaria;
-                        dgv.Rows.Add(setor.Id, setor.Nome, setor.Descricao, setor.secretaria.Nome, setor.secretaria.Id);
+                        setor.SecretariaStr = secretaria;
+                        dgv.Rows.Add(setor.Id, setor.Nome, setor.Descricao, setor.SecretariaStr.Nome, setor.SecretariaStr.Id);
 
                     }
                 }
@@ -82,8 +82,8 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
                 setor.Id = Convert.ToInt32(dgv.CurrentRow.Cells[0].Value.ToString());
                 setor.Nome = dgv.CurrentRow.Cells[1].Value.ToString();
                 setor.Descricao = dgv.CurrentRow.Cells[2].Value.ToString();
-                setor.secretaria.Nome = dgv.CurrentRow.Cells[3].Value.ToString();
-                setor.secretaria.Id = Convert.ToInt32(dgv.CurrentRow.Cells[4].Value);
+                setor.SecretariaStr.Nome = dgv.CurrentRow.Cells[3].Value.ToString();
+                setor.SecretariaStr.Id = Convert.ToInt32(dgv.CurrentRow.Cells[4].Value);
                 return true;
             }
             else

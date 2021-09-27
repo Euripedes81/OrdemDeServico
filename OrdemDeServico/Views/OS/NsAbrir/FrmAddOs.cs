@@ -1,4 +1,5 @@
-﻿using OrdemDeServico.Model;
+﻿using OrdemDeServico.Helpers;
+using OrdemDeServico.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,7 +35,21 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            Limpar();
+            if (Validador.CampoBranco(txtSolicitante.Text, txtPatrimonio.Text, txtDiagnostico.Text ) && 
+                (MessageBox.Show("Deseja salvar essa O.S?", "",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+            {
+                if(solicitante.SetorSlc.Id == maquina.SetorMqn.Id)
+                {
+                    Limpar();
+                }
+                else if(MessageBox.Show("Solicitante e Máquina não pertencem ao mesmo setor!\nDeseja continuar?", "",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Limpar();
+                }
+                
+            }
+            
         }
         private void Limpar()
         {
@@ -47,7 +62,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
 
         private void txtDiagnostico_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txtDescricaoSolicitante.CharacterCasing = CharacterCasing.Upper;
-        }       
+           txtDiagnostico.CharacterCasing = CharacterCasing.Upper;
+        }
     }
 }

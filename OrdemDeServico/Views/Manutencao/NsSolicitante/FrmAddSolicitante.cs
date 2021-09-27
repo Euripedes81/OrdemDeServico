@@ -29,7 +29,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSolicitante
                         Solicitante solicitante = new Solicitante();
                         solicitante.Nome = txtNome.Text;
                         solicitante.Descricao = txtDescricao.Text;
-                        solicitante.setor.Id = setores[cbSetor.SelectedIndex].Id;
+                        solicitante.SetorSlc.Id = setores[cbSetor.SelectedIndex].Id;
                         CrudHelper.Inserir(solicitante);
                         Limpar();
                     }

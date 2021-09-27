@@ -9,11 +9,11 @@ namespace OrdemDeServico.Model
         public int Patrimonio { get; set; }
         public string Tipo { get; set; }
         public string Descricao { get; set; }
-        public Setor setor { get; set; }
+        public Setor SetorMqn { get; set; }
 
         public Maquina()
         {
-            setor = new Setor();
+            SetorMqn = new Setor();
         }
     }
 }

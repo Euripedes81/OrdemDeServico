@@ -55,6 +55,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             // 
             // txtSolicitante
             // 
+            this.txtSolicitante.BackColor = System.Drawing.SystemColors.Info;
             this.txtSolicitante.Location = new System.Drawing.Point(12, 44);
             this.txtSolicitante.Name = "txtSolicitante";
             this.txtSolicitante.ReadOnly = true;
@@ -89,7 +90,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.tsbPesquisarMaquina});
             this.toolStrip2.Location = new System.Drawing.Point(553, 36);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(66, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(35, 25);
             this.toolStrip2.TabIndex = 3;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -105,6 +106,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             // 
             // txtPatrimonio
             // 
+            this.txtPatrimonio.BackColor = System.Drawing.SystemColors.Info;
             this.txtPatrimonio.Location = new System.Drawing.Point(39, 243);
             this.txtPatrimonio.Name = "txtPatrimonio";
             this.txtPatrimonio.ReadOnly = true;
@@ -113,6 +115,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             // 
             // txtDescricaoMaquina
             // 
+            this.txtDescricaoMaquina.BackColor = System.Drawing.SystemColors.Info;
             this.txtDescricaoMaquina.Location = new System.Drawing.Point(39, 290);
             this.txtDescricaoMaquina.Multiline = true;
             this.txtDescricaoMaquina.Name = "txtDescricaoMaquina";
@@ -200,6 +203,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             // 
             // txtDescricaoSolicitante
             // 
+            this.txtDescricaoSolicitante.BackColor = System.Drawing.SystemColors.Info;
             this.txtDescricaoSolicitante.Location = new System.Drawing.Point(12, 90);
             this.txtDescricaoSolicitante.Multiline = true;
             this.txtDescricaoSolicitante.Name = "txtDescricaoSolicitante";
@@ -243,6 +247,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Name = "FrmAddOs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar O.S";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

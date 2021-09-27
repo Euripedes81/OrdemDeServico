@@ -26,6 +26,18 @@ namespace OrdemDeServico.Helpers
             }
             return false;
         }
+        public static bool CampoBranco(string nomeCampo)
+        {
+            if (string.IsNullOrEmpty(nomeCampo))
+            {
+                MessageBox.Show("Todos os campos são obrigatórios!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         public static bool CampoBranco(string nomeCampo, string nomeCampo2)
         {
             if (string.IsNullOrEmpty(nomeCampo) || string.IsNullOrEmpty(nomeCampo2))
@@ -37,11 +49,10 @@ namespace OrdemDeServico.Helpers
             {
                 return true;
             }
-
-        }
-        public static bool CampoBranco(string nomeCampo, string nomeCampo2, string telefoneCampo)
+        }        
+        public static bool CampoBranco(string nomeCampo, string nomeCampo2, string nomeCampo3)
         {
-            if (string.IsNullOrEmpty(nomeCampo) || string.IsNullOrEmpty(nomeCampo2) || !telefoneCampo.Any(c => char.IsDigit(c)))
+            if (string.IsNullOrEmpty(nomeCampo) || string.IsNullOrEmpty(nomeCampo2) || string.IsNullOrEmpty(nomeCampo3))
             {
                 MessageBox.Show("Todos os campos são obrigatórios!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;

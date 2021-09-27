@@ -8,10 +8,10 @@ namespace OrdemDeServico.Model
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
-        public Secretaria secretaria { get; set; }
+        public Secretaria SecretariaStr { get; set; }
         public Setor()
         {
-            secretaria = new Secretaria();
+            SecretariaStr = new Secretaria();
         }
 
         public override string ToString()
