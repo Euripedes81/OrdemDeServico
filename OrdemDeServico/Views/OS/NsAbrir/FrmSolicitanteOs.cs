@@ -35,7 +35,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            AdicionaDgvHelper.PesquisaDgv(dgv, txtSolicitante, solicitantes, setor);
+            AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar.Text, solicitantes, setor);
         }
        
     }

@@ -31,7 +31,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         {
             if (txtPesquisar.Text != "")
             {
-                AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar, maquinas, setor);
+                AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar.Text, maquinas, setor);
             }
         }
         private void tsbAdicionar_Click(object sender, EventArgs e)
@@ -49,7 +49,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             timer1.Enabled = false;
             if (txtPesquisar.Text != "")
             {
-                AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar, maquinas, setor);
+                AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar.Text, maquinas, setor);
             }
         }
 

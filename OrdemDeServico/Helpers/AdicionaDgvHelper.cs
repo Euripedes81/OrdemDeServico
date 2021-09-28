@@ -23,11 +23,11 @@ namespace OrdemDeServico.Helpers
             bool[] visibilidade = new[] { true, true, true, true, false, true };
             Criador.CriaDataGridView(dgv, nomeColuna, textoColuna, tamanho, visibilidade);
         }
-        public static void PesquisaDgv(DataGridView dgv, TextBox txtPesquisar, List<Maquina> maquinas, Setor setor )
+        public static void PesquisaDgv(DataGridView dgv, string txtPesquisar, List<Maquina> maquinas, Setor setor )
         {
             CriarDgvMaquina(dgv);
 
-            int patrimonio = Convert.ToInt32(txtPesquisar.Text);
+            int patrimonio = Convert.ToInt32(txtPesquisar);
             if ((maquinas = PesquisadorHelper.PesquisarMaquina(patrimonio)) != null)
             {
                 foreach (Maquina maquina in maquinas)
@@ -45,10 +45,10 @@ namespace OrdemDeServico.Helpers
                 }
             }
         }
-        public static void PesquisaDgv(DataGridView dgv, TextBox txtPesquisar, List<Solicitante> solicitantes, Setor setor)
+        public static void PesquisaDgv(DataGridView dgv, string textoPesquisa, List<Solicitante> solicitantes, Setor setor)
         {
             CriarDgvSolicitante(dgv);
-            if ((solicitantes = PesquisadorHelper.PesquisarSolicitante(txtPesquisar.Text)) != null)
+            if ((solicitantes = PesquisadorHelper.PesquisarSolicitante(textoPesquisa)) != null)
             {
                 foreach (Solicitante solicitante in solicitantes)
                 {
@@ -59,10 +59,9 @@ namespace OrdemDeServico.Helpers
                         {
                             dgv.Rows.Add(solicitante.Id, solicitante.Nome, solicitante.Descricao, solicitante.SetorSlc.Nome,
                                 solicitante.SetorSlc.Id, solicitante.SetorSlc.SecretariaStr.Nome);
-                        }
-
+                        }                        
                     }
-                }
+                }                
             }
         }
         public static bool ObterLinhaDgv(DataGridView dgv, Maquina maquina)

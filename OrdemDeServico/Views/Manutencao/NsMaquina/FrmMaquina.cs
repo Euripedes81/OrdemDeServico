@@ -33,7 +33,7 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
         {
             if (txtPesquisar.Text != "")
             {
-                AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar, maquinas, setor);
+                AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar.Text, maquinas, setor);
             }
         }
 
@@ -73,7 +73,7 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
             timer1.Enabled = false;
             if (txtPesquisar.Text != "")
             {
-                AdicionaDgvHelper.PesquisaDgv(dgv,txtPesquisar,maquinas, setor);
+                AdicionaDgvHelper.PesquisaDgv(dgv,txtPesquisar.Text, maquinas, setor);
             }
         }
         private void txtPesquisar_TextChanged(object sender, EventArgs e)

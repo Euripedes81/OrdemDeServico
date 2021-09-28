@@ -1,13 +1,6 @@
 ﻿using OrdemDeServico.Helpers;
 using OrdemDeServico.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OrdemDeServico.Views.OS.NsAbrir
@@ -35,11 +28,18 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            OrdemServico ordemServico = new OrdemServico();
+            ordemServico.SolicitanteOs = solicitante;
+            ordemServico.MaquinaOs = maquina;
+            ordemServico.Diagnostico = txtDiagnostico.Text;
+            ordemServico.DataAbertura = DateTime.Now;
+            ordemServico.AtendenteOs.Id = 1;
             if (Validador.CampoBranco(txtSolicitante.Text, txtPatrimonio.Text, txtDiagnostico.Text ) && 
                 (MessageBox.Show("Deseja salvar essa O.S?", "",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
                 if(solicitante.SetorSlc.Id == maquina.SetorMqn.Id)
                 {
+                    CrudHelper.Inserir(ordemServico);
                     Limpar();
                 }
                 else if(MessageBox.Show("Solicitante e Máquina não pertencem ao mesmo setor!\nDeseja continuar?", "",

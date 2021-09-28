@@ -16,12 +16,12 @@ namespace OrdemDeServico.Model
         public string Solucao { get; set; }
         public DateTime DataFechamento { get; set; }
         public string Observacao { get; set; }
-        public Atendente atendenteOs { get; set; }
+        public Atendente AtendenteOs { get; set; }
         public OrdemServico()
         {
             SolicitanteOs = new Solicitante();
             MaquinaOs = new Maquina();
-            atendenteOs = new Atendente();
+            AtendenteOs = new Atendente();
         }
     }
 }

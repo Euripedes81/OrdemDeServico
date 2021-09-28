@@ -23,17 +23,15 @@ namespace OrdemDeServico.DAO
             OrdemServico ordemServico = obj as OrdemServico;
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "INSERT INTO ordemdeservico (IdSolicitante, IdMaquiana, Diagnostico, DataAbertura, Solucao," +
-                " DataFechamento, Observacao, IdAtentende) VALUES (@IdSolicitante, @IdMaquina, @Diagnostico, @DataAbertura, @Solucao" +
-                "@DataFechamento, @Observacao, @IdAtentende)";
-            comando.Parameters.AddWithValue("Nome", ordemServico.SolicitanteOs.Id);
-            comando.Parameters.AddWithValue("Descricao", ordemServico.MaquinaOs.Id);
+            comando.CommandText = "INSERT INTO ordemdeservico (IdSolicitante, IdMaquina, Diagnostico, DataAbertura, Solucao, DataFechamento, Observacao, IdAtendente) VALUES (@IdSolicitante, @IdMaquina, @Diagnostico, @DataAbertura, @Solucao, @DataFechamento, @Observacao, @IdAtendente)";
+            comando.Parameters.AddWithValue("IdSolicitante", ordemServico.SolicitanteOs.Id);
+            comando.Parameters.AddWithValue("IdMaquina", ordemServico.MaquinaOs.Id);
             comando.Parameters.AddWithValue("Diagnostico", ordemServico.Diagnostico);
             comando.Parameters.AddWithValue("DataAbertura", ordemServico.DataAbertura);
             comando.Parameters.AddWithValue("Solucao", ordemServico.Solucao);
             comando.Parameters.AddWithValue("DataFechamento", ordemServico.DataFechamento);
             comando.Parameters.AddWithValue("Observacao", ordemServico.Observacao);
-            comando.Parameters.AddWithValue("IdSetor", ordemServico.Diagnostico);
+            comando.Parameters.AddWithValue("IdAtendente", ordemServico.AtendenteOs.Id);
             ConexaoBancoDAO.CRUD(comando);
         }
 

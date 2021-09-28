@@ -25,7 +25,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSolicitante
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar, solicitantes, setor);
+            AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar.Text, solicitantes, setor);
         }
 
 
@@ -47,7 +47,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSolicitante
                      == DialogResult.Yes)
                 {
                     CrudHelper.Excluir(solicitante);
-                    AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar, solicitantes, setor);
+                    AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar.Text, solicitantes, setor);
                 }
             }
         }       

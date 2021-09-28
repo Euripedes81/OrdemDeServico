@@ -73,5 +73,22 @@ namespace OrdemDeServico.Helpers
             MaquinaDAO maquinaDAO = new MaquinaDAO();
             maquinaDAO.Delete(solicitante);
         }
+        public static void Inserir(OrdemServico ordemServico)
+        {
+            OrdemServicoDAO ordemServicoDAO = new OrdemServicoDAO();
+            if (ordemServico.Id == 0)
+            {
+                ordemServicoDAO.Insert(ordemServico);
+            }
+            else
+            {
+                ordemServicoDAO.Update(ordemServico);
+            }
+        }
+        public static void Excluir(OrdemServico ordemServico)
+        {
+            OrdemServicoDAO ordemServicoDAO = new OrdemServicoDAO();
+            ordemServicoDAO.Delete(ordemServico);
+        }
     }
 }
