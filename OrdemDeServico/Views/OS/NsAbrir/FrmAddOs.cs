@@ -42,12 +42,17 @@ namespace OrdemDeServico.Views.OS.NsAbrir
                     CrudHelper.Inserir(ordemServico);
                     Limpar();
                 }
-                else if(MessageBox.Show("Solicitante e Máquina não pertencem ao mesmo setor!\nDeseja continuar?", "",
-                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                else
                 {
-                    Limpar();
+                    MessageBox.Show("Solicitante e Máquina não pertencem ao mesmo setor!", "",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                
+                //else if (MessageBox.Show("Solicitante e Máquina não pertencem ao mesmo setor!\nDeseja continuar?", "",
+                //        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                //{
+                //    Limpar();
+                //}
+
             }
             
         }
@@ -58,11 +63,11 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             txtPatrimonio.Text = "";
             txtDescricaoMaquina.Text = "";
             txtDiagnostico.Text = "";
-        }
+        }      
 
-        private void txtDiagnostico_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtDiagnostico_TextChanged(object sender, EventArgs e)
         {
-           txtDiagnostico.CharacterCasing = CharacterCasing.Upper;
+            txtDiagnostico.CharacterCasing = CharacterCasing.Upper;
         }
     }
 }

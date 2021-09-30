@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OrdemDeServico.Helpers;
+using OrdemDeServico.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,10 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace OrdemDeServico.Views.OS.NsAbrir
-{
+namespace OrdemDeServico.Views.OS.NsAbrir{
+    
+    
     public partial class FrmAbreOs : Form
     {
+        private List<OrdemServico> ordemServicos;
+        private Atendente atendente = new Atendente();       
         public FrmAbreOs()
         {
             InitializeComponent();
@@ -35,6 +40,16 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             FrmAddOs frmAddOs = new FrmAddOs();
             frmAddOs.MdiParent = FrmPrincipal.ActiveForm;
             frmAddOs.Show();
-        }    
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            atendente.Id = 1;
+            
+            if(txtPesquisarNome.Enabled == true)
+            {
+                AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisarNome.Text, atendente);
+            }
+        }
     }
 }

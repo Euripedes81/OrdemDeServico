@@ -51,6 +51,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.toolStrip2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtSolicitante
@@ -60,7 +61,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.txtSolicitante.Name = "txtSolicitante";
             this.txtSolicitante.ReadOnly = true;
             this.txtSolicitante.Size = new System.Drawing.Size(538, 20);
-            this.txtSolicitante.TabIndex = 0;
+            this.txtSolicitante.TabIndex = 1;
             // 
             // toolStrip1
             // 
@@ -70,7 +71,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.toolStrip1.Location = new System.Drawing.Point(553, 39);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(35, 25);
-            this.toolStrip1.TabIndex = 1;
+            this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // tsbPesquisarSolicitante
@@ -91,7 +92,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.toolStrip2.Location = new System.Drawing.Point(553, 36);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(35, 25);
-            this.toolStrip2.TabIndex = 3;
+            this.toolStrip2.TabIndex = 1;
             this.toolStrip2.Text = "toolStrip2";
             // 
             // tsbPesquisarMaquina
@@ -121,7 +122,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.txtDescricaoMaquina.Name = "txtDescricaoMaquina";
             this.txtDescricaoMaquina.ReadOnly = true;
             this.txtDescricaoMaquina.Size = new System.Drawing.Size(538, 86);
-            this.txtDescricaoMaquina.TabIndex = 4;
+            this.txtDescricaoMaquina.TabIndex = 3;
             // 
             // txtDiagnostico
             // 
@@ -129,8 +130,9 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.txtDiagnostico.Multiline = true;
             this.txtDiagnostico.Name = "txtDiagnostico";
             this.txtDiagnostico.Size = new System.Drawing.Size(600, 86);
-            this.txtDiagnostico.TabIndex = 8;
-            this.txtDiagnostico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiagnostico_KeyPress);
+            this.txtDiagnostico.TabIndex = 4;
+            this.txtDiagnostico.TextChanged += new System.EventHandler(this.txtDiagnostico_TextChanged);
+           
             // 
             // label1
             // 
@@ -147,7 +149,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.label2.Location = new System.Drawing.Point(12, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 13);
-            this.label2.TabIndex = 10;
+            this.label2.TabIndex = 1;
             this.label2.Text = "Número de patrimônio";
             // 
             // label3
@@ -162,7 +164,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 422);
+            this.label4.Location = new System.Drawing.Point(12, 410);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 13);
             this.label4.TabIndex = 12;
@@ -173,7 +175,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.btnSalvar.Location = new System.Drawing.Point(231, 559);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(117, 43);
-            this.btnSalvar.TabIndex = 14;
+            this.btnSalvar.TabIndex = 5;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -188,7 +190,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.groupBox1.Location = new System.Drawing.Point(27, 34);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(600, 153);
-            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Solicitante";
             // 
@@ -209,7 +211,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.txtDescricaoSolicitante.Name = "txtDescricaoSolicitante";
             this.txtDescricaoSolicitante.ReadOnly = true;
             this.txtDescricaoSolicitante.Size = new System.Drawing.Size(538, 43);
-            this.txtDescricaoSolicitante.TabIndex = 12;
+            this.txtDescricaoSolicitante.TabIndex = 3;
             // 
             // groupBox2
             // 
@@ -218,12 +220,13 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.groupBox2.Location = new System.Drawing.Point(27, 202);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(600, 207);
-            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Máquina";
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(637, 532);
@@ -238,7 +241,6 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(669, 625);
             this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtDiagnostico);
             this.Controls.Add(this.txtDescricaoMaquina);
@@ -257,6 +259,8 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

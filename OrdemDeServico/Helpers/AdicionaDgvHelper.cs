@@ -23,12 +23,32 @@ namespace OrdemDeServico.Helpers
             bool[] visibilidade = new[] { true, true, true, true, false, true };
             Criador.CriaDataGridView(dgv, nomeColuna, textoColuna, tamanho, visibilidade);
         }
+        private static void CriarDgvOrdemServico(DataGridView dgv, string status)
+        {
+            if (status == "abertura")
+            {
+
+                string[] nomeColuna = new string[] { "Id", "Solicitante", "Maquina", "Tipo", "Diagnostico", "DataAbertura",  "Atendente" };
+                string[] textoColuna = new string[] { "Número", "Solicitante", "Máquina", "Tipo", "Diagnóstico", "Abertura", "Atendente" };
+                int[] tamanho = new[] { 50, 250, 250, 250, 250, 250, 150 };                
+                Criador.CriaDataGridView(dgv, nomeColuna, textoColuna, tamanho);
+            }
+            else
+            {
+                string[] nomeColuna = new string[] { "Id", "Solicitante", "Maquina","Tipo", "Diagnostico", "DataAbertura", "Solucao", "DataFechamento",
+                    "Observacao", "Atendente" };
+                string[] textoColuna = new string[] { "Número", "Solicitante", "Máquina", "Tipo", "Diagnóstico", "Abertura", "Solução", "Fechamento",
+                    "Observação", "Atendente" };
+                int[] tamanho = new[] { 50, 250, 250, 250, 250, 250, 250, 250, 250, 150 };                
+                Criador.CriaDataGridView(dgv, nomeColuna, textoColuna, tamanho);
+            }
+        }
         public static void PesquisaDgv(DataGridView dgv, string txtPesquisar, List<Maquina> maquinas, Setor setor )
         {
             CriarDgvMaquina(dgv);
 
             int patrimonio = Convert.ToInt32(txtPesquisar);
-            if ((maquinas = PesquisadorHelper.PesquisarMaquina(patrimonio)) != null)
+            if ((maquinas = PesquisadorHelper.PesquisarMaquinaPatrimonio(patrimonio)) != null)
             {
                 foreach (Maquina maquina in maquinas)
                 {
@@ -64,9 +84,32 @@ namespace OrdemDeServico.Helpers
                 }                
             }
         }
+        public static void PesquisaDgv(DataGridView dgv, string textoPesquisa, Atendente atendente)
+        {
+            List<Solicitante> solicitantes;
+            List<OrdemServico> ordemServicos;
+
+            CriarDgvOrdemServico(dgv, "abertura");
+            if ((solicitantes = PesquisadorHelper.PesquisarSolicitante(textoPesquisa)) != null)
+            {
+                foreach (Solicitante solicitante in solicitantes)
+                {
+                    if ((ordemServicos = PesquisadorHelper.PesquisarOrdemServico(solicitante.Id, atendente.Id)) != null)
+                    {
+                       foreach(OrdemServico ordemServico in ordemServicos)
+                       {
+                            ordemServico.SolicitanteOs = PesquisadorHelper.PesquisarSolicitanteId(ordemServico.SolicitanteOs.Id);
+                            ordemServico.MaquinaOs = PesquisadorHelper.PesquisarMaquinaId(ordemServico.MaquinaOs.Id);
+                            
+                            dgv.Rows.Add(ordemServico.Id, ordemServico.SolicitanteOs.Nome, ordemServico.MaquinaOs.Patrimonio, ordemServico.MaquinaOs.Tipo,
+                                ordemServico.Diagnostico, ordemServico.DataAbertura, ordemServico.AtendenteOs.Id);
+                       }
+                    }
+                }
+            }
+        }
         public static bool ObterLinhaDgv(DataGridView dgv, Maquina maquina)
         {
-
             if (dgv.SelectedRows.Count > 0)
             {
                 maquina.Id = Convert.ToInt32(dgv.CurrentRow.Cells[0].Value.ToString());
@@ -81,12 +124,10 @@ namespace OrdemDeServico.Helpers
             {
                 return false;
             }
-
         }       
        
         public static bool ObterLinhaDgv(DataGridView dgv, Solicitante solicitante)
         {
-
             if (dgv.SelectedRows.Count > 0)
             {
                 solicitante.Id = Convert.ToInt32(dgv.CurrentRow.Cells[0].Value.ToString());
@@ -100,7 +141,6 @@ namespace OrdemDeServico.Helpers
             {
                 return false;
             }
-
         }
     }
 }

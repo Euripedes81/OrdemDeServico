@@ -70,5 +70,28 @@ namespace OrdemDeServico.DAO
             dr.Close();
             return solicitantes;
         }
+        public Solicitante SelectId(int id)
+        {
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = "SELECT * FROM Solicitante WHERE Id=@Id";
+            comando.Parameters.AddWithValue("Id", id);
+            MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
+            Solicitante solicitante = new Solicitante();
+            if (dr.HasRows)
+            {
+                dr.Read();
+                solicitante.Id = Convert.ToInt32(dr["Id"]);
+                solicitante.Nome = Convert.ToString(dr["Nome"]);
+                solicitante.Descricao = Convert.ToString(dr["Descricao"]);
+                solicitante.SetorSlc.Id = Convert.ToInt16(dr["IdSetor"]);                
+            }
+            else
+            {
+                solicitante = null;
+            }
+            dr.Close();
+            return solicitante;
+        }
     }
 }

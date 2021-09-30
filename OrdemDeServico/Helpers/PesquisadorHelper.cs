@@ -33,7 +33,14 @@ namespace OrdemDeServico.Helpers
             Setor setor;
             setor = setorDAO.SelectId(id);
             return setor;
-        }       
+        }
+        public static Solicitante PesquisarSolicitanteId(int id)
+        {
+            SolicitanteDAO solicitanteDAO = new SolicitanteDAO();
+            Solicitante solicitante;
+            solicitante = solicitanteDAO.SelectId(id);
+            return solicitante;
+        }
         public static List<Solicitante> PesquisarSolicitante(string nome)
         {
             List<Solicitante> solicitante;
@@ -41,12 +48,26 @@ namespace OrdemDeServico.Helpers
             solicitante = solicitanteDAO.SelectNome(nome);
             return solicitante;
         }
-        public static List<Maquina> PesquisarMaquina(int patrimonio )
+        public static List<Maquina> PesquisarMaquinaPatrimonio(int patrimonio )
         {
-            List<Maquina> maquina;
+            List<Maquina> maquinas;
             MaquinaDAO maquinaDAO = new MaquinaDAO();
-            maquina = maquinaDAO.SelectNome(patrimonio);
+            maquinas = maquinaDAO.SelectNome(patrimonio);
+            return maquinas;
+        }
+        public static Maquina PesquisarMaquinaId(int id)
+        {
+            Maquina maquina;
+            MaquinaDAO maquinaDAO = new MaquinaDAO();
+            maquina = maquinaDAO.SelectId(id);
             return maquina;
+        }
+        public static List<OrdemServico> PesquisarOrdemServico(int idSolicitante, int idAtendente)
+        {
+            List<OrdemServico> ordemServicos;
+            OrdemServicoDAO ordemServicoDAO = new OrdemServicoDAO();
+            ordemServicos = ordemServicoDAO.SelectIdSolicitante(idSolicitante, idAtendente);
+            return ordemServicos;
         }
     }
 }
