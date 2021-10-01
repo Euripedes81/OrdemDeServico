@@ -69,5 +69,12 @@ namespace OrdemDeServico.Helpers
             ordemServicos = ordemServicoDAO.SelectIdSolicitante(idSolicitante, idAtendente);
             return ordemServicos;
         }
+        public static Atendente PesquisarAtendenteId(int id)
+        {
+            AtendenteDAO atendenteDAO = new AtendenteDAO();
+            Atendente atendente;
+            atendente = atendenteDAO.SelectId(id);
+            return atendente;
+        }
     }
 }

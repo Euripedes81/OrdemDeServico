@@ -100,9 +100,9 @@ namespace OrdemDeServico.Helpers
                        {
                             ordemServico.SolicitanteOs = PesquisadorHelper.PesquisarSolicitanteId(ordemServico.SolicitanteOs.Id);
                             ordemServico.MaquinaOs = PesquisadorHelper.PesquisarMaquinaId(ordemServico.MaquinaOs.Id);
-                            
+                            ordemServico.AtendenteOs = PesquisadorHelper.PesquisarAtendenteId(atendente.Id);
                             dgv.Rows.Add(ordemServico.Id, ordemServico.SolicitanteOs.Nome, ordemServico.MaquinaOs.Patrimonio, ordemServico.MaquinaOs.Tipo,
-                                ordemServico.Diagnostico, ordemServico.DataAbertura, ordemServico.AtendenteOs.Id);
+                                ordemServico.Diagnostico, ordemServico.DataAbertura, ordemServico.AtendenteOs.Nome);
                        }
                     }
                 }

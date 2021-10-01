@@ -108,6 +108,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\AtendenteDAO.cs" />
     <Compile Include="DAO\ConexaoBancoDAO.cs" />
     <Compile Include="DAO\ICrud.cs" />
     <Compile Include="DAO\MaquinaDAO.cs" />

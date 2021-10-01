@@ -45,7 +45,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir{
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             atendente.Id = 1;
-            
+            atendente.Usuario = "euripedes";
             if(txtPesquisarNome.Enabled == true)
             {
                 AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisarNome.Text, atendente);
