@@ -10,13 +10,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace OrdemDeServico.Views.OS.NsAbrir{
+namespace OrdemDeServico.Views.OS.NsAbrir
+{
     
     
     public partial class FrmAbreOs : Form
     {
         private Atendente atendente = new Atendente();
         private int numeroOs;
+        private OrdemServico ordemServico;
         public FrmAbreOs()
         {
             InitializeComponent();
@@ -41,13 +43,10 @@ namespace OrdemDeServico.Views.OS.NsAbrir{
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
-        {
-            atendente.Id = 1;
-            atendente.Usuario = "euripedes";
-            
+        {            
             if (txtPesquisarNome.ReadOnly == false)
             {
-                AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisarNome.Text, atendente);
+                AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisarNome.Text);
             }            
         }        
 
@@ -59,7 +58,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir{
             if (!string.IsNullOrWhiteSpace(txtPesquisarOs.Text))
             {
                 numeroOs = (int)Convert.ToInt64(txtPesquisarOs.Text);
-                AdicionaDgvHelper.PesquisaDgv(dgv, numeroOs, atendente); 
+                AdicionaDgvHelper.PesquisaDgv(dgv, numeroOs); 
             }
         }
 
@@ -75,6 +74,23 @@ namespace OrdemDeServico.Views.OS.NsAbrir{
                 e.Handled = true;
             }
         }
-       
+
+        private void tsbExcluir_Click(object sender, EventArgs e)
+        {
+            ordemServico = new OrdemServico();
+            atendente.Id = 1;
+            atendente.Usuario = "euripedes";
+            if (AdicionaDgvHelper.ObterLinhaDgvOs(dgv, ordemServico))
+            {
+                if(ordemServico.AtendenteOs.Id == atendente.Id)
+                {
+                    MessageBox.Show("São Iguais");
+                }
+                else
+                {
+                    MessageBox.Show("Você não tem permissão para excluir este registro!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+        }
     }
 }

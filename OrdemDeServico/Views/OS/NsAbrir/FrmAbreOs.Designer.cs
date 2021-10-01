@@ -31,9 +31,9 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         {
             this.components = new System.ComponentModel.Container();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsbAdicionar = new System.Windows.Forms.ToolStripButton();
-            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
+            this.tsbAbrir = new System.Windows.Forms.ToolStripButton();
             this.tsbExcluir = new System.Windows.Forms.ToolStripButton();
+            this.tsbVisualizar = new System.Windows.Forms.ToolStripButton();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.txtPesquisarNome = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -52,31 +52,24 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.toolStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbAdicionar,
-            this.tsbEditar,
-            this.tsbExcluir});
+            this.tsbAbrir,
+            this.tsbExcluir,
+            this.tsbVisualizar});
             this.toolStrip1.Location = new System.Drawing.Point(9, 418);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(209, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(234, 25);
             this.toolStrip1.TabIndex = 20;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // tsbAdicionar
+            // tsbAbrir
             // 
-            this.tsbAdicionar.Image = global::OrdemDeServico.Properties.Resources.add_30;
-            this.tsbAdicionar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbAdicionar.Name = "tsbAdicionar";
-            this.tsbAdicionar.Size = new System.Drawing.Size(78, 22);
-            this.tsbAdicionar.Text = "Adicionar";
-            this.tsbAdicionar.Click += new System.EventHandler(this.tsbAdicionar_Click);
-            // 
-            // tsbEditar
-            // 
-            this.tsbEditar.Image = global::OrdemDeServico.Properties.Resources.edit_30;
-            this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbEditar.Name = "tsbEditar";
-            this.tsbEditar.Size = new System.Drawing.Size(57, 22);
-            this.tsbEditar.Text = "Editar";
+            this.tsbAbrir.Image = global::OrdemDeServico.Properties.Resources.add_30;
+            this.tsbAbrir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbAbrir.Name = "tsbAbrir";
+            this.tsbAbrir.Size = new System.Drawing.Size(53, 22);
+            this.tsbAbrir.Text = "Abrir";
+            this.tsbAbrir.ToolTipText = "Abrir O.S";
+            this.tsbAbrir.Click += new System.EventHandler(this.tsbAdicionar_Click);
             // 
             // tsbExcluir
             // 
@@ -85,6 +78,15 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.tsbExcluir.Name = "tsbExcluir";
             this.tsbExcluir.Size = new System.Drawing.Size(62, 22);
             this.tsbExcluir.Text = "Excluir";
+            this.tsbExcluir.Click += new System.EventHandler(this.tsbExcluir_Click);
+            // 
+            // tsbVisualizar
+            // 
+            this.tsbVisualizar.Image = global::OrdemDeServico.Properties.Resources.relatorio;
+            this.tsbVisualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbVisualizar.Name = "tsbVisualizar";
+            this.tsbVisualizar.Size = new System.Drawing.Size(76, 22);
+            this.tsbVisualizar.Text = "Visualizar";
             // 
             // dgv
             // 
@@ -194,8 +196,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
 
         #endregion
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton tsbAdicionar;
-        private System.Windows.Forms.ToolStripButton tsbEditar;
+        private System.Windows.Forms.ToolStripButton tsbAbrir;
         private System.Windows.Forms.ToolStripButton tsbExcluir;
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.TextBox txtPesquisarNome;
@@ -205,5 +206,6 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox txtPesquisarOs;
+        private System.Windows.Forms.ToolStripButton tsbVisualizar;
     }
 }

@@ -80,13 +80,12 @@ namespace OrdemDeServico.DAO
             dr.Close();
             return ordemServicos;
         }
-        public List<OrdemServico> SelectIdSolicitante(int idSolicitante, int idAtendente )
+        public List<OrdemServico> SelectIdSolicitante(int idSolicitante)
         {
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "SELECT * FROM ordemdeservico WHERE IdSolicitante=@IdSolicitante and IdAtendente=@IdAtendente";
-            comando.Parameters.AddWithValue("IdSolicitante", idSolicitante);
-            comando.Parameters.AddWithValue("IdAtendente", idAtendente);
+            comando.CommandText = "SELECT * FROM ordemdeservico WHERE IdSolicitante=@IdSolicitante";
+            comando.Parameters.AddWithValue("IdSolicitante", idSolicitante);            
             MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
             List<OrdemServico> ordemServicos = new List<OrdemServico>();
             if (dr.HasRows)
