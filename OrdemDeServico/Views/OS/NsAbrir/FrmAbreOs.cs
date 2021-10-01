@@ -15,8 +15,8 @@ namespace OrdemDeServico.Views.OS.NsAbrir{
     
     public partial class FrmAbreOs : Form
     {
-        private List<OrdemServico> ordemServicos;
-        private Atendente atendente = new Atendente();       
+        private Atendente atendente = new Atendente();
+        private int numeroOs;
         public FrmAbreOs()
         {
             InitializeComponent();
@@ -24,17 +24,15 @@ namespace OrdemDeServico.Views.OS.NsAbrir{
 
         private void txtPesquisarNome_MouseClick(object sender, MouseEventArgs e)
         {
-            mtxtPesquisarOs.ReadOnly = true;
+            txtPesquisarOs.ReadOnly = true;
             txtPesquisarNome.ReadOnly = false ;
-        }
-        
-
-        private void mtxtPesquisarOs_MouseClick(object sender, MouseEventArgs e)
+        }      
+                
+        private void txtPesquisarOs_MouseClick(object sender, MouseEventArgs e)
         {
             txtPesquisarNome.ReadOnly = true;
-            mtxtPesquisarOs.ReadOnly = false;
+            txtPesquisarOs.ReadOnly = false;
         }
-
         private void tsbAdicionar_Click(object sender, EventArgs e)
         {
             FrmAddOs frmAddOs = new FrmAddOs();
@@ -46,10 +44,37 @@ namespace OrdemDeServico.Views.OS.NsAbrir{
         {
             atendente.Id = 1;
             atendente.Usuario = "euripedes";
-            if(txtPesquisarNome.Enabled == true)
+            
+            if (txtPesquisarNome.ReadOnly == false)
             {
                 AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisarNome.Text, atendente);
+            }            
+        }        
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Enabled = false;
+            atendente.Id = 1;
+            atendente.Usuario = "euripedes";
+            if (!string.IsNullOrWhiteSpace(txtPesquisarOs.Text))
+            {
+                numeroOs = (int)Convert.ToInt64(txtPesquisarOs.Text);
+                AdicionaDgvHelper.PesquisaDgv(dgv, numeroOs, atendente); 
             }
         }
+
+        private void txtPesquisaOs_TextChanged(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+        }
+
+        private void txtPesquisaOs_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+       
     }
 }

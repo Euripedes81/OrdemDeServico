@@ -94,7 +94,7 @@ namespace OrdemDeServico.Helpers
             {
                 foreach (Solicitante solicitante in solicitantes)
                 {
-                    if ((ordemServicos = PesquisadorHelper.PesquisarOrdemServico(solicitante.Id, atendente.Id)) != null)
+                    if ((ordemServicos = PesquisadorHelper.PesquisarOrdemServicoSolicitante(solicitante.Id, atendente.Id)) != null)
                     {
                        foreach(OrdemServico ordemServico in ordemServicos)
                        {
@@ -107,6 +107,25 @@ namespace OrdemDeServico.Helpers
                     }
                 }
             }
+        }
+        public static void PesquisaDgv(DataGridView dgv, int numeroOs, Atendente atendente)
+        {
+            List<OrdemServico> ordemServicos;
+
+            CriarDgvOrdemServico(dgv, "abertura");
+
+            if ((ordemServicos = PesquisadorHelper.PesquisarOrdemServico(numeroOs)) != null)
+            {
+                foreach (OrdemServico ordemServico in ordemServicos)
+                {
+                    ordemServico.SolicitanteOs = PesquisadorHelper.PesquisarSolicitanteId(ordemServico.SolicitanteOs.Id);
+                    ordemServico.MaquinaOs = PesquisadorHelper.PesquisarMaquinaId(ordemServico.MaquinaOs.Id);
+                    ordemServico.AtendenteOs = PesquisadorHelper.PesquisarAtendenteId(atendente.Id);
+                    dgv.Rows.Add(ordemServico.Id, ordemServico.SolicitanteOs.Nome, ordemServico.MaquinaOs.Patrimonio, ordemServico.MaquinaOs.Tipo,
+                        ordemServico.Diagnostico, ordemServico.DataAbertura, ordemServico.AtendenteOs.Nome);
+                }
+            }
+
         }
         public static bool ObterLinhaDgv(DataGridView dgv, Maquina maquina)
         {

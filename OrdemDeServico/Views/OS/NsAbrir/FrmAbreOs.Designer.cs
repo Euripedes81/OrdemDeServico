@@ -29,6 +29,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbAdicionar = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
@@ -37,9 +38,10 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.txtPesquisarNome = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtPesquisarOs = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.mtxtPesquisarOs = new System.Windows.Forms.MaskedTextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -104,9 +106,9 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             // 
             this.txtPesquisarNome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPesquisarNome.Location = new System.Drawing.Point(122, 39);
+            this.txtPesquisarNome.Location = new System.Drawing.Point(111, 39);
             this.txtPesquisarNome.Name = "txtPesquisarNome";
-            this.txtPesquisarNome.Size = new System.Drawing.Size(540, 20);
+            this.txtPesquisarNome.Size = new System.Drawing.Size(551, 20);
             this.txtPesquisarNome.TabIndex = 17;
             this.txtPesquisarNome.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPesquisarNome_MouseClick);
             // 
@@ -125,9 +127,9 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.txtPesquisarOs);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.mtxtPesquisarOs);
             this.groupBox1.Controls.Add(this.btnPesquisar);
             this.groupBox1.Controls.Add(this.txtPesquisarNome);
             this.groupBox1.Location = new System.Drawing.Point(9, 12);
@@ -137,10 +139,20 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pesquisar por:";
             // 
+            // txtPesquisarOs
+            // 
+            this.txtPesquisarOs.Location = new System.Drawing.Point(16, 39);
+            this.txtPesquisarOs.Name = "txtPesquisarOs";
+            this.txtPesquisarOs.Size = new System.Drawing.Size(87, 20);
+            this.txtPesquisarOs.TabIndex = 22;
+            this.txtPesquisarOs.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPesquisarOs_MouseClick);
+            this.txtPesquisarOs.TextChanged += new System.EventHandler(this.txtPesquisaOs_TextChanged);
+            this.txtPesquisarOs.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesquisaOs_KeyPress);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(119, 23);
+            this.label2.Location = new System.Drawing.Point(109, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 13);
             this.label2.TabIndex = 21;
@@ -155,14 +167,9 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.label1.TabIndex = 20;
             this.label1.Text = "Número da O.S";
             // 
-            // mtxtPesquisarOs
+            // timer1
             // 
-            this.mtxtPesquisarOs.Location = new System.Drawing.Point(16, 39);
-            this.mtxtPesquisarOs.Mask = "000000";
-            this.mtxtPesquisarOs.Name = "mtxtPesquisarOs";
-            this.mtxtPesquisarOs.Size = new System.Drawing.Size(100, 20);
-            this.mtxtPesquisarOs.TabIndex = 19;
-            this.mtxtPesquisarOs.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mtxtPesquisarOs_MouseClick);
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FrmAbreOs
             // 
@@ -196,6 +203,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox mtxtPesquisarOs;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox txtPesquisarOs;
     }
 }

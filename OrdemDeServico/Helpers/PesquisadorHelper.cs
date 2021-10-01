@@ -62,11 +62,18 @@ namespace OrdemDeServico.Helpers
             maquina = maquinaDAO.SelectId(id);
             return maquina;
         }
-        public static List<OrdemServico> PesquisarOrdemServico(int idSolicitante, int idAtendente)
+        public static List<OrdemServico> PesquisarOrdemServicoSolicitante(int idSolicitante, int idAtendente)
         {
             List<OrdemServico> ordemServicos;
             OrdemServicoDAO ordemServicoDAO = new OrdemServicoDAO();
             ordemServicos = ordemServicoDAO.SelectIdSolicitante(idSolicitante, idAtendente);
+            return ordemServicos;
+        }
+        public static List<OrdemServico> PesquisarOrdemServico(int numeroOs)
+        {
+            List<OrdemServico> ordemServicos;
+            OrdemServicoDAO ordemServicoDAO = new OrdemServicoDAO();
+            ordemServicos = ordemServicoDAO.SelectIdOs(numeroOs);
             return ordemServicos;
         }
         public static Atendente PesquisarAtendenteId(int id)
