@@ -73,8 +73,15 @@ namespace OrdemDeServico.Helpers
         {
             List<OrdemServico> ordemServicos;
             OrdemServicoDAO ordemServicoDAO = new OrdemServicoDAO();
-            ordemServicos = ordemServicoDAO.SelectIdOs(numeroOs);
+            ordemServicos = ordemServicoDAO.SelectListaId(numeroOs);
             return ordemServicos;
+        }
+        public static OrdemServico PesquisarOrdemServicoId(int numeroOs)
+        {
+            OrdemServico ordemServico;
+            OrdemServicoDAO ordemServicoDAO = new OrdemServicoDAO();
+            ordemServico = ordemServicoDAO.SelectId(numeroOs);
+            return ordemServico;
         }
         public static Atendente PesquisarAtendenteId(int id)
         {
