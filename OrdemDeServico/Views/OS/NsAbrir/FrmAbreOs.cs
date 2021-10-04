@@ -1,19 +1,12 @@
 ﻿using OrdemDeServico.Helpers;
 using OrdemDeServico.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OrdemDeServico.Views.OS.NsAbrir
 {
-    
-    
+
+
     public partial class FrmAbreOs : Form
     {
         private Atendente atendente = new Atendente();
@@ -78,18 +71,32 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         private void tsbExcluir_Click(object sender, EventArgs e)
         {
             ordemServico = new OrdemServico();
-            atendente.Id = 1;
+            atendente.Id = 2;
             atendente.Usuario = "euripedes";
             if (AdicionaDgvHelper.ObterLinhaDgvOs(dgv, ordemServico))
             {
                 if(ordemServico.AtendenteOs.Id == atendente.Id)
                 {
-                    MessageBox.Show("São Iguais");
+                    if (MessageBox.Show("Deseja excluir esta O.S?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        CrudHelper.Excluir(ordemServico); 
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Você não tem permissão para excluir este registro!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+            }
+        }
+
+        private void tsbVisualizar_Click(object sender, EventArgs e)
+        {
+            ordemServico = new OrdemServico();
+            if (AdicionaDgvHelper.ObterLinhaDgvOs(dgv, ordemServico))
+            {
+                FrmRelatorioOsAberta frmRelatorioOsAberta = new FrmRelatorioOsAberta(ordemServico);
+                frmRelatorioOsAberta.MdiParent = FrmPrincipal.ActiveForm;
+                frmRelatorioOsAberta.Show(); 
             }
         }
     }

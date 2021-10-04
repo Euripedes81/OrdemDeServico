@@ -104,3 +104,4 @@ C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemD
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.OS.NsAbrir.FrmAddOs.resources
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.OS.NsAbrir.FrmSolicitanteOs.resources
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.OS.NsAbrir.FrmMaquinaOs.resources
+C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.OS.NsAbrir.FrmRelatorioOsAberta.resources

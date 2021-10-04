@@ -87,6 +87,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.tsbVisualizar.Name = "tsbVisualizar";
             this.tsbVisualizar.Size = new System.Drawing.Size(76, 22);
             this.tsbVisualizar.Text = "Visualizar";
+            this.tsbVisualizar.Click += new System.EventHandler(this.tsbVisualizar_Click);
             // 
             // dgv
             // 

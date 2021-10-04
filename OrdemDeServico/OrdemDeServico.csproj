@@ -231,6 +231,12 @@
     <Compile Include="Views\OS\NsAbrir\FrmMaquinaOs.Designer.cs">
       <DependentUpon>FrmMaquinaOs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\OS\NsAbrir\FrmRelatorioOsAberta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\OS\NsAbrir\FrmRelatorioOsAberta.Designer.cs">
+      <DependentUpon>FrmRelatorioOsAberta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\OS\NsAbrir\FrmSolicitanteOs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,6 +254,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reports\RprtMaquina.rdlc" />
+    <EmbeddedResource Include="Reports\RprtOsAberta.rdlc" />
     <EmbeddedResource Include="Views\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,10 +306,14 @@
     <EmbeddedResource Include="Views\OS\NsAbrir\FrmMaquinaOs.resx">
       <DependentUpon>FrmMaquinaOs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\OS\NsAbrir\FrmRelatorioOsAberta.resx">
+      <DependentUpon>FrmRelatorioOsAberta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\OS\NsAbrir\FrmSolicitanteOs.resx">
       <DependentUpon>FrmSolicitanteOs.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="OrdemDeServico.Model.Maquina.datasource" />
+    <None Include="OrdemDeServico.Model.OrdemServico.datasource" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

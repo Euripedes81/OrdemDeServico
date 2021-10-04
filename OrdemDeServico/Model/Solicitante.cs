@@ -1,5 +1,8 @@
-﻿namespace OrdemDeServico.Model
+﻿using System;
+
+namespace OrdemDeServico.Model
 {
+    [Serializable]
     public class Solicitante
     {
         public int Id { get; set; }
