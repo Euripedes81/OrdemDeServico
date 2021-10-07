@@ -95,7 +95,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             if (AdicionaDgvHelper.ObterLinhaDgvOs(dgv, ordemServico))
             {
                 FrmRelatorioOsAberta frmRelatorioOsAberta = new FrmRelatorioOsAberta(ordemServico);
-                frmRelatorioOsAberta.MdiParent = FrmPrincipal.ActiveForm;
+                //frmRelatorioOsAberta.MdiParent = FrmPrincipal.ActiveForm;
                 frmRelatorioOsAberta.Show(); 
             }
         }

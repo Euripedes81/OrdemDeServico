@@ -29,8 +29,8 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
             this.reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent;            
             this.maquinaBindingSource.Clear();
-            maquina.SetorMqn = PesquisadorHelper.PesquisarSetor(maquina.SetorMqn.Id);
-            maquina.SetorMqn.SecretariaStr = PesquisadorHelper.PesquisarSecretaria(maquina.SetorMqn.SecretariaStr.Id);           
+            maquina.SetorMqn = PesquisadorHelper.PesquisarSetorId(maquina.SetorMqn.Id);
+            maquina.SetorMqn.SecretariaStr = PesquisadorHelper.PesquisarSecretariaId(maquina.SetorMqn.SecretariaStr.Id);           
             this.maquinaBindingSource.Add(maquina);
            
         }

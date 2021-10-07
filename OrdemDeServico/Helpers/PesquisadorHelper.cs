@@ -13,7 +13,7 @@ namespace OrdemDeServico.Helpers
             secretarias = secretariaDAO.SelectNome(nome);
             return secretarias;
         }
-        public static Secretaria PesquisarSecretaria(int id)
+        public static Secretaria PesquisarSecretariaId(int id)
         {
             SecretariaDAO secretariaDAO = new SecretariaDAO();
             Secretaria secretaria;
@@ -27,7 +27,7 @@ namespace OrdemDeServico.Helpers
             setores = setorDAO.SelectNome(nome);
             return setores;
         }
-        public static Setor PesquisarSetor(int id)
+        public static Setor PesquisarSetorId(int id)
         {
             SetorDAO setorDAO = new SetorDAO();
             Setor setor;

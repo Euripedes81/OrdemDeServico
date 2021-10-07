@@ -26,9 +26,8 @@ namespace OrdemDeServico.DAO
         public static MySqlDataReader Selecionar(MySqlCommand comando)
         {
             MySqlConnection conexao = Conectar();
-            MySqlDataReader dr;
             comando.Connection = conexao;
-            dr = comando.ExecuteReader(CommandBehavior.CloseConnection);
+            MySqlDataReader dr = comando.ExecuteReader(CommandBehavior.CloseConnection);
             return dr;
         }
     }

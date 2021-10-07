@@ -46,7 +46,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.rprtvOsAberta.Location = new System.Drawing.Point(0, 0);
             this.rprtvOsAberta.Name = "rprtvOsAberta";
             this.rprtvOsAberta.ServerReport.BearerToken = null;
-            this.rprtvOsAberta.Size = new System.Drawing.Size(800, 450);
+            this.rprtvOsAberta.Size = new System.Drawing.Size(973, 567);
             this.rprtvOsAberta.TabIndex = 0;
             // 
             // ordemServicoBindingSource
@@ -57,10 +57,11 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(973, 567);
             this.Controls.Add(this.rprtvOsAberta);
             this.Name = "FrmRelatorioOsAberta";
-            this.Text = "FrmRelatorioOsAberta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Ordem de Serviço Aberta";
             this.Load += new System.EventHandler(this.FrmRelatorioOsAberta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ordemServicoBindingSource)).EndInit();
             this.ResumeLayout(false);

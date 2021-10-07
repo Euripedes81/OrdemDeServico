@@ -64,7 +64,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
             {
                 foreach (Setor setor in setores)
                 {
-                    if ((secretaria = PesquisadorHelper.PesquisarSecretaria(setor.SecretariaStr.Id)) != null)
+                    if ((secretaria = PesquisadorHelper.PesquisarSecretariaId(setor.SecretariaStr.Id)) != null)
                     {
 
                         setor.SecretariaStr = secretaria;

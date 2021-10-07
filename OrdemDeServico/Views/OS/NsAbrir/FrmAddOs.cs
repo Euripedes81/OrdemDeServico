@@ -31,6 +31,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             OrdemServico ordemServico = new OrdemServico();
             ordemServico.SolicitanteOs = solicitante;
             ordemServico.MaquinaOs = maquina;
+            ordemServico.SetorOs = maquina.SetorMqn;
             ordemServico.Diagnostico = txtDiagnostico.Text;
             ordemServico.DataAbertura = DateTime.Now;
             ordemServico.AtendenteOs.Id = 1;

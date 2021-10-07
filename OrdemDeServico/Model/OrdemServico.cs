@@ -11,6 +11,7 @@ namespace OrdemDeServico.Model
         public int Id { get; set; }
         public Solicitante SolicitanteOs { get; set; }
         public Maquina MaquinaOs { get; set; }
+        public Setor SetorOs { get; set; }
         public string Diagnostico { get; set; }
         public DateTime DataAbertura { get; set; }
         public string Solucao { get; set; }
@@ -21,6 +22,7 @@ namespace OrdemDeServico.Model
         {
             SolicitanteOs = new Solicitante();
             MaquinaOs = new Maquina();
+            SetorOs = new Setor();
             AtendenteOs = new Atendente();
         }
     }

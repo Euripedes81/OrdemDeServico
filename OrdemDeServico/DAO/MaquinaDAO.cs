@@ -84,13 +84,11 @@ namespace OrdemDeServico.DAO
             if (dr.HasRows)
             {
                 dr.Read();
-
                 maquina.Id = Convert.ToInt32(dr["Id"]);
                 maquina.Patrimonio = Convert.ToInt32(dr["Patrimonio"]);
                 maquina.Tipo = Convert.ToString(dr["Tipo"]);
                 maquina.Descricao = Convert.ToString(dr["Descricao"]);
                 maquina.SetorMqn.Id = Convert.ToInt16(dr["IdSetor"]);
-
             }
             else
             {

@@ -23,8 +23,10 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.rprtvOsAberta.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent;
             this.ordemServicoBindingSource.Clear();
             ordemServico = PesquisadorHelper.PesquisarOrdemServicoId(ordemServico.Id);
-            ordemServico.SolicitanteOs = PesquisadorHelper.PesquisarSolicitanteId(ordemServico.SolicitanteOs.Id);
-            ordemServico.MaquinaOs = PesquisadorHelper.PesquisarMaquinaId(ordemServico.MaquinaOs.Id);            
+            ordemServico.SolicitanteOs = PesquisadorHelper.PesquisarSolicitanteId(ordemServico.SolicitanteOs.Id);           
+            ordemServico.MaquinaOs = PesquisadorHelper.PesquisarMaquinaId(ordemServico.MaquinaOs.Id);
+            ordemServico.SetorOs = PesquisadorHelper.PesquisarSetorId(ordemServico.MaquinaOs.SetorMqn.Id);
+            ordemServico.SetorOs.SecretariaStr = PesquisadorHelper.PesquisarSecretariaId(ordemServico.SetorOs.SecretariaStr.Id);            
             this.rprtvOsAberta.RefreshReport();
             this.ordemServicoBindingSource.Add(ordemServico);
                         

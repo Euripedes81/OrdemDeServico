@@ -53,10 +53,10 @@ namespace OrdemDeServico.Helpers
             {
                 foreach (Maquina maquina in maquinas)
                 {
-                    if ((setor = PesquisadorHelper.PesquisarSetor(maquina.SetorMqn.Id)) != null)
+                    if ((setor = PesquisadorHelper.PesquisarSetorId(maquina.SetorMqn.Id)) != null)
                     {
                         maquina.SetorMqn = setor;
-                        if ((maquina.SetorMqn.SecretariaStr = PesquisadorHelper.PesquisarSecretaria(maquina.SetorMqn.SecretariaStr.Id)) != null)
+                        if ((maquina.SetorMqn.SecretariaStr = PesquisadorHelper.PesquisarSecretariaId(maquina.SetorMqn.SecretariaStr.Id)) != null)
                         {
                             dgv.Rows.Add(maquina.Id, maquina.Patrimonio, maquina.Tipo, maquina.Descricao, maquina.SetorMqn.Nome,
                                 maquina.SetorMqn.Id, maquina.SetorMqn.SecretariaStr.Nome);
@@ -73,10 +73,10 @@ namespace OrdemDeServico.Helpers
             {
                 foreach (Solicitante solicitante in solicitantes)
                 {
-                    if ((setor = PesquisadorHelper.PesquisarSetor(solicitante.SetorSlc.Id)) != null)
+                    if ((setor = PesquisadorHelper.PesquisarSetorId(solicitante.SetorSlc.Id)) != null)
                     {
                         solicitante.SetorSlc = setor;
-                        if ((solicitante.SetorSlc.SecretariaStr = PesquisadorHelper.PesquisarSecretaria(solicitante.SetorSlc.SecretariaStr.Id)) != null)
+                        if ((solicitante.SetorSlc.SecretariaStr = PesquisadorHelper.PesquisarSecretariaId(solicitante.SetorSlc.SecretariaStr.Id)) != null)
                         {
                             dgv.Rows.Add(solicitante.Id, solicitante.Nome, solicitante.Descricao, solicitante.SetorSlc.Nome,
                                 solicitante.SetorSlc.Id, solicitante.SetorSlc.SecretariaStr.Nome);
