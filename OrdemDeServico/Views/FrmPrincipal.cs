@@ -1,4 +1,5 @@
-﻿using OrdemDeServico.Views.Manutencao.NsMaquina;
+﻿using OrdemDeServico.Model;
+using OrdemDeServico.Views.Manutencao.NsMaquina;
 using OrdemDeServico.Views.Manutencao.NsSecretaria;
 using OrdemDeServico.Views.Manutencao.NsSetor;
 using OrdemDeServico.Views.Manutencao.NsSolicitante;
@@ -10,9 +11,12 @@ namespace OrdemDeServico.Views
 {
     public partial class FrmPrincipal : Form
     {
+        FrmLogin frmLogin = new FrmLogin();
+        public static Atendente atendenteLogin { get; set; }
         public FrmPrincipal()
-        {
+        {            
             InitializeComponent();
+            frmLogin.ShowDialog();
         }
         private void secretariaTsmi_Click(object sender, EventArgs e)
         {
@@ -45,7 +49,7 @@ namespace OrdemDeServico.Views
 
         private void gerenciadorOsTsmi_Click(object sender, EventArgs e)
         {
-            FrmAbreOs frmAbreOs = new FrmAbreOs();
+            FrmAbreOs frmAbreOs = new FrmAbreOs(atendenteLogin);
             frmAbreOs.MdiParent = this;
             frmAbreOs.Show();
         }
@@ -56,5 +60,6 @@ namespace OrdemDeServico.Views
             frmConsultaOs.MdiParent = this;
             frmConsultaOs.Show();
         }
+        
     }
 }

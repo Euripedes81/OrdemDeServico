@@ -380,21 +380,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="setor">
+                    <Textbox Name="SetorMqn">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!setor.Value.Nome</Value>
+                              <Value>=Fields!SetorMqn.Value.Nome</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>setor</rd:DefaultName>
+                      <rd:DefaultName>SetorMqn</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -410,21 +410,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="setor1">
+                    <Textbox Name="SetorMqn1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!setor.Value.secretaria.Nome</Value>
+                              <Value>=Fields!SetorMqn.Value.SecretariaStr.Nome</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>setor1</rd:DefaultName>
+                      <rd:DefaultName>SetorMqn1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -436,6 +436,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -545,11 +546,18 @@
       </ConnectionProperties>
       <rd:DataSourceID>322d4536-0aab-47c5-8c4b-b57179a3ffee</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="OrdemDeServicoModel1">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>91b0268c-02a9-43e5-8ea1-91c08cebdded</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="dsMaquina">
       <Query>
-        <DataSourceName>OrdemDeServicoModel</DataSourceName>
+        <DataSourceName>OrdemDeServicoModel1</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -565,8 +573,8 @@
           <DataField>Patrimonio</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="setor">
-          <DataField>setor</DataField>
+        <Field Name="SetorMqn">
+          <DataField>SetorMqn</DataField>
           <rd:TypeName>OrdemDeServico.Model.Setor</rd:TypeName>
         </Field>
         <Field Name="Tipo">

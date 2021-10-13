@@ -90,5 +90,15 @@ namespace OrdemDeServico.Helpers
             atendente = atendenteDAO.SelectId(id);
             return atendente;
         }
+        public static Atendente PesquisarAtendenteNome(string usuario)
+        {
+            AtendenteDAO atendenteDAO = new AtendenteDAO();            
+            return atendenteDAO.SelectUsuarioExiste(usuario);
+        }
+        public static bool PesquisarAtendenteSenha(int id, string senha)
+        {
+            AtendenteDAO atendenteDAO = new AtendenteDAO();
+            return atendenteDAO.SelectUsuarioSenha(id, senha);
+        }
     }
 }

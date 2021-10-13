@@ -25,7 +25,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             if (Validador.CampoBranco(txtSolucao.Text))
             {
                 ordemServico.Solucao = txtSolucao.Text;
-                ordemServico.Observacao = txtSolucao.Text;
+                ordemServico.Observacao = txtObservacao.Text;
                 ordemServico.DataFechamento = DateTime.Now;
                 CrudHelper.Inserir(ordemServico);
                 FrmRelatorioOsFechada frmRelatorioOsFechada = new FrmRelatorioOsFechada(ordemServico, this);

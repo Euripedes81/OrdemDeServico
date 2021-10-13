@@ -9,9 +9,11 @@ namespace OrdemDeServico.Views.OS.NsAbrir
     {
         private Solicitante solicitante = new Solicitante();
         private Maquina maquina = new Maquina();
-        public FrmAddOs()
+        private Atendente atendente;
+        public FrmAddOs(Atendente atendente)
         {
             InitializeComponent();
+            this.atendente = atendente;
         }
 
         private void tsbPesquisarSolicitante_Click(object sender, EventArgs e)
@@ -34,7 +36,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             ordemServico.SetorOs = maquina.SetorMqn;
             ordemServico.Diagnostico = txtDiagnostico.Text;
             ordemServico.DataAbertura = DateTime.Now;
-            ordemServico.AtendenteOs.Id = 1;
+            ordemServico.AtendenteOs = atendente;
             if (Validador.CampoBranco(txtSolicitante.Text, txtPatrimonio.Text, txtDiagnostico.Text ) && 
                 (MessageBox.Show("Deseja salvar essa O.S?", "",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
@@ -47,12 +49,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
                 {
                     MessageBox.Show("Solicitante e Máquina não pertencem ao mesmo setor!", "",
                         MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                //else if (MessageBox.Show("Solicitante e Máquina não pertencem ao mesmo setor!\nDeseja continuar?", "",
-                //        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                //{
-                //    Limpar();
-                //}
+                }                
 
             }
             

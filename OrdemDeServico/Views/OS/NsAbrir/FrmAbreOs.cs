@@ -9,12 +9,13 @@ namespace OrdemDeServico.Views.OS.NsAbrir
 
     public partial class FrmAbreOs : Form
     {
-        private Atendente atendente = new Atendente(2,"rock","Rock Junior");
+        private Atendente atendente;
         private int numeroOs;
         private OrdemServico ordemServico;
-        public FrmAbreOs()
+        public FrmAbreOs(Atendente atendente)
         {
             InitializeComponent();
+            this.atendente = atendente;
         }
 
         private void txtPesquisarNome_MouseClick(object sender, MouseEventArgs e)
@@ -30,7 +31,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         }
         private void tsbAdicionar_Click(object sender, EventArgs e)
         {
-            FrmAddOs frmAddOs = new FrmAddOs();
+            FrmAddOs frmAddOs = new FrmAddOs(atendente);
             frmAddOs.MdiParent = FrmPrincipal.ActiveForm;
             frmAddOs.Show();
         }

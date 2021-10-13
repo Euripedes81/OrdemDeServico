@@ -23,10 +23,11 @@ namespace OrdemDeServico.DAO
             OrdemServico ordemServico = obj as OrdemServico;
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "INSERT INTO ordemdeservico (IdSolicitante, IdMaquina, Diagnostico, DataAbertura, Solucao, DataFechamento, Observacao, IdAtendente)" +
-                " VALUES (@IdSolicitante, @IdMaquina, @Diagnostico, @DataAbertura, @Solucao, @DataFechamento, @Observacao, @IdAtendente)";
+            comando.CommandText = "INSERT INTO ordemdeservico (IdSolicitante, IdMaquina, IdSetor, Diagnostico, DataAbertura, Solucao, DataFechamento, Observacao, IdAtendente)" +
+                " VALUES (@IdSolicitante, @IdMaquina, @IdSetor, @Diagnostico, @DataAbertura, @Solucao, @DataFechamento, @Observacao, @IdAtendente)";
             comando.Parameters.AddWithValue("IdSolicitante", ordemServico.SolicitanteOs.Id);
             comando.Parameters.AddWithValue("IdMaquina", ordemServico.MaquinaOs.Id);
+            comando.Parameters.AddWithValue("IdSetor", ordemServico.SetorOs.Id);
             comando.Parameters.AddWithValue("Diagnostico", ordemServico.Diagnostico);
             comando.Parameters.AddWithValue("DataAbertura", ordemServico.DataAbertura);
             comando.Parameters.AddWithValue("Solucao", ordemServico.Solucao);
