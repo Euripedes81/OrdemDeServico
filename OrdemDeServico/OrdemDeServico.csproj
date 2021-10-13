@@ -225,6 +225,18 @@
     <Compile Include="Views\OS\NsAbrir\FrmAddOs.Designer.cs">
       <DependentUpon>FrmAddOs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\OS\NsAbrir\FrmConsultaOs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\OS\NsAbrir\FrmConsultaOs.Designer.cs">
+      <DependentUpon>FrmConsultaOs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OS\NsAbrir\FrmFechaOs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\OS\NsAbrir\FrmFechaOs.Designer.cs">
+      <DependentUpon>FrmFechaOs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\OS\NsAbrir\FrmMaquinaOs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +248,12 @@
     </Compile>
     <Compile Include="Views\OS\NsAbrir\FrmRelatorioOsAberta.Designer.cs">
       <DependentUpon>FrmRelatorioOsAberta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OS\NsAbrir\FrmRelatorioOsFechada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\OS\NsAbrir\FrmRelatorioOsFechada.Designer.cs">
+      <DependentUpon>FrmRelatorioOsFechada.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\OS\NsAbrir\FrmSolicitanteOs.cs">
       <SubType>Form</SubType>
@@ -255,6 +273,7 @@
     </Compile>
     <EmbeddedResource Include="Reports\RprtMaquina.rdlc" />
     <EmbeddedResource Include="Reports\RprtOsAberta.rdlc" />
+    <EmbeddedResource Include="Reports\RprtOsFechada.rdlc" />
     <EmbeddedResource Include="Views\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -303,11 +322,20 @@
     <EmbeddedResource Include="Views\OS\NsAbrir\FrmAddOs.resx">
       <DependentUpon>FrmAddOs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\OS\NsAbrir\FrmConsultaOs.resx">
+      <DependentUpon>FrmConsultaOs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\OS\NsAbrir\FrmFechaOs.resx">
+      <DependentUpon>FrmFechaOs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\OS\NsAbrir\FrmMaquinaOs.resx">
       <DependentUpon>FrmMaquinaOs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\OS\NsAbrir\FrmRelatorioOsAberta.resx">
       <DependentUpon>FrmRelatorioOsAberta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\OS\NsAbrir\FrmRelatorioOsFechada.resx">
+      <DependentUpon>FrmRelatorioOsFechada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\OS\NsAbrir\FrmSolicitanteOs.resx">
       <DependentUpon>FrmSolicitanteOs.cs</DependentUpon>
@@ -328,9 +356,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\OS\NsFechar\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\icons8-pesquisar-26.png" />
   </ItemGroup>
@@ -345,6 +371,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\relatorio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\concluir.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

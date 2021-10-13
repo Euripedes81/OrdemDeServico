@@ -40,7 +40,6 @@ C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\bin\Debug\System
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\bin\Debug\System.Memory.xml
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.csproj.CopyComplete
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.exe
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.pdb
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\bin\Debug\Microsoft.ReportViewer.Common.dll
@@ -105,3 +104,6 @@ C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemD
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.OS.NsAbrir.FrmSolicitanteOs.resources
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.OS.NsAbrir.FrmMaquinaOs.resources
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.OS.NsAbrir.FrmRelatorioOsAberta.resources
+C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.OS.NsAbrir.FrmFechaOs.resources
+C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.OS.NsAbrir.FrmRelatorioOsFechada.resources
+C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.OS.NsAbrir.FrmConsultaOs.resources

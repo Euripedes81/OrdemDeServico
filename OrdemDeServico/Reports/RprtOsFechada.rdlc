@@ -694,6 +694,12 @@
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
+                            <TextRun>
+                              <Value>=Fields!Solucao.Value</Value>
+                              <Style>
+                                <FontWeight>Normal</FontWeight>
+                              </Style>
+                            </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
@@ -730,9 +736,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Observação: </Value>
+                              <Value>Observação:  </Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value>=Fields!Observacao.Value</Value>
+                              <Style>
+                                <FontWeight>Normal</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -752,14 +764,13 @@
                       </Style>
                     </Textbox>
                     <ColSpan>3</ColSpan>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell />
                 <TablixCell />
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox34">
+                    <Textbox Name="DataFechamento">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -771,11 +782,17 @@
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
+                            <TextRun>
+                              <Value>=Fields!DataFechamento.Value</Value>
+                              <Style>
+                                <FontWeight>Normal</FontWeight>
+                              </Style>
+                            </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox34</rd:DefaultName>
+                      <rd:DefaultName>DataFechamento</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -847,7 +864,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!AtendenteOs.Value.Nome</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                               </Style>
@@ -860,7 +877,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>_______________________________________</Value>
+                              <Value>___________________________________</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                               </Style>
@@ -1000,8 +1017,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>dsOrdemServico</DataSetName>
-        <Top>0.03528cm</Top>
-        <Left>0.44662cm</Left>
+        <Top>0.07056cm</Top>
+        <Left>0.50677cm</Left>
         <Height>11.76791cm</Height>
         <Width>18.17563cm</Width>
         <Style>
@@ -1011,16 +1028,30 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>4.80181in</Height>
+    <Height>4.71875in</Height>
     <Style />
   </Body>
-  <Width>7.50384in</Width>
+  <Width>7.48934in</Width>
   <Page>
     <PageHeader>
-      <Height>2.30188cm</Height>
+      <Height>2.43417cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
+        <Image Name="Image1">
+          <Source>Embedded</Source>
+          <Value>Brasão</Value>
+          <Sizing>FitProportional</Sizing>
+          <Top>0.40982cm</Top>
+          <Left>0.50677cm</Left>
+          <Height>1.72036cm</Height>
+          <Width>1.84396cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
         <Textbox Name="Textbox22">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -1069,10 +1100,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox22</rd:DefaultName>
-          <Top>0.22972cm</Top>
-          <Left>5.18266cm</Left>
+          <Top>0.40982cm</Top>
+          <Left>5.29875cm</Left>
           <Height>1.72036cm</Height>
           <Width>9.82834cm</Width>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1084,21 +1116,6 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Image Name="Image1">
-          <Source>Embedded</Source>
-          <Value>Brasão</Value>
-          <Sizing>FitProportional</Sizing>
-          <Top>0.22972cm</Top>
-          <Left>0.44662cm</Left>
-          <Height>1.72036cm</Height>
-          <Width>1.84396cm</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Image>
         <Textbox Name="Textbox12">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -1114,8 +1131,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox12</rd:DefaultName>
-          <Top>0.79057cm</Top>
-          <Left>16.93016cm</Left>
+          <Top>1.00101cm</Top>
+          <Left>16.99031cm</Left>
           <Height>0.6cm</Height>
           <Width>1.69209cm</Width>
           <ZIndex>2</ZIndex>
@@ -1137,7 +1154,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>1.47064cm</Height>
+      <Height>1.69333cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -1156,8 +1173,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.44097cm</Top>
-          <Left>0.26683cm</Left>
+          <Top>0.54667cm</Top>
+          <Left>0.50677cm</Left>
           <Height>0.6cm</Height>
           <Width>2.84396cm</Width>
           <Style>
@@ -1185,8 +1202,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.44097cm</Top>
-          <Left>14.94578cm</Left>
+          <Top>0.54667cm</Top>
+          <Left>15.00593cm</Left>
           <Height>0.6cm</Height>
           <Width>3.67647cm</Width>
           <ZIndex>1</ZIndex>
@@ -1223,7 +1240,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>3c2faa8e-b4e4-49f4-90a6-4605232b7a20</rd:DataSourceID>
+      <rd:DataSourceID>7d3ddc83-bd3d-4dbd-a766-01d8382dfb48</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -1304,5 +1321,5 @@ r6+1jSrbW9NubC8hS5tLmJ4ZoZBlZEYYII75BNfIPxU/Z5134ieCNF8Da5oniO8HhLUXk0PxFo93YF5b
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>97213482-0a05-4cfb-a8d9-02bf98ff9f47</rd:ReportID>
+  <rd:ReportID>801b0366-891c-4a8c-aa5c-5c2f7f8a63bb</rd:ReportID>
 </Report>

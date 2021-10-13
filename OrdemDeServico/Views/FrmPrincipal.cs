@@ -43,11 +43,18 @@ namespace OrdemDeServico.Views
             frmMaquina.Show();
         }
 
-        private void abrirOsTsmi_Click(object sender, EventArgs e)
+        private void gerenciadorOsTsmi_Click(object sender, EventArgs e)
         {
-            FrmAbreOs frmAbreOs = new FrmAbreOs();            
+            FrmAbreOs frmAbreOs = new FrmAbreOs();
             frmAbreOs.MdiParent = this;
             frmAbreOs.Show();
+        }
+
+        private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultaOs frmConsultaOs = new FrmConsultaOs();
+            frmConsultaOs.MdiParent = this;
+            frmConsultaOs.Show();
         }
     }
 }

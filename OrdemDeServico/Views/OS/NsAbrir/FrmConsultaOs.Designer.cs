@@ -1,7 +1,7 @@
 ﻿
 namespace OrdemDeServico.Views.OS.NsAbrir
 {
-    partial class FrmAbreOs
+    partial class FrmConsultaOs
     {
         /// <summary>
         /// Required designer variable.
@@ -31,17 +31,14 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         {
             this.components = new System.ComponentModel.Container();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsbAbrir = new System.Windows.Forms.ToolStripButton();
-            this.tsbFecharOs = new System.Windows.Forms.ToolStripButton();
-            this.tsbExcluir = new System.Windows.Forms.ToolStripButton();
             this.tsbVisualizar = new System.Windows.Forms.ToolStripButton();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.txtPesquisarNome = new System.Windows.Forms.TextBox();
-            this.btnPesquisar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtPesquisarOs = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.txtPesquisarNome = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -54,45 +51,12 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.toolStrip1.AutoSize = false;
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbAbrir,
-            this.tsbFecharOs,
-            this.tsbExcluir,
             this.tsbVisualizar});
-            this.toolStrip1.Location = new System.Drawing.Point(9, 438);
+            this.toolStrip1.Location = new System.Drawing.Point(9, 437);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(301, 45);
-            this.toolStrip1.TabIndex = 20;
+            this.toolStrip1.Size = new System.Drawing.Size(125, 45);
+            this.toolStrip1.TabIndex = 23;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tsbAbrir
-            // 
-            this.tsbAbrir.Image = global::OrdemDeServico.Properties.Resources.add_30;
-            this.tsbAbrir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbAbrir.Name = "tsbAbrir";
-            this.tsbAbrir.Size = new System.Drawing.Size(53, 42);
-            this.tsbAbrir.Text = "Abrir";
-            this.tsbAbrir.ToolTipText = "Abrir O.S";
-            this.tsbAbrir.Click += new System.EventHandler(this.tsbAdicionar_Click);
-            // 
-            // tsbFecharOs
-            // 
-            this.tsbFecharOs.Image = global::OrdemDeServico.Properties.Resources.concluir;
-            this.tsbFecharOs.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbFecharOs.Name = "tsbFecharOs";
-            this.tsbFecharOs.Size = new System.Drawing.Size(62, 42);
-            this.tsbFecharOs.Text = "Fechar";
-            this.tsbFecharOs.ToolTipText = "Fechar O.S";
-            this.tsbFecharOs.Click += new System.EventHandler(this.tsbFecharOs_Click);
-            // 
-            // tsbExcluir
-            // 
-            this.tsbExcluir.Image = global::OrdemDeServico.Properties.Resources.remove_30;
-            this.tsbExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbExcluir.Name = "tsbExcluir";
-            this.tsbExcluir.Size = new System.Drawing.Size(62, 42);
-            this.tsbExcluir.Text = "Excluir";
-            this.tsbExcluir.ToolTipText = "Excluir O.S";
-            this.tsbExcluir.Click += new System.EventHandler(this.tsbExcluir_Click);
             // 
             // tsbVisualizar
             // 
@@ -111,35 +75,14 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(9, 101);
+            this.dgv.Location = new System.Drawing.Point(9, 100);
             this.dgv.MultiSelect = false;
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
             this.dgv.RowTemplate.Height = 25;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(821, 334);
-            this.dgv.TabIndex = 19;
-            // 
-            // txtPesquisarNome
-            // 
-            this.txtPesquisarNome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPesquisarNome.Location = new System.Drawing.Point(111, 39);
-            this.txtPesquisarNome.Name = "txtPesquisarNome";
-            this.txtPesquisarNome.Size = new System.Drawing.Size(607, 20);
-            this.txtPesquisarNome.TabIndex = 17;
-            this.txtPesquisarNome.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPesquisarNome_MouseClick);
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPesquisar.Location = new System.Drawing.Point(724, 37);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(77, 23);
-            this.btnPesquisar.TabIndex = 18;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            this.dgv.TabIndex = 22;
             // 
             // groupBox1
             // 
@@ -150,10 +93,10 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnPesquisar);
             this.groupBox1.Controls.Add(this.txtPesquisarNome);
-            this.groupBox1.Location = new System.Drawing.Point(9, 12);
+            this.groupBox1.Location = new System.Drawing.Point(9, 11);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(822, 83);
-            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pesquisar por:";
             // 
@@ -163,9 +106,8 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.txtPesquisarOs.Name = "txtPesquisarOs";
             this.txtPesquisarOs.Size = new System.Drawing.Size(87, 20);
             this.txtPesquisarOs.TabIndex = 22;
-            this.txtPesquisarOs.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPesquisarOs_MouseClick);
-            this.txtPesquisarOs.TextChanged += new System.EventHandler(this.txtPesquisaOs_TextChanged);
-            this.txtPesquisarOs.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesquisaOs_KeyPress);
+            this.txtPesquisarOs.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPesquisarOs_MouseClick_1);
+            this.txtPesquisarOs.TextChanged += new System.EventHandler(this.txtPesquisarOs_TextChanged);
             // 
             // label2
             // 
@@ -185,11 +127,32 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.label1.TabIndex = 20;
             this.label1.Text = "Número da O.S";
             // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPesquisar.Location = new System.Drawing.Point(724, 37);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(77, 23);
+            this.btnPesquisar.TabIndex = 18;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // txtPesquisarNome
+            // 
+            this.txtPesquisarNome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPesquisarNome.Location = new System.Drawing.Point(111, 39);
+            this.txtPesquisarNome.Name = "txtPesquisarNome";
+            this.txtPesquisarNome.Size = new System.Drawing.Size(607, 20);
+            this.txtPesquisarNome.TabIndex = 17;
+            this.txtPesquisarNome.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPesquisarNome_MouseClick_1);
+            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // FrmAbreOs
+            // FrmConsultaOs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -197,9 +160,8 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.groupBox1);
-            this.Name = "FrmAbreOs";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Gerenciador O.S";
+            this.Name = "FrmConsultaOs";
+            this.Text = "Consulta O.S";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
@@ -210,18 +172,16 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         }
 
         #endregion
+
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton tsbAbrir;
-        private System.Windows.Forms.ToolStripButton tsbExcluir;
+        private System.Windows.Forms.ToolStripButton tsbVisualizar;
         private System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.TextBox txtPesquisarNome;
-        private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtPesquisarOs;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.TextBox txtPesquisarNome;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.TextBox txtPesquisarOs;
-        private System.Windows.Forms.ToolStripButton tsbVisualizar;
-        private System.Windows.Forms.ToolStripButton tsbFecharOs;
     }
 }

@@ -73,6 +73,16 @@ namespace OrdemDeServico.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap concluir {
+            get {
+                object obj = ResourceManager.GetObject("concluir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit_30 {
             get {
                 object obj = ResourceManager.GetObject("edit-30", resourceCulture);

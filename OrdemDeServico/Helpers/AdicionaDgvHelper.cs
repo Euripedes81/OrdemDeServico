@@ -85,7 +85,7 @@ namespace OrdemDeServico.Helpers
                 }                
             }
         }
-        public static void PesquisaDgv(DataGridView dgv, string textoPesquisa)
+        public static void PesquisaDgvOsAberta(DataGridView dgv, string textoPesquisa)
         {
             List<Solicitante> solicitantes;
             List<OrdemServico> ordemServicos;
@@ -99,17 +99,20 @@ namespace OrdemDeServico.Helpers
                     {
                        foreach(OrdemServico ordemServico in ordemServicos)
                        {
-                            ordemServico.SolicitanteOs = PesquisadorHelper.PesquisarSolicitanteId(ordemServico.SolicitanteOs.Id);
-                            ordemServico.MaquinaOs = PesquisadorHelper.PesquisarMaquinaId(ordemServico.MaquinaOs.Id);
-                            ordemServico.AtendenteOs = PesquisadorHelper.PesquisarAtendenteId(ordemServico.AtendenteOs.Id);
-                            dgv.Rows.Add(ordemServico.Id, ordemServico.SolicitanteOs.Nome, ordemServico.MaquinaOs.Patrimonio, ordemServico.MaquinaOs.Tipo,
-                                ordemServico.Diagnostico, ordemServico.DataAbertura, ordemServico.AtendenteOs.Id, ordemServico.AtendenteOs.Nome);
+                            if (string.IsNullOrEmpty(ordemServico.Solucao))
+                            {
+                                ordemServico.SolicitanteOs = PesquisadorHelper.PesquisarSolicitanteId(ordemServico.SolicitanteOs.Id);
+                                ordemServico.MaquinaOs = PesquisadorHelper.PesquisarMaquinaId(ordemServico.MaquinaOs.Id);
+                                ordemServico.AtendenteOs = PesquisadorHelper.PesquisarAtendenteId(ordemServico.AtendenteOs.Id);
+                                dgv.Rows.Add(ordemServico.Id, ordemServico.SolicitanteOs.Nome, ordemServico.MaquinaOs.Patrimonio, ordemServico.MaquinaOs.Tipo,
+                                    ordemServico.Diagnostico, ordemServico.DataAbertura, ordemServico.AtendenteOs.Id, ordemServico.AtendenteOs.Nome); 
+                            }
                        }
                     }
                 }
             }
         }
-        public static void PesquisaDgv(DataGridView dgv, int numeroOs)
+        public static void PesquisaDgvOsAberta(DataGridView dgv, int numeroOs)
         {
             List<OrdemServico> ordemServicos;
 
@@ -119,11 +122,60 @@ namespace OrdemDeServico.Helpers
             {
                 foreach (OrdemServico ordemServico in ordemServicos)
                 {
+                    if (string.IsNullOrEmpty(ordemServico.Solucao))
+                    {
+                        ordemServico.SolicitanteOs = PesquisadorHelper.PesquisarSolicitanteId(ordemServico.SolicitanteOs.Id);
+                        ordemServico.MaquinaOs = PesquisadorHelper.PesquisarMaquinaId(ordemServico.MaquinaOs.Id);
+                        ordemServico.AtendenteOs = PesquisadorHelper.PesquisarAtendenteId(ordemServico.AtendenteOs.Id);
+                        dgv.Rows.Add(ordemServico.Id, ordemServico.SolicitanteOs.Nome, ordemServico.MaquinaOs.Patrimonio, ordemServico.MaquinaOs.Tipo,
+                            ordemServico.Diagnostico, ordemServico.DataAbertura, ordemServico.AtendenteOs.Id, ordemServico.AtendenteOs.Nome); 
+                    }
+                }
+            }
+
+        }
+        public static void PesquisaDgvOsFechada(DataGridView dgv, string textoPesquisa)
+        {
+            List<Solicitante> solicitantes;
+            List<OrdemServico> ordemServicos;
+
+            CriarDgvOrdemServico(dgv, "fechada");
+            if ((solicitantes = PesquisadorHelper.PesquisarSolicitante(textoPesquisa)) != null)
+            {
+                foreach (Solicitante solicitante in solicitantes)
+                {
+                    if ((ordemServicos = PesquisadorHelper.PesquisarOrdemServicoSolicitante(solicitante.Id)) != null)
+                    {
+                        foreach (OrdemServico ordemServico in ordemServicos)
+                        {
+                            ordemServico.SolicitanteOs = PesquisadorHelper.PesquisarSolicitanteId(ordemServico.SolicitanteOs.Id);
+                            ordemServico.MaquinaOs = PesquisadorHelper.PesquisarMaquinaId(ordemServico.MaquinaOs.Id);
+                            ordemServico.AtendenteOs = PesquisadorHelper.PesquisarAtendenteId(ordemServico.AtendenteOs.Id);
+                            dgv.Rows.Add(ordemServico.Id, ordemServico.SolicitanteOs.Nome, ordemServico.MaquinaOs.Patrimonio, ordemServico.MaquinaOs.Tipo,
+                                ordemServico.Diagnostico, ordemServico.DataAbertura, ordemServico.Solucao, ordemServico.DataFechamento, ordemServico.Observacao,
+                                ordemServico.AtendenteOs.Nome);
+                        }
+                    }
+                }
+            }
+        }
+        public static void PesquisaDgvOsFechada(DataGridView dgv, int numeroOs)
+        {
+            List<OrdemServico> ordemServicos;
+
+            CriarDgvOrdemServico(dgv, "fechada");
+
+            if ((ordemServicos = PesquisadorHelper.PesquisarOrdemServico(numeroOs)) != null)
+            {
+                foreach (OrdemServico ordemServico in ordemServicos)
+                {
                     ordemServico.SolicitanteOs = PesquisadorHelper.PesquisarSolicitanteId(ordemServico.SolicitanteOs.Id);
                     ordemServico.MaquinaOs = PesquisadorHelper.PesquisarMaquinaId(ordemServico.MaquinaOs.Id);
                     ordemServico.AtendenteOs = PesquisadorHelper.PesquisarAtendenteId(ordemServico.AtendenteOs.Id);
                     dgv.Rows.Add(ordemServico.Id, ordemServico.SolicitanteOs.Nome, ordemServico.MaquinaOs.Patrimonio, ordemServico.MaquinaOs.Tipo,
-                        ordemServico.Diagnostico, ordemServico.DataAbertura, ordemServico.AtendenteOs.Id, ordemServico.AtendenteOs.Nome);
+                                 ordemServico.Diagnostico, ordemServico.DataAbertura, ordemServico.Solucao, ordemServico.DataFechamento, ordemServico.Observacao,
+                                 ordemServico.AtendenteOs.Nome);
+
                 }
             }
 
@@ -162,7 +214,7 @@ namespace OrdemDeServico.Helpers
                 return false;
             }
         }
-        public static bool ObterLinhaDgvOs(DataGridView dgv, OrdemServico ordemServico)
+        public static bool ObterLinhaDgvOsAberta(DataGridView dgv, OrdemServico ordemServico)
         {
             if (dgv.SelectedRows.Count > 0)
             {
@@ -174,6 +226,27 @@ namespace OrdemDeServico.Helpers
                 ordemServico.DataAbertura = Convert.ToDateTime(dgv.CurrentRow.Cells[5].Value);
                 ordemServico.AtendenteOs.Id = Convert.ToInt32(dgv.CurrentRow.Cells[6].Value.ToString());
                 ordemServico.AtendenteOs.Nome = dgv.CurrentRow.Cells[7].Value.ToString();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static bool ObterLinhaDgvOsFechada(DataGridView dgv, OrdemServico ordemServico)
+        {
+            if (dgv.SelectedRows.Count > 0)
+            {
+                ordemServico.Id = Convert.ToInt32(dgv.CurrentRow.Cells[0].Value.ToString());
+                ordemServico.SolicitanteOs.Nome = dgv.CurrentRow.Cells[1].Value.ToString();
+                ordemServico.MaquinaOs.Patrimonio = Convert.ToInt32(dgv.CurrentRow.Cells[2].Value.ToString());
+                ordemServico.MaquinaOs.Tipo = dgv.CurrentRow.Cells[3].Value.ToString();
+                ordemServico.Diagnostico = dgv.CurrentRow.Cells[4].Value.ToString();
+                ordemServico.DataAbertura = Convert.ToDateTime(dgv.CurrentRow.Cells[5].Value);
+                ordemServico.Solucao = dgv.CurrentRow.Cells[6].Value.ToString();
+                ordemServico.DataFechamento = Convert.ToDateTime(dgv.CurrentRow.Cells[7].Value);
+                ordemServico.Observacao = dgv.CurrentRow.Cells[8].Value.ToString();
+                ordemServico.AtendenteOs.Nome = dgv.CurrentRow.Cells[9].Value.ToString();
                 return true;
             }
             else

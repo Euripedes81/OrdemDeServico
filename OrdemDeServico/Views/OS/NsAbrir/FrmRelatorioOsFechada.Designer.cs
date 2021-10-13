@@ -1,7 +1,7 @@
 ﻿
 namespace OrdemDeServico.Views.OS.NsAbrir
 {
-    partial class FrmRelatorioOsAberta
+    partial class FrmRelatorioOsFechada
     {
         /// <summary>
         /// Required designer variable.
@@ -31,38 +31,37 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.rptvOsFechada = new Microsoft.Reporting.WinForms.ReportViewer();
             this.ordemServicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rprtvOsAberta = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.ordemServicoBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // rptvOsFechada
+            // 
+            this.rptvOsFechada.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "dsOrdemServico";
+            reportDataSource1.Value = this.ordemServicoBindingSource;
+            this.rptvOsFechada.LocalReport.DataSources.Add(reportDataSource1);
+            this.rptvOsFechada.LocalReport.ReportEmbeddedResource = "OrdemDeServico.Reports.RprtOsFechada.rdlc";
+            this.rptvOsFechada.Location = new System.Drawing.Point(0, 0);
+            this.rptvOsFechada.Name = "rptvOsFechada";
+            this.rptvOsFechada.ServerReport.BearerToken = null;
+            this.rptvOsFechada.Size = new System.Drawing.Size(984, 561);
+            this.rptvOsFechada.TabIndex = 0;
             // 
             // ordemServicoBindingSource
             // 
             this.ordemServicoBindingSource.DataSource = typeof(OrdemDeServico.Model.OrdemServico);
             // 
-            // rprtvOsAberta
-            // 
-            this.rprtvOsAberta.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "dsOrdemServico";
-            reportDataSource1.Value = this.ordemServicoBindingSource;
-            this.rprtvOsAberta.LocalReport.DataSources.Add(reportDataSource1);
-            this.rprtvOsAberta.LocalReport.ReportEmbeddedResource = "OrdemDeServico.Reports.RprtOsAberta.rdlc";
-            this.rprtvOsAberta.Location = new System.Drawing.Point(0, 0);
-            this.rprtvOsAberta.Name = "rprtvOsAberta";
-            this.rprtvOsAberta.ServerReport.BearerToken = null;
-            this.rprtvOsAberta.Size = new System.Drawing.Size(984, 561);
-            this.rprtvOsAberta.TabIndex = 0;
-            // 
-            // FrmRelatorioOsAberta
+            // FrmRelatorioOsFechada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 561);
-            this.Controls.Add(this.rprtvOsAberta);
-            this.Name = "FrmRelatorioOsAberta";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Ordem de Serviço Aberta";
-            this.Load += new System.EventHandler(this.FrmRelatorioOsAberta_Load);
+            this.Controls.Add(this.rptvOsFechada);
+            this.Name = "FrmRelatorioOsFechada";
+            this.Text = "FrmRelatorioOsFechada";
+            this.Load += new System.EventHandler(this.FrmRelatorioOsFechada_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ordemServicoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -70,7 +69,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer rprtvOsAberta;
+        private Microsoft.Reporting.WinForms.ReportViewer rptvOsFechada;
         private System.Windows.Forms.BindingSource ordemServicoBindingSource;
     }
 }
