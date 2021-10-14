@@ -16,7 +16,16 @@ namespace OrdemDeServico.Views
         public FrmPrincipal()
         {            
             InitializeComponent();
-            frmLogin.ShowDialog();
+            frmLogin.ShowDialog();            
+        }
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            if (atendenteLogin == null)
+            {
+                this.Close();
+            }
+            tslUsuario.Text = atendenteLogin.Usuario;
+            tslNome.Text = atendenteLogin.Nome;
         }
         private void secretariaTsmi_Click(object sender, EventArgs e)
         {
@@ -60,6 +69,13 @@ namespace OrdemDeServico.Views
             frmConsultaOs.MdiParent = this;
             frmConsultaOs.Show();
         }
-        
+        private void tsbAterarSenha_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void tsbSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

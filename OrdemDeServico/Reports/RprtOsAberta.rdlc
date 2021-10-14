@@ -678,7 +678,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>2.10813cm</Height>
+              <Height>1.3673cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -719,7 +719,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.97042cm</Height>
+              <Height>1.15216cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -752,7 +752,6 @@
                       </Style>
                     </Textbox>
                     <ColSpan>3</ColSpan>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell />
@@ -1002,7 +1001,7 @@
         <DataSetName>dsOrdemServico</DataSetName>
         <Top>0.03528cm</Top>
         <Left>0.44662cm</Left>
-        <Height>11.76791cm</Height>
+        <Height>11.20882cm</Height>
         <Width>18.17563cm</Width>
         <Style>
           <Border>
@@ -1011,13 +1010,13 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>4.80181in</Height>
+    <Height>4.57264in</Height>
     <Style />
   </Body>
   <Width>7.50384in</Width>
   <Page>
     <PageHeader>
-      <Height>2.30188cm</Height>
+      <Height>2.40771cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -1069,7 +1068,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox22</rd:DefaultName>
-          <Top>0.22972cm</Top>
+          <Top>0.40513cm</Top>
           <Left>5.18266cm</Left>
           <Height>1.72036cm</Height>
           <Width>9.82834cm</Width>
@@ -1088,7 +1087,7 @@
           <Source>Embedded</Source>
           <Value>Brasão</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.22972cm</Top>
+          <Top>0.40513cm</Top>
           <Left>0.44662cm</Left>
           <Height>1.72036cm</Height>
           <Width>1.84396cm</Width>
@@ -1157,7 +1156,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.44097cm</Top>
-          <Left>0.26683cm</Left>
+          <Left>0.44662cm</Left>
           <Height>0.6cm</Height>
           <Width>2.84396cm</Width>
           <Style>
@@ -1211,8 +1210,8 @@
     <PageWidth>21cm</PageWidth>
     <LeftMargin>1cm</LeftMargin>
     <RightMargin>1cm</RightMargin>
-    <TopMargin>1cm</TopMargin>
-    <BottomMargin>1cm</BottomMargin>
+    <TopMargin>0cm</TopMargin>
+    <BottomMargin>0cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>

@@ -39,7 +39,18 @@ namespace OrdemDeServico.Views
             this.oSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerenciadorOsTsmi = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.tslUsuario = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tslNome = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbAterarSenha = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbSair = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -68,28 +79,28 @@ namespace OrdemDeServico.Views
             // secretariaTsmi
             // 
             this.secretariaTsmi.Name = "secretariaTsmi";
-            this.secretariaTsmi.Size = new System.Drawing.Size(180, 22);
+            this.secretariaTsmi.Size = new System.Drawing.Size(129, 22);
             this.secretariaTsmi.Text = "Secretaria";
             this.secretariaTsmi.Click += new System.EventHandler(this.secretariaTsmi_Click);
             // 
             // setorTsmi
             // 
             this.setorTsmi.Name = "setorTsmi";
-            this.setorTsmi.Size = new System.Drawing.Size(180, 22);
+            this.setorTsmi.Size = new System.Drawing.Size(129, 22);
             this.setorTsmi.Text = "Setor";
             this.setorTsmi.Click += new System.EventHandler(this.setorTsmi_Click);
             // 
             // funcionarioTsmi
             // 
             this.funcionarioTsmi.Name = "funcionarioTsmi";
-            this.funcionarioTsmi.Size = new System.Drawing.Size(180, 22);
+            this.funcionarioTsmi.Size = new System.Drawing.Size(129, 22);
             this.funcionarioTsmi.Text = "Solicitante";
             this.funcionarioTsmi.Click += new System.EventHandler(this.funcionarioTsmi_Click);
             // 
             // maquinaTsmi
             // 
             this.maquinaTsmi.Name = "maquinaTsmi";
-            this.maquinaTsmi.Size = new System.Drawing.Size(180, 22);
+            this.maquinaTsmi.Size = new System.Drawing.Size(129, 22);
             this.maquinaTsmi.Text = "Maquina";
             this.maquinaTsmi.Click += new System.EventHandler(this.maquinaTsmi_Click);
             // 
@@ -113,14 +124,95 @@ namespace OrdemDeServico.Views
             // 
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
             this.consultaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.consultaToolStripMenuItem.Text = "Consulta";
+            this.consultaToolStripMenuItem.Text = "Consulta O.S Aberta";
             this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1,
+            this.tslUsuario,
+            this.toolStripSeparator1,
+            this.toolStripLabel2,
+            this.tslNome,
+            this.toolStripSeparator2,
+            this.tsbAterarSenha,
+            this.toolStripSeparator3,
+            this.tsbSair});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 644);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1126, 25);
+            this.toolStrip1.TabIndex = 5;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(53, 22);
+            this.toolStripLabel1.Text = "Usuário: ";
+            // 
+            // tslUsuario
+            // 
+            this.tslUsuario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tslUsuario.Name = "tslUsuario";
+            this.tslUsuario.Size = new System.Drawing.Size(47, 22);
+            this.tslUsuario.Text = "usuario";
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(46, 22);
+            this.toolStripLabel2.Text = "Nome: ";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tslNome
+            // 
+            this.tslNome.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tslNome.Name = "tslNome";
+            this.tslNome.Size = new System.Drawing.Size(39, 22);
+            this.tslNome.Text = "nome";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tsbAterarSenha
+            // 
+            this.tsbAterarSenha.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbAterarSenha.Image = ((System.Drawing.Image)(resources.GetObject("tsbAterarSenha.Image")));
+            this.tsbAterarSenha.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbAterarSenha.Name = "tsbAterarSenha";
+            this.tsbAterarSenha.Size = new System.Drawing.Size(80, 22);
+            this.tsbAterarSenha.Text = "Alterar senha";
+            this.tsbAterarSenha.Click += new System.EventHandler(this.tsbAterarSenha_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tsbSair
+            // 
+            this.tsbSair.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbSair.Image = ((System.Drawing.Image)(resources.GetObject("tsbSair.Image")));
+            this.tsbSair.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSair.Name = "tsbSair";
+            this.tsbSair.Size = new System.Drawing.Size(30, 22);
+            this.tsbSair.Text = "Sair";
+            this.tsbSair.Click += new System.EventHandler(this.tsbSair_Click);
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 669);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
@@ -128,9 +220,12 @@ namespace OrdemDeServico.Views
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ordem de Serviço";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;            
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,5 +242,15 @@ namespace OrdemDeServico.Views
         private System.Windows.Forms.ToolStripMenuItem oSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gerenciadorOsTsmi;
         private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripLabel tslUsuario;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripLabel tslNome;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton tsbAterarSenha;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton tsbSair;
     }
 }

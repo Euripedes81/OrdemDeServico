@@ -161,7 +161,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmConsultaOs";
-            this.Text = "Consulta O.S";
+            this.Text = "Consulta O.S Fechada";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();

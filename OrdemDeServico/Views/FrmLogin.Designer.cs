@@ -40,7 +40,7 @@ namespace OrdemDeServico.Views
             // 
             this.txtUsuario.Location = new System.Drawing.Point(24, 37);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(312, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(277, 20);
             this.txtUsuario.TabIndex = 0;
             // 
             // label1
@@ -65,13 +65,13 @@ namespace OrdemDeServico.Views
             // 
             this.txtSenha.Location = new System.Drawing.Point(24, 96);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(312, 20);
+            this.txtSenha.Size = new System.Drawing.Size(277, 20);
             this.txtSenha.TabIndex = 2;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
             // btnEntrar
             // 
-            this.btnEntrar.Location = new System.Drawing.Point(128, 140);
+            this.btnEntrar.Location = new System.Drawing.Point(112, 140);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(75, 23);
             this.btnEntrar.TabIndex = 5;
@@ -84,15 +84,19 @@ namespace OrdemDeServico.Views
             this.AcceptButton = this.btnEntrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(360, 187);
+            this.ClientSize = new System.Drawing.Size(327, 186);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtUsuario);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(343, 225);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(343, 225);
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
+            this.Text = "Login - Ordem de Serviço";
             this.ResumeLayout(false);
             this.PerformLayout();
 

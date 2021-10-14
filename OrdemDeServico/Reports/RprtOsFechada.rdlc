@@ -678,7 +678,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>2.10813cm</Height>
+              <Height>1.12917cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1017,9 +1017,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>dsOrdemServico</DataSetName>
-        <Top>0.07056cm</Top>
+        <Top>0.3241cm</Top>
         <Left>0.50677cm</Left>
-        <Height>11.76791cm</Height>
+        <Height>10.78895cm</Height>
         <Width>18.17563cm</Width>
         <Style>
           <Border>
@@ -1028,13 +1028,13 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>4.71875in</Height>
+    <Height>4.50022in</Height>
     <Style />
   </Body>
   <Width>7.48934in</Width>
   <Page>
     <PageHeader>
-      <Height>2.43417cm</Height>
+      <Height>2.46063cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -1154,7 +1154,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>1.69333cm</Height>
+      <Height>1.32291cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -1173,7 +1173,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.54667cm</Top>
+          <Top>0.03528cm</Top>
           <Left>0.50677cm</Left>
           <Height>0.6cm</Height>
           <Width>2.84396cm</Width>
@@ -1202,7 +1202,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.54667cm</Top>
+          <Top>0.03528cm</Top>
           <Left>15.00593cm</Left>
           <Height>0.6cm</Height>
           <Width>3.67647cm</Width>
@@ -1224,7 +1224,7 @@
         </Border>
       </Style>
     </PageFooter>
-    <PageHeight>29.7cm</PageHeight>
+    <PageHeight>32cm</PageHeight>
     <PageWidth>21cm</PageWidth>
     <LeftMargin>1cm</LeftMargin>
     <RightMargin>1cm</RightMargin>
