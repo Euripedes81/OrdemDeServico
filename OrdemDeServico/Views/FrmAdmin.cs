@@ -1,0 +1,51 @@
+﻿using OrdemDeServico.Helpers;
+using OrdemDeServico.Model;
+using OrdemDeServico.Views.Usuario;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
+
+namespace OrdemDeServico.Views
+{
+    public partial class FrmAdmin : Form
+    {
+        Atendente atendente = new Atendente();
+        List<Atendente> atendentes = new List<Atendente>();
+        public FrmAdmin()
+        {
+            InitializeComponent();
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar.Text, atendentes);
+        }
+
+        private void tsbAdicionar_Click(object sender, EventArgs e)
+        {
+            FrmAddUsuario frmAddUsuario = new FrmAddUsuario();
+            frmAddUsuario.ShowDialog();
+        }
+
+        private void tsbEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsbExcluir_Click(object sender, EventArgs e)
+        {
+            if (AdicionaDgvHelper.ObterLinhaDgv(dgv, atendente))
+            {
+                if (MessageBox.Show("Deseja excluir este registro?", "Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                     == DialogResult.Yes)
+                {
+                    if (atendente.Id != 1)
+                    {
+                        CrudHelper.Excluir(atendente);
+                        AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar.Text, atendentes); 
+                    }
+                }
+            }
+        }
+    }
+}

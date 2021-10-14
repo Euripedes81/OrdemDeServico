@@ -48,6 +48,13 @@ namespace OrdemDeServico.Helpers
             solicitante = solicitanteDAO.SelectNome(nome);
             return solicitante;
         }
+        public static List<Atendente> PesquisarAtendente(string nome)
+        {
+            List<Atendente> atendente;
+            AtendenteDAO atendenteDAO = new AtendenteDAO();
+            atendente = atendenteDAO.SelectNome(nome);
+            return atendente;
+        }
         public static List<Maquina> PesquisarMaquinaPatrimonio(int patrimonio )
         {
             List<Maquina> maquinas;

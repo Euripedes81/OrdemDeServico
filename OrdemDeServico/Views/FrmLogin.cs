@@ -26,8 +26,16 @@ namespace OrdemDeServico.Views
             {
                 if (PesquisadorHelper.PesquisarAtendenteSenha(atendente.Id, txtSenha.Text))
                 {
-                    FrmPrincipal.atendenteLogin = atendente;
-                    this.Close();
+                    if (atendente.Id != 1)
+                    {
+                        FrmPrincipal.atendenteLogin = atendente;
+                        this.Close();
+                    }
+                    else
+                    {
+                        FrmAdmin frmAdmin = new FrmAdmin();
+                        frmAdmin.ShowDialog();
+                    }
                 }
                 else 
                 { 

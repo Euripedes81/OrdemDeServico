@@ -24,8 +24,11 @@ namespace OrdemDeServico.Views
             {
                 this.Close();
             }
-            tslUsuario.Text = atendenteLogin.Usuario;
-            tslNome.Text = atendenteLogin.Nome;
+            else 
+            {
+                tslUsuario.Text = atendenteLogin.Usuario;
+                tslNome.Text = atendenteLogin.Nome;
+            }
         }
         private void secretariaTsmi_Click(object sender, EventArgs e)
         {
@@ -71,7 +74,9 @@ namespace OrdemDeServico.Views
         }
         private void tsbAterarSenha_Click(object sender, EventArgs e)
         {
-
+            FrmSenha frmSenha = new FrmSenha(atendenteLogin);
+            frmSenha.MdiParent = this;
+            frmSenha.Show();
         }
         private void tsbSair_Click(object sender, EventArgs e)
         {

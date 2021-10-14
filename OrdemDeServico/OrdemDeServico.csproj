@@ -129,6 +129,12 @@
     <Compile Include="Model\Solicitante.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\FrmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmAdmin.Designer.cs">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,12 @@
     </Compile>
     <Compile Include="Views\FrmPrincipal.designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmSenha.designer.cs">
+      <DependentUpon>FrmSenha.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Manutencao\NsMaquina\FrmAddMaquina.cs">
       <SubType>Form</SubType>
@@ -267,6 +279,12 @@
     <Compile Include="Views\OS\NsAbrir\FrmSolicitanteOs.Designer.cs">
       <DependentUpon>FrmSolicitanteOs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Usuario\FrmAddUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Usuario\FrmAddUsuario.Designer.cs">
+      <DependentUpon>FrmAddUsuario.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -280,11 +298,17 @@
     <EmbeddedResource Include="Reports\RprtMaquina.rdlc" />
     <EmbeddedResource Include="Reports\RprtOsAberta.rdlc" />
     <EmbeddedResource Include="Reports\RprtOsFechada.rdlc" />
+    <EmbeddedResource Include="Views\FrmAdmin.resx">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmSenha.resx">
+      <DependentUpon>FrmSenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Manutencao\NsMaquina\FrmAddMaquina.resx">
       <DependentUpon>FrmAddMaquina.cs</DependentUpon>
@@ -348,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\OS\NsAbrir\FrmSolicitanteOs.resx">
       <DependentUpon>FrmSolicitanteOs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Usuario\FrmAddUsuario.resx">
+      <DependentUpon>FrmAddUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="OrdemDeServico.Model.Maquina.datasource" />
     <None Include="OrdemDeServico.Model.OrdemServico.datasource" />

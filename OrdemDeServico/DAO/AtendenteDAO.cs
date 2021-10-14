@@ -3,9 +3,6 @@ using OrdemDeServico.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OrdemDeServico.DAO
 {
@@ -26,9 +23,10 @@ namespace OrdemDeServico.DAO
             Atendente atendente = obj as Atendente;
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "INSERT INTO Atendente (Usuario, Nome) VALUES (@Usuario, @Nome) ";
+            comando.CommandText = "INSERT INTO Atendente (Usuario, Nome, Senha) VALUES (@Usuario, @Nome, md5(@Senha))";
             comando.Parameters.AddWithValue("Usuario", atendente.Usuario);
-            comando.Parameters.AddWithValue("Nome", atendente.Nome);            
+            comando.Parameters.AddWithValue("Nome", atendente.Nome);
+            comando.Parameters.AddWithValue("Senha", atendente.Senha);
             ConexaoBancoDAO.CRUD(comando);
         }
 
@@ -37,9 +35,9 @@ namespace OrdemDeServico.DAO
             Atendente atendente = obj as Atendente;
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "UPDATE Solicitante SET Nome=@Nome  WHERE Id=@Id";
+            comando.CommandText = "UPDATE Atendente SET Senha=MD5(@Senha)  WHERE Id=@Id";
             comando.Parameters.AddWithValue("Id", atendente.Id);
-            comando.Parameters.AddWithValue("Nome", atendente.Nome);            
+            comando.Parameters.AddWithValue("Senha", atendente.Senha);            
             ConexaoBancoDAO.CRUD(comando);
         }
 

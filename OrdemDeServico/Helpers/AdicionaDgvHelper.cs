@@ -23,6 +23,13 @@ namespace OrdemDeServico.Helpers
             bool[] visibilidade = new[] { true, true, true, true, false, true };
             Criador.CriaDataGridView(dgv, nomeColuna, textoColuna, tamanho, visibilidade);
         }
+        private static void CriarDgvAtendente(DataGridView dgv)
+        {
+            string[] nomeColuna = new string[] { "Id", "Usuario", "Nome" };
+            string[] textoColuna = new string[] { "Id", "Usuario", "Nome" };
+            int[] tamanho = new[] { 50, 250, 250 };           
+            Criador.CriaDataGridView(dgv, nomeColuna, textoColuna, tamanho);
+        }
         private static void CriarDgvOrdemServico(DataGridView dgv, string status)
         {
             if (status == "abertura")
@@ -83,6 +90,18 @@ namespace OrdemDeServico.Helpers
                         }                        
                     }
                 }                
+            }
+        }
+        public static void PesquisaDgv(DataGridView dgv, string textoPesquisa, List<Atendente> atendentes)
+        {
+            CriarDgvAtendente(dgv);
+            if ((atendentes = PesquisadorHelper.PesquisarAtendente(textoPesquisa)) != null)
+            {
+                foreach (Atendente atendente in atendentes)
+                {
+                    dgv.Rows.Add(atendente.Id, atendente.Usuario, atendente.Nome);
+
+                }
             }
         }
         public static void PesquisaDgvOsAberta(DataGridView dgv, string textoPesquisa)
@@ -223,6 +242,20 @@ namespace OrdemDeServico.Helpers
                 return false;
             }
         }
+        public static bool ObterLinhaDgv(DataGridView dgv, Atendente atendente)
+        {
+            if (dgv.SelectedRows.Count > 0)
+            {
+                atendente.Id = Convert.ToInt32(dgv.CurrentRow.Cells[0].Value.ToString());
+                atendente.Usuario = dgv.CurrentRow.Cells[1].Value.ToString();
+                atendente.Nome = dgv.CurrentRow.Cells[2].Value.ToString();               
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public static bool ObterLinhaDgvOsAberta(DataGridView dgv, OrdemServico ordemServico)
         {
             if (dgv.SelectedRows.Count > 0)
@@ -263,5 +296,6 @@ namespace OrdemDeServico.Helpers
                 return false;
             }
         }
+        
     }
 }

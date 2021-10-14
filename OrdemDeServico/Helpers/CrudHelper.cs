@@ -90,5 +90,22 @@ namespace OrdemDeServico.Helpers
             OrdemServicoDAO ordemServicoDAO = new OrdemServicoDAO();
             ordemServicoDAO.Delete(ordemServico);
         }
+        public static void Inserir(Atendente atendente)
+        {
+            AtendenteDAO atendenteDAO = new AtendenteDAO();
+            if (atendente.Id == 0)
+            {
+                atendenteDAO.Insert(atendente);
+            }
+            else
+            {
+                atendenteDAO.Update(atendente);
+            }
+        }
+        public static void Excluir(Atendente atendente)
+        {
+            AtendenteDAO atendenteDAO = new AtendenteDAO();
+            atendenteDAO.Delete(atendente);
+        }
     }
 }
