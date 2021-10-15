@@ -51,7 +51,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSecretaria
                     catch (Exception ex)
                     {
 
-                        MessageBox.Show(ex.Message);
+                        Mensagem.SecretariaMsgExcluir();
                     }
                 }
             }

@@ -111,3 +111,4 @@ C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemD
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.FrmSenha.resources
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.FrmAdmin.resources
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.Usuario.FrmAddUsuario.resources
+C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.Usuario.FrmAlteraSenha.resources

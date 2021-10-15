@@ -37,7 +37,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
                     catch (Exception ex)
                     {
 
-                        MessageBox.Show(ex.Message);
+                        Mensagem.SetorMsgAdicionar();
                     }
                 }
             }

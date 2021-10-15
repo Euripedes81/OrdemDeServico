@@ -43,7 +43,7 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
                     catch (Exception ex)
                     {
 
-                        MessageBox.Show(ex.Message);
+                        Mensagem.MaquinaMsgAdicionar();
                     }
                 }
             }

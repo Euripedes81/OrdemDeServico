@@ -30,12 +30,12 @@ namespace OrdemDeServico.Views
         private void InitializeComponent()
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.dgv = new System.Windows.Forms.DataGridView();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.tsbAdicionar = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbExcluir = new System.Windows.Forms.ToolStripButton();
+            this.dgv = new System.Windows.Forms.DataGridView();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +53,33 @@ namespace OrdemDeServico.Views
             this.toolStrip1.Size = new System.Drawing.Size(209, 25);
             this.toolStrip1.TabIndex = 15;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsbAdicionar
+            // 
+            this.tsbAdicionar.Image = global::OrdemDeServico.Properties.Resources.add_30;
+            this.tsbAdicionar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbAdicionar.Name = "tsbAdicionar";
+            this.tsbAdicionar.Size = new System.Drawing.Size(78, 22);
+            this.tsbAdicionar.Text = "Adicionar";
+            this.tsbAdicionar.Click += new System.EventHandler(this.tsbAdicionar_Click);
+            // 
+            // tsbEditar
+            // 
+            this.tsbEditar.Image = global::OrdemDeServico.Properties.Resources.edit_30;
+            this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEditar.Name = "tsbEditar";
+            this.tsbEditar.Size = new System.Drawing.Size(57, 22);
+            this.tsbEditar.Text = "Editar";
+            this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
+            // 
+            // tsbExcluir
+            // 
+            this.tsbExcluir.Image = global::OrdemDeServico.Properties.Resources.remove_30;
+            this.tsbExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbExcluir.Name = "tsbExcluir";
+            this.tsbExcluir.Size = new System.Drawing.Size(62, 22);
+            this.tsbExcluir.Text = "Excluir";
+            this.tsbExcluir.Click += new System.EventHandler(this.tsbExcluir_Click);
             // 
             // dgv
             // 
@@ -90,33 +117,6 @@ namespace OrdemDeServico.Views
             this.txtPesquisar.Size = new System.Drawing.Size(687, 20);
             this.txtPesquisar.TabIndex = 12;
             // 
-            // tsbAdicionar
-            // 
-            this.tsbAdicionar.Image = global::OrdemDeServico.Properties.Resources.add_30;
-            this.tsbAdicionar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbAdicionar.Name = "tsbAdicionar";
-            this.tsbAdicionar.Size = new System.Drawing.Size(78, 22);
-            this.tsbAdicionar.Text = "Adicionar";
-            this.tsbAdicionar.Click += new System.EventHandler(this.tsbAdicionar_Click);
-            // 
-            // tsbEditar
-            // 
-            this.tsbEditar.Image = global::OrdemDeServico.Properties.Resources.edit_30;
-            this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbEditar.Name = "tsbEditar";
-            this.tsbEditar.Size = new System.Drawing.Size(57, 22);
-            this.tsbEditar.Text = "Editar";
-            this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
-            // 
-            // tsbExcluir
-            // 
-            this.tsbExcluir.Image = global::OrdemDeServico.Properties.Resources.remove_30;
-            this.tsbExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbExcluir.Name = "tsbExcluir";
-            this.tsbExcluir.Size = new System.Drawing.Size(62, 22);
-            this.tsbExcluir.Text = "Excluir";
-            this.tsbExcluir.Click += new System.EventHandler(this.tsbExcluir_Click);
-            // 
             // FrmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,6 +126,9 @@ namespace OrdemDeServico.Views
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.txtPesquisar);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(800, 500);
+            this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "FrmAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Administração de Usuários";

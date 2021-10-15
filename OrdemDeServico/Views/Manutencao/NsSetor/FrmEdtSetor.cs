@@ -39,10 +39,10 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
                         CrudHelper.Inserir(setor);
                         this.Close();
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
 
-                        MessageBox.Show(ex.Message);
+                        Mensagem.SetorMsgAdicionar();
                     }
                     Limpar();
                 }

@@ -36,7 +36,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSolicitante
                     catch (Exception ex)
                     {
 
-                        MessageBox.Show(ex.Message);
+                        Mensagem.SolicitanteMsgAdicionar();
                     }
                 }
             }

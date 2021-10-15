@@ -7,8 +7,7 @@ namespace OrdemDeServico.DAO
     {
 
         public static MySqlConnection Conectar()
-        {
-            //string conexaoStr = @"Server=192.168.0.200;Database=aviso;Uid=aviso;Pwd=aviso*1344";
+        {            
             string conexaoStr = @"Server=192.168.0.200;Database=ordemdeservico;Uid=ordem;Pwd=servico";
             MySqlConnection conexao = new MySqlConnection(conexaoStr);
             conexao.Open();

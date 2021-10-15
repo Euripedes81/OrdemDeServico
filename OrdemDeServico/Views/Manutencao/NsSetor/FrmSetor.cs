@@ -44,7 +44,15 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
                 if (MessageBox.Show("Deseja excluir este registro?", "Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                      == DialogResult.Yes)
                 {
-                    CrudHelper.Excluir(setor);
+                    try
+                    {
+                        CrudHelper.Excluir(setor);
+                    }
+                    catch (Exception)
+                    {
+
+                        Mensagem.SetorMsgExcluir();
+                    }
                     PesquisaDgv();
                 }
             }

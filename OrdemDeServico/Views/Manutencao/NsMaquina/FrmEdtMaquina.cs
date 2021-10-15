@@ -30,14 +30,14 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
                         maquina.Descricao = txtDescricao.Text;
                         maquina.SetorMqn.Id = setores[cbSetor.SelectedIndex].Id;
                         CrudHelper.Inserir(maquina);
-                        this.Close();
+                        Limpar();
                     }
                     catch (Exception ex)
                     {
 
-                        MessageBox.Show(ex.Message);
+                        Mensagem.MaquinaMsgAdicionar();
                     }
-                    Limpar();
+                    
                 }
             }
         }

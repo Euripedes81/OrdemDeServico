@@ -119,6 +119,7 @@
     <Compile Include="Helpers\AdicionaDgvHelper.cs" />
     <Compile Include="Helpers\Criador.cs" />
     <Compile Include="Helpers\CrudHelper.cs" />
+    <Compile Include="Helpers\Mensagem.cs" />
     <Compile Include="Helpers\PesquisadorHelper.cs" />
     <Compile Include="Helpers\Validador.cs" />
     <Compile Include="Model\Atendente.cs" />
@@ -285,6 +286,12 @@
     <Compile Include="Views\Usuario\FrmAddUsuario.Designer.cs">
       <DependentUpon>FrmAddUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Usuario\FrmAlteraSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Usuario\FrmAlteraSenha.Designer.cs">
+      <DependentUpon>FrmAlteraSenha.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -375,6 +382,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Usuario\FrmAddUsuario.resx">
       <DependentUpon>FrmAddUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Usuario\FrmAlteraSenha.resx">
+      <DependentUpon>FrmAlteraSenha.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="OrdemDeServico.Model.Maquina.datasource" />
     <None Include="OrdemDeServico.Model.OrdemServico.datasource" />

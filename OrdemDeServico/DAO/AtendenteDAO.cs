@@ -23,7 +23,7 @@ namespace OrdemDeServico.DAO
             Atendente atendente = obj as Atendente;
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "INSERT INTO Atendente (Usuario, Nome, Senha) VALUES (@Usuario, @Nome, md5(@Senha))";
+            comando.CommandText = "INSERT INTO Atendente (Usuario, Nome, Senha) VALUES (@Usuario, @Nome, sha1(@Senha))";
             comando.Parameters.AddWithValue("Usuario", atendente.Usuario);
             comando.Parameters.AddWithValue("Nome", atendente.Nome);
             comando.Parameters.AddWithValue("Senha", atendente.Senha);
@@ -35,7 +35,7 @@ namespace OrdemDeServico.DAO
             Atendente atendente = obj as Atendente;
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "UPDATE Atendente SET Senha=MD5(@Senha)  WHERE Id=@Id";
+            comando.CommandText = "UPDATE Atendente SET Senha=sha1(@Senha) WHERE Id=@Id";
             comando.Parameters.AddWithValue("Id", atendente.Id);
             comando.Parameters.AddWithValue("Senha", atendente.Senha);            
             ConexaoBancoDAO.CRUD(comando);
@@ -119,7 +119,7 @@ namespace OrdemDeServico.DAO
         {
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "SELECT * FROM Atendente WHERE Id=@Id and Senha=md5(@Senha)";
+            comando.CommandText = "SELECT * FROM Atendente WHERE Id=@Id and Senha=sha1(@Senha)";
             comando.Parameters.AddWithValue("Id", id);
             comando.Parameters.AddWithValue("Senha", senha);
             MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);

@@ -113,7 +113,7 @@ namespace OrdemDeServico.Views.Usuario
             this.Controls.Add(this.label1);
             this.Name = "FrmAddUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "FrmAddUsuario";
+            this.Text = "Adiciona Usuário";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -29,7 +29,11 @@ namespace OrdemDeServico.Views
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
-
+            if(AdicionaDgvHelper.ObterLinhaDgv(dgv, atendente))
+            {
+                FrmAlteraSenha frmAlteraSenha = new FrmAlteraSenha(atendente);
+                frmAlteraSenha.ShowDialog();
+            }
         }
 
         private void tsbExcluir_Click(object sender, EventArgs e)
@@ -41,8 +45,21 @@ namespace OrdemDeServico.Views
                 {
                     if (atendente.Id != 1)
                     {
-                        CrudHelper.Excluir(atendente);
-                        AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar.Text, atendentes); 
+                        try
+                        {
+                            CrudHelper.Excluir(atendente);
+                            AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar.Text, atendentes);
+                        }
+                        catch (Exception ex)
+                        {
+
+                            MessageBox.Show("Você não pode excluir um usuário que esteja vinculado com alguma O.S!", "",
+                                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("O usuário admin não pode ser excluído!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
             }

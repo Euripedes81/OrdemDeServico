@@ -46,7 +46,15 @@ namespace OrdemDeServico.Views.Manutencao.NsSolicitante
                 if (MessageBox.Show("Deseja excluir este registro?", "Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                      == DialogResult.Yes)
                 {
-                    CrudHelper.Excluir(solicitante);
+                    try
+                    {
+                        CrudHelper.Excluir(solicitante);
+                    }
+                    catch (Exception)
+                    {
+
+                        Mensagem.SolicitanteMsgExcluir();
+                    }
                     AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar.Text, solicitantes, setor);
                 }
             }

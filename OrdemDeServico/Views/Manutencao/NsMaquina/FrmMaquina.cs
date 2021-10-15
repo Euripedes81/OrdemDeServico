@@ -56,8 +56,16 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
                 if (MessageBox.Show("Deseja excluir este registro?", "Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                      == DialogResult.Yes)
                 {
-                    CrudHelper.Excluir(maquina);
-                    AdicionaDgvHelper.ObterLinhaDgv(dgv, maquina);
+                    try
+                    {
+                        CrudHelper.Excluir(maquina);
+                        AdicionaDgvHelper.ObterLinhaDgv(dgv, maquina);
+                    }
+                    catch (Exception)
+                    {
+
+                        Mensagem.MaquinaMsgExcluir();
+                    }
                 }
             }
         }
