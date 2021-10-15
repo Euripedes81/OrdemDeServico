@@ -52,9 +52,7 @@ namespace OrdemDeServico.Views
                         }
                         catch (Exception ex)
                         {
-
-                            MessageBox.Show("Você não pode excluir um usuário que esteja vinculado com alguma O.S!", "",
-                                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            Mensagem.AtendenteMsgExcluir();
                         }
                     }
                     else

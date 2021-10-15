@@ -76,6 +76,19 @@ namespace OrdemDeServico.Helpers
             }
 
         }
+        public static bool CampoBranco(string nomeCampo, ComboBox cb1, ComboBox cb2)
+        {
+            if (string.IsNullOrEmpty(nomeCampo) || (cb1.SelectedItem == null) || (cb2.SelectedItem == null))
+            {
+                MessageBox.Show("Todos os campos são obrigatórios!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
         public static bool CampoNumerico(string nomeCampo)
         {
             if(nomeCampo.Any(c => char.IsDigit(c)))

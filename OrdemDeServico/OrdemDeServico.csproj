@@ -121,6 +121,7 @@
     <Compile Include="Helpers\CrudHelper.cs" />
     <Compile Include="Helpers\Mensagem.cs" />
     <Compile Include="Helpers\PesquisadorHelper.cs" />
+    <Compile Include="Helpers\TipoMaquinaEnum.cs" />
     <Compile Include="Helpers\Validador.cs" />
     <Compile Include="Model\Atendente.cs" />
     <Compile Include="Model\Maquina.cs" />

@@ -2,12 +2,6 @@
 using OrdemDeServico.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OrdemDeServico.Views.Manutencao.NsMaquina
@@ -15,6 +9,8 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
     public partial class FrmAddMaquina : Form
     {
         private List<Setor> setores;
+        private string[] tipoSetor = new string[] {"COMPUTADOR DESKTOP", "COMPUTADOR NOTEBOOK", "IMPRESSORA LASERJET", "IMPRESSORA DESKJET" };       
+
         public FrmAddMaquina()
         {
             InitializeComponent();
@@ -25,7 +21,7 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (Validador.CampoBranco(txtTipo.Text, txtDescricao.Text, cbSetor))
+            if (Validador.CampoBranco( txtDescricao.Text,cbTipoMaquina, cbSetor))
             {
                 if (MessageBox.Show("Deseja salvar os dados?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     == DialogResult.Yes)
@@ -34,15 +30,14 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
                     {
                         Maquina maquina = new Maquina();
                         maquina.Patrimonio = Convert.ToInt32(mtxtNumPatrimonio.Text);
-                        maquina.Tipo = txtTipo.Text;
+                        maquina.Tipo = tipoSetor[cbTipoMaquina.SelectedIndex];
                         maquina.Descricao = txtDescricao.Text;
                         maquina.SetorMqn.Id = setores[cbSetor.SelectedIndex].Id;
                         CrudHelper.Inserir(maquina);
                         Limpar();
                     }
-                    catch (Exception ex)
+                    catch (Exception )
                     {
-
                         Mensagem.MaquinaMsgAdicionar();
                     }
                 }
@@ -55,6 +50,10 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
                 foreach (Setor setor in setores)
                 {
                     cbSetor.Items.Add(setor.ToString());
+                }                
+                for (int i = 0; i < tipoSetor.Length; i++)
+                {
+                    cbTipoMaquina.Items.Add(tipoSetor[i]);
                 }
             }
 
@@ -62,15 +61,10 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
         private void Limpar()
         {
             mtxtNumPatrimonio.Text = "";
-            txtTipo.Text = "";
             txtDescricao.Text = "";
             cbSetor.SelectedIndex = -1;
-        }
-
-        private void txtNome_TextChanged(object sender, EventArgs e)
-        {
-            txtTipo.CharacterCasing = CharacterCasing.Upper;
-        }
+            cbTipoMaquina.SelectedIndex = -1;
+        }        
 
         private void txtDescricao_TextChanged(object sender, EventArgs e)
         {

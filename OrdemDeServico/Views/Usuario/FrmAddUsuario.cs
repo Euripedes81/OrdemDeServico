@@ -25,10 +25,9 @@ namespace OrdemDeServico.Views.Usuario
                     CrudHelper.Inserir(atendente);
                     Limpar();
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-
-                    MessageBox.Show("Usuário existente, tente outro nome!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Mensagem.AtendenteMsgAdicionar();                   
                 }
                 
             }

@@ -35,9 +35,9 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.txtTipo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.mtxtNumPatrimonio = new System.Windows.Forms.MaskedTextBox();
+            this.cbTipoMaquina = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label3
@@ -94,14 +94,6 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
             this.txtDescricao.TabIndex = 26;
             this.txtDescricao.TextChanged += new System.EventHandler(this.txtDescricao_TextChanged);
             // 
-            // txtTipo
-            // 
-            this.txtTipo.Location = new System.Drawing.Point(10, 79);
-            this.txtTipo.Name = "txtTipo";
-            this.txtTipo.Size = new System.Drawing.Size(443, 20);
-            this.txtTipo.TabIndex = 24;
-            this.txtTipo.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -120,12 +112,21 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
             this.mtxtNumPatrimonio.Size = new System.Drawing.Size(72, 23);
             this.mtxtNumPatrimonio.TabIndex = 23;
             // 
+            // cbTipoMaquina
+            // 
+            this.cbTipoMaquina.FormattingEnabled = true;
+            this.cbTipoMaquina.Location = new System.Drawing.Point(10, 79);
+            this.cbTipoMaquina.Name = "cbTipoMaquina";
+            this.cbTipoMaquina.Size = new System.Drawing.Size(442, 21);
+            this.cbTipoMaquina.TabIndex = 32;
+            // 
             // FrmAddMaquina
             // 
             this.AcceptButton = this.btnSalvar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 346);
+            this.Controls.Add(this.cbTipoMaquina);
             this.Controls.Add(this.mtxtNumPatrimonio);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -133,7 +134,6 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDescricao);
-            this.Controls.Add(this.txtTipo);
             this.Controls.Add(this.cbSetor);
             this.Name = "FrmAddMaquina";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -152,8 +152,8 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDescricao;
-        private System.Windows.Forms.TextBox txtTipo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.MaskedTextBox mtxtNumPatrimonio;
+        private System.Windows.Forms.ComboBox cbTipoMaquina;
     }
 }
