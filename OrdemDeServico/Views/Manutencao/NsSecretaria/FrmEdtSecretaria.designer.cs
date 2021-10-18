@@ -29,6 +29,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSecretaria
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEdtSecretaria));
             this.btnSalvar = new System.Windows.Forms.Button();
             this.mtxtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,9 +43,9 @@ namespace OrdemDeServico.Views.Manutencao.NsSecretaria
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(171, 144);
+            this.btnSalvar.Location = new System.Drawing.Point(147, 125);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(80, 38);
+            this.btnSalvar.Size = new System.Drawing.Size(69, 33);
             this.btnSalvar.TabIndex = 13;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -52,78 +53,78 @@ namespace OrdemDeServico.Views.Manutencao.NsSecretaria
             // 
             // mtxtTelefone
             // 
-            this.mtxtTelefone.Location = new System.Drawing.Point(307, 34);
+            this.mtxtTelefone.Location = new System.Drawing.Point(263, 29);
             this.mtxtTelefone.Mask = "(99) 0000-0000";
             this.mtxtTelefone.Name = "mtxtTelefone";
-            this.mtxtTelefone.Size = new System.Drawing.Size(90, 23);
+            this.mtxtTelefone.Size = new System.Drawing.Size(78, 20);
             this.mtxtTelefone.TabIndex = 8;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(307, 16);
+            this.label3.Location = new System.Drawing.Point(263, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 15);
+            this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 12;
             this.label3.Text = "Telefone";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 76);
+            this.label2.Location = new System.Drawing.Point(10, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 15);
+            this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 11;
             this.label2.Text = "Descrição";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(60, 16);
+            this.label1.Location = new System.Drawing.Point(51, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 15);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 9;
             this.label1.Text = "Nome";
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(12, 94);
+            this.txtDescricao.Location = new System.Drawing.Point(10, 81);
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(385, 23);
+            this.txtDescricao.Size = new System.Drawing.Size(331, 20);
             this.txtDescricao.TabIndex = 10;
             this.txtDescricao.TextChanged += new System.EventHandler(this.txtDescricao_TextChanged);
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(60, 34);
+            this.txtNome.Location = new System.Drawing.Point(51, 29);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(232, 23);
+            this.txtNome.Size = new System.Drawing.Size(199, 20);
             this.txtNome.TabIndex = 7;
             this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 16);
+            this.label4.Location = new System.Drawing.Point(10, 14);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(17, 15);
+            this.label4.Size = new System.Drawing.Size(16, 13);
             this.label4.TabIndex = 14;
             this.label4.Text = "Id";
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(12, 34);
+            this.txtId.Location = new System.Drawing.Point(10, 29);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(42, 23);
+            this.txtId.Size = new System.Drawing.Size(37, 20);
             this.txtId.TabIndex = 15;
             // 
-            // FrmEditar
+            // FrmEdtSecretaria
             // 
             this.AcceptButton = this.btnSalvar;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(427, 214);
+            this.ClientSize = new System.Drawing.Size(366, 185);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSalvar);
@@ -133,11 +134,12 @@ namespace OrdemDeServico.Views.Manutencao.NsSecretaria
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.txtNome);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(443, 253);
+            this.MaximumSize = new System.Drawing.Size(382, 224);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(443, 253);
-            this.Name = "FrmEditar";
+            this.MinimumSize = new System.Drawing.Size(382, 224);
+            this.Name = "FrmEdtSecretaria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Editar Secretaria";
             this.Load += new System.EventHandler(this.FrmEditar_Load);

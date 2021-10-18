@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Ordem-de-Servico.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
@@ -121,7 +124,7 @@
     <Compile Include="Helpers\CrudHelper.cs" />
     <Compile Include="Helpers\Mensagem.cs" />
     <Compile Include="Helpers\PesquisadorHelper.cs" />
-    <Compile Include="Helpers\TipoMaquinaEnum.cs" />
+    <Compile Include="Helpers\TipoMaquina.cs" />
     <Compile Include="Helpers\Validador.cs" />
     <Compile Include="Model\Atendente.cs" />
     <Compile Include="Model\Maquina.cs" />
@@ -306,6 +309,7 @@
     <EmbeddedResource Include="Reports\RprtMaquina.rdlc" />
     <EmbeddedResource Include="Reports\RprtOsAberta.rdlc" />
     <EmbeddedResource Include="Reports\RprtOsFechada.rdlc" />
+    <EmbeddedResource Include="Reports\RprtOsSecretaria.rdlc" />
     <EmbeddedResource Include="Views\FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -403,7 +407,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Ordem-de-Servico.ico" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-pesquisar-26.png" />
   </ItemGroup>
@@ -421,6 +427,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\concluir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Relatorios\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

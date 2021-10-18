@@ -29,13 +29,14 @@ namespace OrdemDeServico.Views.Manutencao.NsSolicitante
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSolicitante));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsbAdicionar = new System.Windows.Forms.ToolStripButton();
+            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbExcluir = new System.Windows.Forms.ToolStripButton();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
-            this.tsbAdicionar = new System.Windows.Forms.ToolStripButton();
-            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
@@ -50,9 +51,27 @@ namespace OrdemDeServico.Views.Manutencao.NsSolicitante
             this.tsbExcluir});
             this.toolStrip1.Location = new System.Drawing.Point(14, 423);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(240, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(209, 25);
             this.toolStrip1.TabIndex = 11;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsbAdicionar
+            // 
+            this.tsbAdicionar.Image = global::OrdemDeServico.Properties.Resources.add_30;
+            this.tsbAdicionar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbAdicionar.Name = "tsbAdicionar";
+            this.tsbAdicionar.Size = new System.Drawing.Size(78, 22);
+            this.tsbAdicionar.Text = "Adicionar";
+            this.tsbAdicionar.Click += new System.EventHandler(this.tsbAdicionar_Click);
+            // 
+            // tsbEditar
+            // 
+            this.tsbEditar.Image = global::OrdemDeServico.Properties.Resources.edit_30;
+            this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEditar.Name = "tsbEditar";
+            this.tsbEditar.Size = new System.Drawing.Size(57, 22);
+            this.tsbEditar.Text = "Editar";
+            this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
             // 
             // tsbExcluir
             // 
@@ -99,24 +118,6 @@ namespace OrdemDeServico.Views.Manutencao.NsSolicitante
             this.txtPesquisar.Size = new System.Drawing.Size(687, 20);
             this.txtPesquisar.TabIndex = 8;
             // 
-            // tsbAdicionar
-            // 
-            this.tsbAdicionar.Image = global::OrdemDeServico.Properties.Resources.add_30;
-            this.tsbAdicionar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbAdicionar.Name = "tsbAdicionar";
-            this.tsbAdicionar.Size = new System.Drawing.Size(78, 22);
-            this.tsbAdicionar.Text = "Adicionar";
-            this.tsbAdicionar.Click += new System.EventHandler(this.tsbAdicionar_Click);
-            // 
-            // tsbEditar
-            // 
-            this.tsbEditar.Image = global::OrdemDeServico.Properties.Resources.edit_30;
-            this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbEditar.Name = "tsbEditar";
-            this.tsbEditar.Size = new System.Drawing.Size(57, 22);
-            this.tsbEditar.Text = "Editar";
-            this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
-            // 
             // FrmSolicitante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,6 +127,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSolicitante
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.txtPesquisar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmSolicitante";
             this.Text = "Solicitante";
             this.toolStrip1.ResumeLayout(false);

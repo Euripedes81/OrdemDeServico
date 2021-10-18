@@ -4,12 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
+
 namespace OrdemDeServico.Views.Manutencao.NsMaquina
 {
     public partial class FrmAddMaquina : Form
     {
-        private List<Setor> setores;
-        private string[] tipoSetor = new string[] {"COMPUTADOR DESKTOP", "COMPUTADOR NOTEBOOK", "IMPRESSORA LASERJET", "IMPRESSORA DESKJET" };       
+        private List<Setor> setores;           
 
         public FrmAddMaquina()
         {
@@ -28,9 +28,10 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
                 {
                     try
                     {
+                        TipoMaquina tipo = (TipoMaquina)cbTipoMaquina.SelectedIndex;                        
                         Maquina maquina = new Maquina();
                         maquina.Patrimonio = Convert.ToInt32(mtxtNumPatrimonio.Text);
-                        maquina.Tipo = tipoSetor[cbTipoMaquina.SelectedIndex];
+                        maquina.Tipo = Convert.ToString(tipo);
                         maquina.Descricao = txtDescricao.Text;
                         maquina.SetorMqn.Id = setores[cbSetor.SelectedIndex].Id;
                         CrudHelper.Inserir(maquina);
@@ -51,9 +52,9 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
                 {
                     cbSetor.Items.Add(setor.ToString());
                 }                
-                for (int i = 0; i < tipoSetor.Length; i++)
+                foreach(var tipoMaquina in Enum.GetNames(typeof(TipoMaquina)))
                 {
-                    cbTipoMaquina.Items.Add(tipoSetor[i]);
+                    cbTipoMaquina.Items.Add(tipoMaquina);
                 }
             }
 

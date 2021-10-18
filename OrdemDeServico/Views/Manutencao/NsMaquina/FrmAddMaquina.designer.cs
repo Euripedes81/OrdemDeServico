@@ -29,6 +29,7 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddMaquina));
             this.label3 = new System.Windows.Forms.Label();
             this.cbSetor = new System.Windows.Forms.ComboBox();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -135,9 +136,10 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.cbSetor);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAddMaquina";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "FrmAddMaquina";
+            this.Text = "Adicionar Máquina";
             this.Load += new System.EventHandler(this.FrmAddMaquina_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

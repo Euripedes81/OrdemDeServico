@@ -30,6 +30,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAbreOs));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbAbrir = new System.Windows.Forms.ToolStripButton();
             this.tsbFecharOs = new System.Windows.Forms.ToolStripButton();
@@ -198,6 +199,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAbreOs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Gerenciador O.S";

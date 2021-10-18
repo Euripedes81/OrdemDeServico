@@ -29,6 +29,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFechaOs));
             this.btnSalvar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtObservacao = new System.Windows.Forms.TextBox();
@@ -127,6 +128,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.ClientSize = new System.Drawing.Size(596, 400);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.groupBox3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmFechaOs";
             this.Text = "Fechamento O.S";
             this.Load += new System.EventHandler(this.FrmFechaOs_Load);

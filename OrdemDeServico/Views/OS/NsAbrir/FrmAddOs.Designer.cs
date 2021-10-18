@@ -29,6 +29,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddOs));
             this.txtSolicitante = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbPesquisarSolicitante = new System.Windows.Forms.ToolStripButton();
@@ -132,7 +133,6 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.txtDiagnostico.Size = new System.Drawing.Size(600, 86);
             this.txtDiagnostico.TabIndex = 4;
             this.txtDiagnostico.TextChanged += new System.EventHandler(this.txtDiagnostico_TextChanged);
-           
             // 
             // label1
             // 
@@ -248,6 +248,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAddOs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar O.S";

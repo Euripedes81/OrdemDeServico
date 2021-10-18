@@ -30,6 +30,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMaquinaOs));
             this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbAdicionar = new System.Windows.Forms.ToolStripButton();
@@ -58,7 +59,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.tsbAdicionar});
             this.toolStrip1.Location = new System.Drawing.Point(8, 425);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(121, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(90, 25);
             this.toolStrip1.TabIndex = 20;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -123,8 +124,9 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.txtPesquisar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMaquinaOs";
-            this.Text = "FrmMaquinaOs";
+            this.Text = "Máquina O.S";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();

@@ -30,18 +30,23 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.rptvOsFechada = new Microsoft.Reporting.WinForms.ReportViewer();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRelatorioOsFechada));
             this.ordemServicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rptvOsFechada = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.ordemServicoBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ordemServicoBindingSource
+            // 
+            this.ordemServicoBindingSource.DataSource = typeof(OrdemDeServico.Model.OrdemServico);
             // 
             // rptvOsFechada
             // 
             this.rptvOsFechada.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource2.Name = "dsOrdemServico";
-            reportDataSource2.Value = this.ordemServicoBindingSource;
-            this.rptvOsFechada.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "dsOrdemServico";
+            reportDataSource1.Value = this.ordemServicoBindingSource;
+            this.rptvOsFechada.LocalReport.DataSources.Add(reportDataSource1);
             this.rptvOsFechada.LocalReport.ReportEmbeddedResource = "OrdemDeServico.Reports.RprtOsFechada.rdlc";
             this.rptvOsFechada.Location = new System.Drawing.Point(0, 0);
             this.rptvOsFechada.Name = "rptvOsFechada";
@@ -49,16 +54,13 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.rptvOsFechada.Size = new System.Drawing.Size(984, 561);
             this.rptvOsFechada.TabIndex = 0;
             // 
-            // ordemServicoBindingSource
-            // 
-            this.ordemServicoBindingSource.DataSource = typeof(OrdemDeServico.Model.OrdemServico);
-            // 
             // FrmRelatorioOsFechada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.rptvOsFechada);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmRelatorioOsFechada";
             this.Text = "Ordem de Serviço Fechada";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

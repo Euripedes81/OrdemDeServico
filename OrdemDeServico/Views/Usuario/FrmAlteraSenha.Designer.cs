@@ -29,6 +29,7 @@ namespace OrdemDeServico.Views.Usuario
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAlteraSenha));
             this.btnAlterar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
@@ -91,6 +92,7 @@ namespace OrdemDeServico.Views.Usuario
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtUsuario);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(337, 227);
             this.MinimizeBox = false;

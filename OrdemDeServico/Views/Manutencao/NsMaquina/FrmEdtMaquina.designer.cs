@@ -29,6 +29,7 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEdtMaquina));
             this.mtxtNumPatrimonio = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -134,6 +135,7 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.txtTipo);
             this.Controls.Add(this.cbSetor);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(480, 380);
             this.MinimizeBox = false;

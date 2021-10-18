@@ -30,6 +30,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultaOs));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbVisualizar = new System.Windows.Forms.ToolStripButton();
             this.dgv = new System.Windows.Forms.DataGridView();
@@ -161,6 +162,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmConsultaOs";
             this.Text = "Consulta O.S Fechada";
             this.toolStrip1.ResumeLayout(false);
