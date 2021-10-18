@@ -79,13 +79,11 @@ namespace OrdemDeServico.Views.OS.NsAbrir
 
         private void tsbVisualizar_Click(object sender, EventArgs e)
         {
-            ordemServico = new OrdemServico();
-            if (AdicionaDgvHelper.ObterLinhaDgvOsAberta(dgv, ordemServico))
-            {
-                FrmRelatorioOsAberta frmRelatorioOsAberta = new FrmRelatorioOsAberta(ordemServico);
-                //frmRelatorioOsAberta.MdiParent = FrmPrincipal.ActiveForm;
-                frmRelatorioOsAberta.Show();
-            }
+            Visualizar();
+        }
+        private void dgv_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Visualizar();
         }
         private void btnPesquisar_Click(object sender, EventArgs e)
         {            
@@ -119,6 +117,15 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             }
         }
 
-        
+        private void Visualizar()
+        {
+            ordemServico = new OrdemServico();
+            if (AdicionaDgvHelper.ObterLinhaDgvOsAberta(dgv, ordemServico))
+            {
+                FrmRelatorioOsAberta frmRelatorioOsAberta = new FrmRelatorioOsAberta(ordemServico);
+                //frmRelatorioOsAberta.MdiParent = FrmPrincipal.ActiveForm;
+                frmRelatorioOsAberta.Show();
+            }
+        }
     }
 }

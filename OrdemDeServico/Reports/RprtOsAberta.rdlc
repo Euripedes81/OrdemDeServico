@@ -678,7 +678,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>1.3673cm</Height>
+              <Height>2.18751cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -719,7 +719,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>1.15216cm</Height>
+              <Height>2.19313cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -999,9 +999,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>dsOrdemServico</DataSetName>
-        <Top>0.03528cm</Top>
+        <Top>0.33513cm</Top>
         <Left>0.44662cm</Left>
-        <Height>11.20882cm</Height>
+        <Height>13.07cm</Height>
         <Width>18.17563cm</Width>
         <Style>
           <Border>
@@ -1010,10 +1010,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>4.57264in</Height>
+    <Height>5.27761in</Height>
     <Style />
   </Body>
-  <Width>7.50384in</Width>
+  <Width>7.48301in</Width>
   <Page>
     <PageHeader>
       <Height>2.40771cm</Height>
@@ -1210,8 +1210,8 @@
     <PageWidth>21cm</PageWidth>
     <LeftMargin>1cm</LeftMargin>
     <RightMargin>1cm</RightMargin>
-    <TopMargin>0cm</TopMargin>
-    <BottomMargin>0cm</BottomMargin>
+    <TopMargin>1cm</TopMargin>
+    <BottomMargin>1cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>

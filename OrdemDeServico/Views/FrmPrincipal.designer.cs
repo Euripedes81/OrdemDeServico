@@ -42,13 +42,14 @@ namespace OrdemDeServico.Views
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tslUsuario = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.tslNome = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbAterarSenha = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbSair = new System.Windows.Forms.ToolStripButton();
+            this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +58,8 @@ namespace OrdemDeServico.Views
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
-            this.oSToolStripMenuItem});
+            this.oSToolStripMenuItem,
+            this.relatórioToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -159,16 +161,16 @@ namespace OrdemDeServico.Views
             this.tslUsuario.Size = new System.Drawing.Size(47, 22);
             this.tslUsuario.Text = "usuario";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
             this.toolStripLabel2.Size = new System.Drawing.Size(46, 22);
             this.toolStripLabel2.Text = "Nome: ";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // tslNome
             // 
@@ -206,6 +208,12 @@ namespace OrdemDeServico.Views
             this.tsbSair.Size = new System.Drawing.Size(30, 22);
             this.tsbSair.Text = "Sair";
             this.tsbSair.Click += new System.EventHandler(this.tsbSair_Click);
+            // 
+            // relatórioToolStripMenuItem
+            // 
+            this.relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
+            this.relatórioToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.relatórioToolStripMenuItem.Text = "Relatório";
             // 
             // FrmPrincipal
             // 
@@ -252,5 +260,6 @@ namespace OrdemDeServico.Views
         private System.Windows.Forms.ToolStripButton tsbAterarSenha;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton tsbSair;
+        private System.Windows.Forms.ToolStripMenuItem relatórioToolStripMenuItem;
     }
 }

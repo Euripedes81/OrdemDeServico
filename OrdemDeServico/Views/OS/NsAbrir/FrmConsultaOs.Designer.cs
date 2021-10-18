@@ -83,6 +83,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(821, 334);
             this.dgv.TabIndex = 22;
+            this.dgv.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentDoubleClick);
             // 
             // groupBox1
             // 

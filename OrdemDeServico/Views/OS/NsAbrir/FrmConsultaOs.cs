@@ -1,13 +1,6 @@
 ﻿using OrdemDeServico.Helpers;
 using OrdemDeServico.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OrdemDeServico.Views.OS.NsAbrir
@@ -36,14 +29,12 @@ namespace OrdemDeServico.Views.OS.NsAbrir
 
         private void tsbVisualizar_Click(object sender, EventArgs e)
         {
-            ordemServico = new OrdemServico();
-            if (AdicionaDgvHelper.ObterLinhaDgvOsFechada(dgv, ordemServico))
-            {
-                FrmRelatorioOsFechada frmRelatorioOsFechada = new FrmRelatorioOsFechada(ordemServico);
-                frmRelatorioOsFechada.Show();
-            }
+            Visualizar();
         }
-
+        private void dgv_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Visualizar();
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Enabled = false;
@@ -73,5 +64,15 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             txtPesquisarOs.ReadOnly = true;
             txtPesquisarNome.ReadOnly = false;
         }
+        private void Visualizar()
+        {
+            ordemServico = new OrdemServico();
+            if (AdicionaDgvHelper.ObterLinhaDgvOsFechada(dgv, ordemServico))
+            {
+                FrmRelatorioOsFechada frmRelatorioOsFechada = new FrmRelatorioOsFechada(ordemServico);
+                frmRelatorioOsFechada.Show();
+            }
+        }
+        
     }
 }
