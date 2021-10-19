@@ -6,36 +6,33 @@ using System.Data;
 
 namespace OrdemDeServico.DAO
 {
-    class SetorDAO : ICrud
+    class SetorDAO : ICrud<Setor>
     {
-        public void Delete(object obj)
-        {
-            Setor setor = obj as Setor;
+        public void Delete(Setor setor)
+        {            
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "DELETE FROM Setor where Id=@Id";
+            comando.CommandText = "DELETE FROM setor where Id=@Id";
             comando.Parameters.AddWithValue("Id", setor.Id);
             ConexaoBancoDAO.CRUD(comando);
         }
 
-        public void Insert(object obj)
+        public void Insert(Setor setor)
         {
-            Setor setor = obj as Setor;
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "INSERT INTO Setor (Nome, Descricao, IdSecretaria) VALUES (@Nome, @Descricao, @IdSecretaria) ";
+            comando.CommandText = "INSERT INTOsetor (Nome, Descricao, IdSecretaria) VALUES (@Nome, @Descricao, @IdSecretaria) ";
             comando.Parameters.AddWithValue("Nome", setor.Nome);
             comando.Parameters.AddWithValue("Descricao", setor.Descricao);
             comando.Parameters.AddWithValue("IdSecretaria", setor.SecretariaStr.Id);
             ConexaoBancoDAO.CRUD(comando);
         }
 
-        public void Update(object obj)
-        {
-            Setor setor = obj as Setor;
+        public void Update(Setor setor)
+        {           
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "UPDATE Setor SET Nome=@Nome, Descricao=@Descricao, IdSecretaria=@IdSecretaria  WHERE Id=@Id";
+            comando.CommandText = "UPDATE setor SET Nome=@Nome, Descricao=@Descricao, IdSecretaria=@IdSecretaria  WHERE Id=@Id";
             comando.Parameters.AddWithValue("Id", setor.Id);
             comando.Parameters.AddWithValue("Nome", setor.Nome);
             comando.Parameters.AddWithValue("Descricao", setor.Descricao);
@@ -47,7 +44,7 @@ namespace OrdemDeServico.DAO
         {
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "SELECT * FROM Setor WHERE Nome LIKE @Nome";
+            comando.CommandText = "SELECT * FROM setor WHERE Nome LIKE @Nome";
             comando.Parameters.AddWithValue("Nome", "%" + nome + "%");
             MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
             List<Setor> setores = new List<Setor>();
@@ -74,7 +71,7 @@ namespace OrdemDeServico.DAO
         {
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "SELECT * FROM Setor WHERE Id=@Id";
+            comando.CommandText = "SELECT * FROM setor WHERE Id=@Id";
             comando.Parameters.AddWithValue("Id", id);
             MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
             Setor setor = new Setor();

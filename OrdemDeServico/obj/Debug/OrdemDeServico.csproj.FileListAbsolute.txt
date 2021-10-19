@@ -112,3 +112,7 @@ C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemD
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.FrmAdmin.resources
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.Usuario.FrmAddUsuario.resources
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.Usuario.FrmAlteraSenha.resources
+C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\bin\Debug\OrdemDeServico.exe.manifest
+C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\bin\Debug\OrdemDeServico.application
+C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.exe.manifest
+C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.application

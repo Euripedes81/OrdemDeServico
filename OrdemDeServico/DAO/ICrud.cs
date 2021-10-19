@@ -1,9 +1,10 @@
 ﻿namespace OrdemDeServico.DAO
 {
-    interface ICrud
+    interface ICrud<T>
     {
-        void Insert(object obj);
-        void Update(object obj);
-        void Delete(object obj);
+        void Insert(T obj);
+        void Update(T obj);
+        void Delete(T obj);
+        
     }
 }

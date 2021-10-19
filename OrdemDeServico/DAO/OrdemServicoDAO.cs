@@ -6,11 +6,10 @@ using System.Data;
 
 namespace OrdemDeServico.DAO
 {
-    class OrdemServicoDAO : ICrud
+    class OrdemServicoDAO : ICrud<OrdemServico>
     {
-        public void Delete(object obj)
-        {
-            OrdemServico ordemDeServico = obj as OrdemServico;
+        public void Delete(OrdemServico ordemDeServico)
+        {            
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
             comando.CommandText = "DELETE FROM ordemdeServico where Id=@Id";
@@ -18,9 +17,8 @@ namespace OrdemDeServico.DAO
             ConexaoBancoDAO.CRUD(comando);
         }
 
-        public void Insert(object obj)
+        public void Insert(OrdemServico ordemServico)
         {
-            OrdemServico ordemServico = obj as OrdemServico;
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
             comando.CommandText = "INSERT INTO ordemdeservico (IdSolicitante, IdMaquina, IdSetor, Diagnostico, DataAbertura, Solucao, DataFechamento, Observacao, IdAtendente)" +
@@ -37,9 +35,8 @@ namespace OrdemDeServico.DAO
             ConexaoBancoDAO.CRUD(comando);
         }
 
-        public void Update(object obj)
-        {
-            OrdemServico ordemServico = obj as OrdemServico;
+        public void Update(OrdemServico ordemServico)
+        {            
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
             comando.CommandText = "UPDATE ordemdeservico SET Solucao=@Solucao, DataFechamento=@DataFechamento, Observacao=@Observacao, IdAtendente=@IdAtendente   WHERE Id=@Id";

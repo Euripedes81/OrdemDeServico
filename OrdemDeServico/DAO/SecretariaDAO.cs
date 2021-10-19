@@ -6,36 +6,33 @@ using System.Data;
 
 namespace OrdemDeServico.DAO
 {
-    class SecretariaDAO : ICrud
+    class SecretariaDAO : ICrud<Secretaria>
     {
-        public void Delete(object obj)
+        public void Delete(Secretaria secretaria)
         {
-            Secretaria secretaria = obj as Secretaria;
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "DELETE FROM Secretaria where Id=@Id";
+            comando.CommandText = "DELETE FROM secretaria where Id=@Id";
             comando.Parameters.AddWithValue("Id", secretaria.Id);
             ConexaoBancoDAO.CRUD(comando);
         }
 
-        public void Insert(object obj)
-        {
-            Secretaria secretaria = obj as Secretaria;
+        public void Insert(Secretaria secretaria)
+        {            
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "INSERT INTO Secretaria (Nome, Descricao, Telefone) VALUES (@Nome, @Descricao, @Telefone) ";
+            comando.CommandText = "INSERT INTO secretaria (Nome, Descricao, Telefone) VALUES (@Nome, @Descricao, @Telefone) ";
             comando.Parameters.AddWithValue("Nome", secretaria.Nome);
             comando.Parameters.AddWithValue("Descricao", secretaria.Descricao);
             comando.Parameters.AddWithValue("Telefone", secretaria.Telefone);
             ConexaoBancoDAO.CRUD(comando);
         }
 
-        public void Update(object obj)
-        {
-            Secretaria secretaria = obj as Secretaria;
+        public void Update(Secretaria secretaria)
+        {           
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "UPDATE Secretaria SET Nome=@Nome, Descricao=@Descricao, Telefone=@Telefone  WHERE Id=@Id";
+            comando.CommandText = "UPDATE secretaria SET Nome=@Nome, Descricao=@Descricao, Telefone=@Telefone  WHERE Id=@Id";
             comando.Parameters.AddWithValue("Id", secretaria.Id);
             comando.Parameters.AddWithValue("Nome", secretaria.Nome);
             comando.Parameters.AddWithValue("Descricao", secretaria.Descricao);
@@ -47,7 +44,7 @@ namespace OrdemDeServico.DAO
         {
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "SELECT * FROM Secretaria WHERE Nome LIKE @Nome";
+            comando.CommandText = "SELECT * FROM secretaria WHERE Nome LIKE @Nome";
             comando.Parameters.AddWithValue("Nome", "%" + nome + "%");
             MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
             List<Secretaria> secretarias = new List<Secretaria>();
@@ -74,7 +71,7 @@ namespace OrdemDeServico.DAO
         {
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "SELECT * FROM Secretaria WHERE Id=@Id";
+            comando.CommandText = "SELECT * FROM secretaria WHERE Id=@Id";
             comando.Parameters.AddWithValue("Id", id);
             MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
             Secretaria secretaria = new Secretaria();

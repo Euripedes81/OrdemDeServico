@@ -6,24 +6,22 @@ using System.Data;
 
 namespace OrdemDeServico.DAO
 {
-    class MaquinaDAO : ICrud
+    class MaquinaDAO : ICrud<Maquina>
     {
-        public void Delete(object obj)
-        {
-            Maquina maquina = obj as Maquina;
+        public void Delete(Maquina maquina)
+        {          
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "DELETE FROM Maquina where Id=@Id";
+            comando.CommandText = "DELETE FROM maquina where Id=@Id";
             comando.Parameters.AddWithValue("Id", maquina.Id);
             ConexaoBancoDAO.CRUD(comando);
         }
 
-        public void Insert(object obj)
-        {
-            Maquina maquina = obj as Maquina;
+        public void Insert(Maquina maquina)
+        {            
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "INSERT INTO Maquina (Patrimonio, Tipo,Descricao, IdSetor) VALUES (@Patrimonio, @Tipo, @Descricao, @IdSetor) ";
+            comando.CommandText = "INSERT INTO maquina (Patrimonio, Tipo,Descricao, IdSetor) VALUES (@Patrimonio, @Tipo, @Descricao, @IdSetor) ";
             comando.Parameters.AddWithValue("Patrimonio", maquina.Patrimonio);
             comando.Parameters.AddWithValue("Tipo", maquina.Tipo);
             comando.Parameters.AddWithValue("Descricao", maquina.Descricao);
@@ -31,12 +29,11 @@ namespace OrdemDeServico.DAO
             ConexaoBancoDAO.CRUD(comando);
         }
 
-        public void Update(object obj)
-        {
-            Maquina maquina = obj as Maquina;
+        public void Update(Maquina maquina)
+        {            
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "UPDATE Maquina SET Patrimonio=@Patrimonio, Tipo=@Tipo, Descricao=@Descricao, IdSetor=@IdSetor  WHERE Id=@Id";
+            comando.CommandText = "UPDATE maquina SET Patrimonio=@Patrimonio, Tipo=@Tipo, Descricao=@Descricao, IdSetor=@IdSetor  WHERE Id=@Id";
             comando.Parameters.AddWithValue("Id", maquina.Id);
             comando.Parameters.AddWithValue("Patrimonio", maquina.Patrimonio);
             comando.Parameters.AddWithValue("Tipo", maquina.Tipo);
@@ -49,7 +46,7 @@ namespace OrdemDeServico.DAO
         {
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "SELECT * FROM Maquina WHERE Patrimonio like @Patrimonio";
+            comando.CommandText = "SELECT * FROM maquina WHERE Patrimonio like @Patrimonio";
             comando.Parameters.AddWithValue("Patrimonio", Patrimonio + "%");
             MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
             List<Maquina> maquinas = new List<Maquina>();
@@ -77,7 +74,7 @@ namespace OrdemDeServico.DAO
         {
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "SELECT * FROM Maquina WHERE Id=@Id";
+            comando.CommandText = "SELECT * FROM maquina WHERE Id=@Id";
             comando.Parameters.AddWithValue("Id", id);
             MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
             Maquina maquina = new Maquina();

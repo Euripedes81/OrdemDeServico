@@ -6,36 +6,36 @@ using System.Data;
 
 namespace OrdemDeServico.DAO
 {
-    class AtendenteDAO : ICrud
+    class AtendenteDAO : ICrud<Atendente>
     {
-        public void Delete(object obj)
+        public void Delete(Atendente atendente)
         {
-            Atendente atendente = obj as Atendente;
+           
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "DELETE FROM Atendente where Id=@Id";
+            comando.CommandText = "DELETE FROM atendente where Id=@Id";
             comando.Parameters.AddWithValue("Id", atendente.Id);
             ConexaoBancoDAO.CRUD(comando);
         }
 
-        public void Insert(object obj)
+        public void Insert(Atendente atendente)
         {
-            Atendente atendente = obj as Atendente;
+           
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "INSERT INTO Atendente (Usuario, Nome, Senha) VALUES (@Usuario, @Nome, sha1(@Senha))";
+            comando.CommandText = "INSERT INTO atendente (Usuario, Nome, Senha) VALUES (@Usuario, @Nome, sha1(@Senha))";
             comando.Parameters.AddWithValue("Usuario", atendente.Usuario);
             comando.Parameters.AddWithValue("Nome", atendente.Nome);
             comando.Parameters.AddWithValue("Senha", atendente.Senha);
             ConexaoBancoDAO.CRUD(comando);
         }
 
-        public void Update(object obj)
+        public void Update(Atendente atendente)
         {
-            Atendente atendente = obj as Atendente;
+          
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "UPDATE Atendente SET Senha=sha1(@Senha) WHERE Id=@Id";
+            comando.CommandText = "UPDATE atendente SET Senha=sha1(@Senha) WHERE Id=@Id";
             comando.Parameters.AddWithValue("Id", atendente.Id);
             comando.Parameters.AddWithValue("Senha", atendente.Senha);            
             ConexaoBancoDAO.CRUD(comando);
@@ -45,7 +45,7 @@ namespace OrdemDeServico.DAO
         {
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "SELECT * FROM Atendente WHERE Nome LIKE @Nome";
+            comando.CommandText = "SELECT * FROM atendente WHERE Nome LIKE @Nome";
             comando.Parameters.AddWithValue("Nome", "%" + nome + "%");
             MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
             List<Atendente> atendentes = new List<Atendente>();
@@ -72,7 +72,7 @@ namespace OrdemDeServico.DAO
         {
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "SELECT * FROM Atendente WHERE Id=@Id";
+            comando.CommandText = "SELECT * FROM atendente WHERE Id=@Id";
             comando.Parameters.AddWithValue("Id", id);
             MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
             Atendente atendente = new Atendente();
@@ -95,7 +95,7 @@ namespace OrdemDeServico.DAO
         {
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "SELECT * FROM Atendente WHERE Usuario=@Usuario";
+            comando.CommandText = "SELECT * FROM atendente WHERE Usuario=@Usuario";
             comando.Parameters.AddWithValue("Usuario", usuario);
             MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
             Atendente atendente = new Atendente();
@@ -119,7 +119,7 @@ namespace OrdemDeServico.DAO
         {
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "SELECT * FROM Atendente WHERE Id=@Id and Senha=sha1(@Senha)";
+            comando.CommandText = "SELECT * FROM atendente WHERE Id=@Id and Senha=sha1(@Senha)";
             comando.Parameters.AddWithValue("Id", id);
             comando.Parameters.AddWithValue("Senha", senha);
             MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
@@ -133,6 +133,6 @@ namespace OrdemDeServico.DAO
                 return false;
             }
 
-        }
+        }       
     }
 }
