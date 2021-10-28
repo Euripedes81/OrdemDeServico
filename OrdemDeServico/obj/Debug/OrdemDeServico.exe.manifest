@@ -751,14 +751,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OrdemDeServico.exe" size="1552360">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OrdemDeServico.exe" size="1556968">
       <assemblyIdentity name="OrdemDeServico" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4uK0/4wTrthH4tH2G2KgDBDz9Y1DW2pPqy3B+6SAlsk=</dsig:DigestValue>
+        <dsig:DigestValue>ebdSPKR/96N4A0Cy/kyqXfGUhCedY6FovKJHY9KUDY0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

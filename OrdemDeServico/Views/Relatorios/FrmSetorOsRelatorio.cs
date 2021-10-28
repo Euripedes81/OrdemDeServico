@@ -23,23 +23,20 @@ namespace OrdemDeServico.Views.Relatorios
         }
         private void FrmSetorOsRelatorio_Load(object sender, EventArgs e)
         {
-            Criador.FormataDateTimePicker(dtpInicio, dtpFim);
+            Criador.FormataDateTimePicker(dtpInicio, dtpFim);            
+            CarregarComboBox();
+        }    
+        private void btnGerarRelatorio_Click(object sender, EventArgs e)
+        {
             this.rprtvSetor.Clear();
             this.rprtvSetor.RefreshReport();
             this.rprtvSetor.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             this.rprtvSetor.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent;
             this.ordemServicoBindingSource.Clear();
-            CarregarComboBox();
-        }    
-        private void btnGerarRelatorio_Click(object sender, EventArgs e)
-        {           
-            this.rprtvSetor.Clear();
-            this.rprtvSetor.RefreshReport();
-            this.ordemServicoBindingSource.Clear();
             foreach (var setor in setores)
             {
                 if ((ordemServicos = PesquisadorHelper.PesquisarOrdemServicos(setor.Id, dtpInicio.Value, dtpFim.Value)) != null)
-                {
+                {                    
                     foreach(var ordemServico in ordemServicos)
                     {                       
                         ordemServico.SolicitanteOs = PesquisadorHelper.PesquisarSolicitanteId(ordemServico.SolicitanteOs.Id);
