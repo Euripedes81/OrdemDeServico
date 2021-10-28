@@ -313,6 +313,12 @@
     <Compile Include="Views\OS\NsAbrir\FrmSolicitanteOs.Designer.cs">
       <DependentUpon>FrmSolicitanteOs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Relatorios\FrmSetorOsRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Relatorios\FrmSetorOsRelatorio.Designer.cs">
+      <DependentUpon>FrmSetorOsRelatorio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Usuario\FrmAddUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -339,6 +345,7 @@
     <EmbeddedResource Include="Reports\RprtOsAberta.rdlc" />
     <EmbeddedResource Include="Reports\RprtOsFechada.rdlc" />
     <EmbeddedResource Include="Reports\RprtOsSecretaria.rdlc" />
+    <EmbeddedResource Include="Reports\RprtOsSetor.rdlc" />
     <EmbeddedResource Include="Views\FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -414,6 +421,9 @@
     <EmbeddedResource Include="Views\OS\NsAbrir\FrmSolicitanteOs.resx">
       <DependentUpon>FrmSolicitanteOs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Relatorios\FrmSetorOsRelatorio.resx">
+      <DependentUpon>FrmSetorOsRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Usuario\FrmAddUsuario.resx">
       <DependentUpon>FrmAddUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -458,9 +468,7 @@
   <ItemGroup>
     <None Include="Resources\concluir.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Relatorios\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>

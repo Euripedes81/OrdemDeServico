@@ -1,5 +1,6 @@
 ﻿using OrdemDeServico.DAO;
 using OrdemDeServico.Model;
+using System;
 using System.Collections.Generic;
 
 namespace OrdemDeServico.Helpers
@@ -33,6 +34,13 @@ namespace OrdemDeServico.Helpers
             Setor setor;
             setor = setorDAO.SelectId(id);
             return setor;
+        }
+        public static List<Setor> PesquisarSetoresId(int id)
+        {
+            SetorDAO setorDAO = new SetorDAO();
+            List<Setor> setores;
+            setores = setorDAO.SelectSetorFk(id);
+            return setores;
         }
         public static Solicitante PesquisarSolicitanteId(int id)
         {
@@ -83,6 +91,13 @@ namespace OrdemDeServico.Helpers
             ordemServicos = ordemServicoDAO.SelectListaId(numeroOs);
             return ordemServicos;
         }
+        public static List<OrdemServico> PesquisarOrdemServicos(int idSolicitante, DateTime dtInicio, DateTime dtFim )
+        {
+            List<OrdemServico> ordemServicos;
+            OrdemServicoDAO ordemServicoDAO = new OrdemServicoDAO();
+            ordemServicos = ordemServicoDAO.SelectIdSolicitante(idSolicitante, dtInicio, dtFim);
+            return ordemServicos;
+        }
         public static OrdemServico PesquisarOrdemServicoId(int numeroOs)
         {
             OrdemServico ordemServico;
@@ -106,6 +121,6 @@ namespace OrdemDeServico.Helpers
         {
             AtendenteDAO atendenteDAO = new AtendenteDAO();
             return atendenteDAO.SelectUsuarioSenha(id, senha);
-        }
+        }       
     }
 }

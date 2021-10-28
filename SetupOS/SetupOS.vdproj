@@ -3,7 +3,7 @@
 "VSVersion" = "3:800"
 "ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
 "IsWebType" = "8:FALSE"
-"ProjectName" = "8:SetupOS"
+"ProjectName" = "8:SetupOrdemDeServico"
 "LanguageId" = "3:1046"
 "CodePage" = "3:1252"
 "UILanguageId" = "3:1046"
@@ -1054,13 +1054,13 @@
         "Entry"
         {
         "MsmKey" = "8:_E48B1EB3D8945A701452A890D140F77D"
-        "OwnerKey" = "8:_005F7ABBF9AC4B638FC3358B60B4ACB7"
+        "OwnerKey" = "8:_BF236E7A4777265A94AFA3F73E4570B3"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_E48B1EB3D8945A701452A890D140F77D"
-        "OwnerKey" = "8:_BF236E7A4777265A94AFA3F73E4570B3"
+        "OwnerKey" = "8:_005F7ABBF9AC4B638FC3358B60B4ACB7"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1091,12 +1091,6 @@
         {
         "MsmKey" = "8:_FC24CA83B75F3F1E9D46B235197DC5BF"
         "OwnerKey" = "8:_005F7ABBF9AC4B638FC3358B60B4ACB7"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_BF236E7A4777265A94AFA3F73E4570B3"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1870,12 +1864,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E48B1EB3D8945A701452A890D140F77D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_E1D8F6B381667EB27F1C7559376C7BC0"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1909,6 +1897,18 @@
         "OwnerKey" = "8:_475ACEAE9806B837E198500DEB01CEFC"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_BF236E7A4777265A94AFA3F73E4570B3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_E48B1EB3D8945A701452A890D140F77D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -1927,13 +1927,21 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Release\\SetupOS.msi"
+        "OutputFilename" = "8:Release\\SetupOrdemDeServico.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -1943,6 +1951,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -6325,9 +6349,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:OrdemDeServico"
+        "ProductName" = "8:Ordem de Servico"
         "ProductCode" = "8:{D023D125-69D4-4CDA-BD1F-8A5A108C41D6}"
-        "PackageCode" = "8:{1A703036-391B-426D-BAAB-4D467CDC0B60}"
+        "PackageCode" = "8:{E63AFE31-AA08-4F57-B7EA-D82D2602B5F3}"
         "UpgradeCode" = "8:{88704E87-D1B0-4CD6-B46C-4D495C342ED9}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -6335,7 +6359,7 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Ordem de Serviço"
+        "Manufacturer" = "8:Ordem de Servico"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:OrdemDeServico"

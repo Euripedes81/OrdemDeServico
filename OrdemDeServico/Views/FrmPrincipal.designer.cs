@@ -39,6 +39,7 @@ namespace OrdemDeServico.Views
             this.oSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerenciadorOsTsmi = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tslUsuario = new System.Windows.Forms.ToolStripLabel();
@@ -49,7 +50,8 @@ namespace OrdemDeServico.Views
             this.tsbAterarSenha = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbSair = new System.Windows.Forms.ToolStripButton();
-            this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.setorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -129,6 +131,14 @@ namespace OrdemDeServico.Views
             this.consultaToolStripMenuItem.Text = "Consulta O.S Aberta";
             this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
+            // relatórioToolStripMenuItem
+            // 
+            this.relatórioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.setorToolStripMenuItem});
+            this.relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
+            this.relatórioToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.relatórioToolStripMenuItem.Text = "Relatório";
+            // 
             // toolStrip1
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -141,7 +151,8 @@ namespace OrdemDeServico.Views
             this.toolStripSeparator2,
             this.tsbAterarSenha,
             this.toolStripSeparator3,
-            this.tsbSair});
+            this.tsbSair,
+            this.toolStripSeparator4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 644);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1126, 25);
@@ -209,11 +220,17 @@ namespace OrdemDeServico.Views
             this.tsbSair.Text = "Sair";
             this.tsbSair.Click += new System.EventHandler(this.tsbSair_Click);
             // 
-            // relatórioToolStripMenuItem
+            // toolStripSeparator4
             // 
-            this.relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
-            this.relatórioToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.relatórioToolStripMenuItem.Text = "Relatório";
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // setorToolStripMenuItem
+            // 
+            this.setorToolStripMenuItem.Name = "setorToolStripMenuItem";
+            this.setorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setorToolStripMenuItem.Text = "Setor";
+            this.setorToolStripMenuItem.Click += new System.EventHandler(this.setorToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -261,5 +278,7 @@ namespace OrdemDeServico.Views
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton tsbSair;
         private System.Windows.Forms.ToolStripMenuItem relatórioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem setorToolStripMenuItem;
     }
 }

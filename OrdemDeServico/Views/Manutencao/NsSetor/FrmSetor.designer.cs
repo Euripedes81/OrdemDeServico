@@ -51,31 +51,34 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
             this.tsbExcluir});
             this.toolStrip1.Location = new System.Drawing.Point(14, 427);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(161, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(240, 25);
             this.toolStrip1.TabIndex = 7;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // tsbAdicionar
             // 
+            this.tsbAdicionar.Image = global::OrdemDeServico.Properties.Resources.add_30;
             this.tsbAdicionar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbAdicionar.Name = "tsbAdicionar";
-            this.tsbAdicionar.Size = new System.Drawing.Size(62, 22);
+            this.tsbAdicionar.Size = new System.Drawing.Size(78, 22);
             this.tsbAdicionar.Text = "Adicionar";
             this.tsbAdicionar.Click += new System.EventHandler(this.tsbAdicionar_Click);
             // 
             // tsbEditar
             // 
+            this.tsbEditar.Image = global::OrdemDeServico.Properties.Resources.edit_30;
             this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEditar.Name = "tsbEditar";
-            this.tsbEditar.Size = new System.Drawing.Size(41, 22);
+            this.tsbEditar.Size = new System.Drawing.Size(57, 22);
             this.tsbEditar.Text = "Editar";
             this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
             // 
             // tsbExcluir
             // 
+            this.tsbExcluir.Image = global::OrdemDeServico.Properties.Resources.remove_30;
             this.tsbExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbExcluir.Name = "tsbExcluir";
-            this.tsbExcluir.Size = new System.Drawing.Size(46, 22);
+            this.tsbExcluir.Size = new System.Drawing.Size(62, 22);
             this.tsbExcluir.Text = "Excluir";
             this.tsbExcluir.Click += new System.EventHandler(this.tsbExcluir_Click);
             // 

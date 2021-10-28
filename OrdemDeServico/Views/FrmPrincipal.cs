@@ -1,9 +1,11 @@
-﻿using OrdemDeServico.Model;
+﻿using OrdemDeServico.Helpers;
+using OrdemDeServico.Model;
 using OrdemDeServico.Views.Manutencao.NsMaquina;
 using OrdemDeServico.Views.Manutencao.NsSecretaria;
 using OrdemDeServico.Views.Manutencao.NsSetor;
 using OrdemDeServico.Views.Manutencao.NsSolicitante;
 using OrdemDeServico.Views.OS.NsAbrir;
+using OrdemDeServico.Views.Relatorios;
 using System;
 using System.Windows.Forms;
 
@@ -27,7 +29,7 @@ namespace OrdemDeServico.Views
             else 
             {
                 tslUsuario.Text = atendenteLogin.Usuario;
-                tslNome.Text = atendenteLogin.Nome;
+                tslNome.Text = atendenteLogin.Nome;                
             }
         }
         private void secretariaTsmi_Click(object sender, EventArgs e)
@@ -81,6 +83,12 @@ namespace OrdemDeServico.Views
         private void tsbSair_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void setorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmSetorOsRelatorio frmSetorOsRelatorio = new FrmSetorOsRelatorio();            
+            frmSetorOsRelatorio.Show();
         }
     }
 }

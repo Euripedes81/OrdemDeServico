@@ -21,7 +21,7 @@ namespace OrdemDeServico.DAO
         {
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "INSERT INTOsetor (Nome, Descricao, IdSecretaria) VALUES (@Nome, @Descricao, @IdSecretaria) ";
+            comando.CommandText = "INSERT INTO setor (Nome, Descricao, IdSecretaria) VALUES (@Nome, @Descricao, @IdSecretaria) ";
             comando.Parameters.AddWithValue("Nome", setor.Nome);
             comando.Parameters.AddWithValue("Descricao", setor.Descricao);
             comando.Parameters.AddWithValue("IdSecretaria", setor.SecretariaStr.Id);
@@ -89,6 +89,33 @@ namespace OrdemDeServico.DAO
             }
             dr.Close();
             return setor;
+        }
+        public List<Setor> SelectSetorFk(int id)
+        {
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = "SELECT * FROM setor WHERE IdSecretaria=@IdSecretaria";
+            comando.Parameters.AddWithValue("IdSecretaria", id);
+            MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
+            List<Setor> setores = new List<Setor>();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {                    
+                    Setor setor = new Setor();
+                    setor.Id = Convert.ToInt32(dr["Id"]);
+                    setor.Nome = Convert.ToString(dr["Nome"]);
+                    setor.Descricao = Convert.ToString(dr["Descricao"]);
+                    setor.SecretariaStr.Id = Convert.ToInt32(dr["IdSecretaria"]);
+                    setores.Add(setor); 
+                }
+            }
+            else
+            {
+                setores = null;
+            }
+            dr.Close();
+            return setores;
         }
     }
 }

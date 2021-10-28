@@ -28,7 +28,7 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
             if (txtPesquisar.Text != "")
             {
                 AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar.Text, maquinas, setor);
-            }
+            }            
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)

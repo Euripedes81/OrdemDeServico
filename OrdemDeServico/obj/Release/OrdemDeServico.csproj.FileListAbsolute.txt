@@ -113,7 +113,7 @@ C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Release\RdlC
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Release\OrdemDeServico.csproj.CoreCompileInputs.cache
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Release\OrdemDeServico.exe.manifest
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Release\OrdemDeServico.application
-C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Release\OrdemDeServico.csproj.CopyComplete
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Release\OrdemDeServico.exe
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Release\OrdemDeServico.pdb
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Release\OrdemDeServico.csproj.AssemblyReference.cache
+C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Release\OrdemDeServico.Views.Relatorios.FrmSetorOsRelatorio.resources
