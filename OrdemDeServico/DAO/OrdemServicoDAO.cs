@@ -52,8 +52,8 @@ namespace OrdemDeServico.DAO
         {
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "SELECT * FROM ordemdeservico WHERE Id=@Id";
-            comando.Parameters.AddWithValue("Id", id);
+            comando.CommandText = "SELECT * FROM ordemdeservico WHERE Id like @Id";
+            comando.Parameters.AddWithValue("Id", id + "%");
             MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
             List<OrdemServico> ordemServicos = new List<OrdemServico>();
             if (dr.HasRows)

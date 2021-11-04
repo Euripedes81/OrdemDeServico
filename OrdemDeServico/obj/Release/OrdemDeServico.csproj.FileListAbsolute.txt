@@ -105,6 +105,7 @@ C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Release\Orde
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Release\OrdemDeServico.Views.OS.NsAbrir.FrmRelatorioOsAberta.resources
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Release\OrdemDeServico.Views.OS.NsAbrir.FrmRelatorioOsFechada.resources
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Release\OrdemDeServico.Views.OS.NsAbrir.FrmSolicitanteOs.resources
+C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Release\OrdemDeServico.Views.Relatorios.FrmSetorOsRelatorio.resources
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Release\OrdemDeServico.Views.Usuario.FrmAddUsuario.resources
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Release\OrdemDeServico.Views.Usuario.FrmAlteraSenha.resources
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Release\OrdemDeServico.csproj.GenerateResource.cache
@@ -116,4 +117,3 @@ C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Release\Orde
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Release\OrdemDeServico.exe
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Release\OrdemDeServico.pdb
 C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Release\OrdemDeServico.csproj.AssemblyReference.cache
-C:\Users\euripedesgf\source\repos\OrdemDeServico\OrdemDeServico\obj\Release\OrdemDeServico.Views.Relatorios.FrmSetorOsRelatorio.resources

@@ -165,7 +165,7 @@ namespace OrdemDeServico.Helpers
                 {
                     if ((ordemServicos = PesquisadorHelper.PesquisarOrdemServicoSolicitante(solicitante.Id)) != null)
                     {
-                        foreach (OrdemServico ordemServico in ordemServicos)
+                        foreach (var ordemServico in ordemServicos)
                         {
                             if (!string.IsNullOrEmpty(ordemServico.Solucao))
                             {
@@ -189,21 +189,17 @@ namespace OrdemDeServico.Helpers
 
             if ((ordemServicos = PesquisadorHelper.PesquisarOrdemServico(numeroOs)) != null)
             {
-                foreach (OrdemServico ordemServico in ordemServicos)
+                foreach (var ordemServico in ordemServicos)
                 {
                     if (!string.IsNullOrEmpty(ordemServico.Solucao))
                     {
                         ordemServico.SolicitanteOs = PesquisadorHelper.PesquisarSolicitanteId(ordemServico.SolicitanteOs.Id);
                         ordemServico.MaquinaOs = PesquisadorHelper.PesquisarMaquinaId(ordemServico.MaquinaOs.Id);
                         ordemServico.AtendenteOs = PesquisadorHelper.PesquisarAtendenteId(ordemServico.AtendenteOs.Id);
-                        if (string.IsNullOrEmpty(ordemServico.Solucao))
-                        {
-                            dgv.Rows.Add(ordemServico.Id, ordemServico.SolicitanteOs.Nome, ordemServico.MaquinaOs.Patrimonio, ordemServico.MaquinaOs.Tipo,
-                                                         ordemServico.Diagnostico, ordemServico.DataAbertura, ordemServico.Solucao, ordemServico.DataFechamento, ordemServico.Observacao,
-                                                         ordemServico.AtendenteOs.Nome);  
-                        }
+                        dgv.Rows.Add(ordemServico.Id, ordemServico.SolicitanteOs.Nome, ordemServico.MaquinaOs.Patrimonio, ordemServico.MaquinaOs.Tipo,
+                            ordemServico.Diagnostico, ordemServico.DataAbertura, ordemServico.Solucao, ordemServico.DataFechamento, ordemServico.Observacao,
+                            ordemServico.AtendenteOs.Nome);
                     }
-
                 }
             }
 

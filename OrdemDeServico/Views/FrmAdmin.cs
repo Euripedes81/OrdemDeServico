@@ -50,7 +50,7 @@ namespace OrdemDeServico.Views
                             CrudHelper.Excluir(atendente);
                             AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar.Text, atendentes);
                         }
-                        catch (Exception ex)
+                        catch (Exception )
                         {
                             Mensagem.AtendenteMsgExcluir();
                         }

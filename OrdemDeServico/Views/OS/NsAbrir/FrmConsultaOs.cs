@@ -7,7 +7,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
 {
     public partial class FrmConsultaOs : Form
     {
-        //private Atendente atendente = new Atendente(2, "rock", "Rock Junior");
+       
         private int numeroOs;
         private OrdemServico ordemServico;
         public FrmConsultaOs()
