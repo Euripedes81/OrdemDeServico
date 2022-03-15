@@ -7,18 +7,18 @@ namespace OrdemDeServico.Views.Manutencao.NsSecretaria
 {
     public partial class FrmEdtSecretaria : Form
     {
-        private Secretaria secretaria = new Secretaria();
+        private Secretaria _secretaria;
         public FrmEdtSecretaria(Secretaria secretaria)
         {
             InitializeComponent();
-            this.secretaria = secretaria;
+            _secretaria = secretaria;
         }
         private void FrmEditar_Load(object sender, EventArgs e)
         {
-            txtId.Text = Convert.ToString(secretaria.Id);
-            txtNome.Text = secretaria.Nome;
-            txtDescricao.Text = secretaria.Descricao;
-            mtxtTelefone.Text = secretaria.Telefone;
+            txtId.Text = Convert.ToString(_secretaria.Id);
+            txtNome.Text = _secretaria.Nome;
+            txtDescricao.Text = _secretaria.Descricao;
+            mtxtTelefone.Text = _secretaria.Telefone;
         }
         private void btnSalvar_Click(object sender, System.EventArgs e)
         {
@@ -29,14 +29,14 @@ namespace OrdemDeServico.Views.Manutencao.NsSecretaria
                 {
                     try
                     {
-                        secretaria.Id = Convert.ToInt32(txtId.Text);
-                        secretaria.Nome = txtNome.Text;
-                        secretaria.Descricao = txtDescricao.Text;
-                        secretaria.Telefone = mtxtTelefone.Text;
-                        CrudHelper.Inserir(secretaria);
+                        _secretaria.Id = Convert.ToInt32(txtId.Text);
+                        _secretaria.Nome = txtNome.Text;
+                        _secretaria.Descricao = txtDescricao.Text;
+                        _secretaria.Telefone = mtxtTelefone.Text;
+                        CrudHelper.Inserir(_secretaria);
                         this.Close();
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
 
                         Mensagem.SecretariaMsgAdicionar();

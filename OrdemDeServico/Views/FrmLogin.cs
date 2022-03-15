@@ -32,7 +32,7 @@ namespace OrdemDeServico.Views
                 }
                 else 
                 { 
-                    MessageBox.Show("As senhas digitadas não conferem!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("A senha digitada não confere!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else

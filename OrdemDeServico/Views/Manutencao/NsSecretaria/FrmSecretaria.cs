@@ -7,11 +7,12 @@ namespace OrdemDeServico.Views.Manutencao.NsSecretaria
 {
     public partial class FrmSecretaria : Form
     {
-        private Secretaria secretaria = new Secretaria();
-        private List<Secretaria> secretarias = new List<Secretaria>();
-        public FrmSecretaria()
+        private Secretaria _secretaria;
+        private List<Secretaria> secretarias;
+        public FrmSecretaria(Secretaria secretaria)
         {
             InitializeComponent();
+            _secretaria = secretaria;
         }
 
         private void tsbAdicionar_Click(object sender, System.EventArgs e)
@@ -30,7 +31,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSecretaria
         {
             if (ObterLinhaDgv())
             {
-                FrmEdtSecretaria frmEditar = new FrmEdtSecretaria(secretaria);
+                FrmEdtSecretaria frmEditar = new FrmEdtSecretaria(_secretaria);
                 frmEditar.MdiParent = FrmPrincipal.ActiveForm;
                 frmEditar.Show();
             }
@@ -45,10 +46,10 @@ namespace OrdemDeServico.Views.Manutencao.NsSecretaria
                 {
                     try
                     {
-                        CrudHelper.Excluir(secretaria);
+                        CrudHelper.Excluir(_secretaria);
                         PesquisaDgv();
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
 
                         Mensagem.SecretariaMsgExcluir();
@@ -79,10 +80,10 @@ namespace OrdemDeServico.Views.Manutencao.NsSecretaria
 
             if (dgv.SelectedRows.Count > 0)
             {
-                secretaria.Id = Convert.ToInt32(dgv.CurrentRow.Cells[0].Value.ToString());
-                secretaria.Nome = dgv.CurrentRow.Cells[1].Value.ToString();
-                secretaria.Descricao = dgv.CurrentRow.Cells[2].Value.ToString();
-                secretaria.Telefone = dgv.CurrentRow.Cells[3].Value.ToString();
+                _secretaria.Id = Convert.ToInt32(dgv.CurrentRow.Cells[0].Value.ToString());
+                _secretaria.Nome = dgv.CurrentRow.Cells[1].Value.ToString();
+                _secretaria.Descricao = dgv.CurrentRow.Cells[2].Value.ToString();
+                _secretaria.Telefone = dgv.CurrentRow.Cells[3].Value.ToString();
                 return true;
             }
             else

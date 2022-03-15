@@ -1,5 +1,4 @@
-﻿using OrdemDeServico.Helpers;
-using OrdemDeServico.Model;
+﻿using OrdemDeServico.Model;
 using OrdemDeServico.Views.Manutencao.NsMaquina;
 using OrdemDeServico.Views.Manutencao.NsSecretaria;
 using OrdemDeServico.Views.Manutencao.NsSetor;
@@ -32,60 +31,60 @@ namespace OrdemDeServico.Views
                 tslNome.Text = atendenteLogin.Nome;                
             }
         }
-        private void secretariaTsmi_Click(object sender, EventArgs e)
+        private void SecretariaTsmi_Click(object sender, EventArgs e)
         {
-            FrmSecretaria frmSecretaria = new FrmSecretaria();
+            FrmSecretaria frmSecretaria = new FrmSecretaria(new Secretaria());
             frmSecretaria.MdiParent = this;
             frmSecretaria.Show();
 
         }
 
-        private void setorTsmi_Click(object sender, EventArgs e)
+        private void SetorTsmi_Click(object sender, EventArgs e)
         {
             FrmSetor frmSetor = new FrmSetor();
             frmSetor.MdiParent = this;
             frmSetor.Show();
         }
 
-        private void funcionarioTsmi_Click(object sender, EventArgs e)
+        private void FuncionarioTsmi_Click(object sender, EventArgs e)
         {
             FrmSolicitante frmSolicitante = new FrmSolicitante();
             frmSolicitante.MdiParent = this;
             frmSolicitante.Show();
         }
 
-        private void maquinaTsmi_Click(object sender, EventArgs e)
+        private void MaquinaTsmi_Click(object sender, EventArgs e)
         {
             FrmMaquina frmMaquina = new FrmMaquina();
             frmMaquina.MdiParent = this;
             frmMaquina.Show();
         }
 
-        private void gerenciadorOsTsmi_Click(object sender, EventArgs e)
+        private void GerenciadorOsTsmi_Click(object sender, EventArgs e)
         {
-            FrmAbreOs frmAbreOs = new FrmAbreOs(atendenteLogin);
+            FrmAbreOs frmAbreOs = new FrmAbreOs(atendenteLogin, new OrdemServico());
             frmAbreOs.MdiParent = this;
             frmAbreOs.Show();
         }
 
-        private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ConsultaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmConsultaOs frmConsultaOs = new FrmConsultaOs();
             frmConsultaOs.MdiParent = this;
             frmConsultaOs.Show();
         }
-        private void tsbAterarSenha_Click(object sender, EventArgs e)
+        private void TsbAterarSenha_Click(object sender, EventArgs e)
         {
             FrmSenha frmSenha = new FrmSenha(atendenteLogin);
             frmSenha.MdiParent = this;
             frmSenha.Show();
         }
-        private void tsbSair_Click(object sender, EventArgs e)
+        private void TsbSair_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void setorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SetorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmSetorOsRelatorio frmSetorOsRelatorio = new FrmSetorOsRelatorio();            
             frmSetorOsRelatorio.Show();

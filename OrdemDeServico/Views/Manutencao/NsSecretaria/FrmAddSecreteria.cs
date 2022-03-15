@@ -27,7 +27,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSecretaria
                     {
                         CrudHelper.Inserir(secretaria);
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
 
                         Mensagem.SecretariaMsgAdicionar();

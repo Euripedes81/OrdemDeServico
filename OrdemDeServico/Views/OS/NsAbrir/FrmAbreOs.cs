@@ -9,13 +9,14 @@ namespace OrdemDeServico.Views.OS.NsAbrir
 
     public partial class FrmAbreOs : Form
     {
-        private Atendente atendente;
+        private Atendente _atendente;
         private int numeroOs;
-        private OrdemServico ordemServico;
-        public FrmAbreOs(Atendente atendente)
+        private OrdemServico _ordemServico;
+        public FrmAbreOs(Atendente atendente, OrdemServico ordemDeServico)
         {
             InitializeComponent();
-            this.atendente = atendente;
+            _atendente = atendente;
+            _ordemServico = ordemDeServico;
         }
 
         private void txtPesquisarNome_MouseClick(object sender, MouseEventArgs e)
@@ -31,27 +32,27 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         }
         private void tsbAdicionar_Click(object sender, EventArgs e)
         {
-            FrmAddOs frmAddOs = new FrmAddOs(atendente);
+            FrmAddOs frmAddOs = new FrmAddOs(_atendente);
             frmAddOs.MdiParent = FrmPrincipal.ActiveForm;
             frmAddOs.Show();
         }
         private void tsbFecharOs_Click(object sender, EventArgs e)
         {
-            ordemServico = new OrdemServico();            
+            //ordemServico = new OrdemServico();            
             
-            if (AdicionaDgvHelper.ObterLinhaDgvOsAberta(dgv, ordemServico))
+            if (AdicionaDgvHelper.ObterLinhaDgvOsAberta(dgv, _ordemServico))
             {
-                if (atendente.Id == ordemServico.AtendenteOs.Id)
+                if (_atendente.Id == _ordemServico.AtendenteOs.Id)
                 {
-                    ordemServico.AtendenteOs = atendente;
-                    FrmFechaOs frmFechaOs = new FrmFechaOs(ordemServico);
+                    _ordemServico.AtendenteOs = _atendente;
+                    FrmFechaOs frmFechaOs = new FrmFechaOs(_ordemServico);
                     frmFechaOs.MdiParent = FrmPrincipal.ActiveForm;
                     frmFechaOs.Show(); 
                 }else if(MessageBox.Show("Esta O.S foi aberta por outro usuário do sistema.\nDeseja continuar?", "",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    ordemServico.AtendenteOs = atendente;
-                    FrmFechaOs frmFechaOs = new FrmFechaOs(ordemServico);
+                    _ordemServico.AtendenteOs = _atendente;
+                    FrmFechaOs frmFechaOs = new FrmFechaOs(_ordemServico);
                     frmFechaOs.MdiParent = FrmPrincipal.ActiveForm;
                     frmFechaOs.Show();
                 }
@@ -59,15 +60,15 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         }
         private void tsbExcluir_Click(object sender, EventArgs e)
         {
-            ordemServico = new OrdemServico();
+            _ordemServico = new OrdemServico();
             
-            if (AdicionaDgvHelper.ObterLinhaDgvOsAberta(dgv, ordemServico))
+            if (AdicionaDgvHelper.ObterLinhaDgvOsAberta(dgv, _ordemServico))
             {
-                if (ordemServico.AtendenteOs.Id == atendente.Id)
+                if (_ordemServico.AtendenteOs.Id == _atendente.Id)
                 {
                     if (MessageBox.Show("Deseja excluir esta O.S?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        CrudHelper.Excluir(ordemServico);
+                        CrudHelper.Excluir(_ordemServico);
                     }
                 }
                 else
@@ -119,10 +120,10 @@ namespace OrdemDeServico.Views.OS.NsAbrir
 
         private void Visualizar()
         {
-            ordemServico = new OrdemServico();
-            if (AdicionaDgvHelper.ObterLinhaDgvOsAberta(dgv, ordemServico))
+            _ordemServico = new OrdemServico();
+            if (AdicionaDgvHelper.ObterLinhaDgvOsAberta(dgv, _ordemServico))
             {
-                FrmRelatorioOsAberta frmRelatorioOsAberta = new FrmRelatorioOsAberta(ordemServico);
+                FrmRelatorioOsAberta frmRelatorioOsAberta = new FrmRelatorioOsAberta(_ordemServico);
                 //frmRelatorioOsAberta.MdiParent = FrmPrincipal.ActiveForm;
                 frmRelatorioOsAberta.Show();
             }

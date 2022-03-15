@@ -85,28 +85,28 @@ namespace OrdemDeServico.Views
             this.secretariaTsmi.Name = "secretariaTsmi";
             this.secretariaTsmi.Size = new System.Drawing.Size(129, 22);
             this.secretariaTsmi.Text = "Secretaria";
-            this.secretariaTsmi.Click += new System.EventHandler(this.secretariaTsmi_Click);
+            this.secretariaTsmi.Click += new System.EventHandler(this.SecretariaTsmi_Click);
             // 
             // setorTsmi
             // 
             this.setorTsmi.Name = "setorTsmi";
             this.setorTsmi.Size = new System.Drawing.Size(129, 22);
             this.setorTsmi.Text = "Setor";
-            this.setorTsmi.Click += new System.EventHandler(this.setorTsmi_Click);
+            this.setorTsmi.Click += new System.EventHandler(this.SetorTsmi_Click);
             // 
             // funcionarioTsmi
             // 
             this.funcionarioTsmi.Name = "funcionarioTsmi";
             this.funcionarioTsmi.Size = new System.Drawing.Size(129, 22);
             this.funcionarioTsmi.Text = "Solicitante";
-            this.funcionarioTsmi.Click += new System.EventHandler(this.funcionarioTsmi_Click);
+            this.funcionarioTsmi.Click += new System.EventHandler(this.FuncionarioTsmi_Click);
             // 
             // maquinaTsmi
             // 
             this.maquinaTsmi.Name = "maquinaTsmi";
             this.maquinaTsmi.Size = new System.Drawing.Size(129, 22);
             this.maquinaTsmi.Text = "Maquina";
-            this.maquinaTsmi.Click += new System.EventHandler(this.maquinaTsmi_Click);
+            this.maquinaTsmi.Click += new System.EventHandler(this.MaquinaTsmi_Click);
             // 
             // oSToolStripMenuItem
             // 
@@ -122,14 +122,14 @@ namespace OrdemDeServico.Views
             this.gerenciadorOsTsmi.Name = "gerenciadorOsTsmi";
             this.gerenciadorOsTsmi.Size = new System.Drawing.Size(180, 22);
             this.gerenciadorOsTsmi.Text = "Gerenciador";
-            this.gerenciadorOsTsmi.Click += new System.EventHandler(this.gerenciadorOsTsmi_Click);
+            this.gerenciadorOsTsmi.Click += new System.EventHandler(this.GerenciadorOsTsmi_Click);
             // 
             // consultaToolStripMenuItem
             // 
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
             this.consultaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultaToolStripMenuItem.Text = "Consulta O.S Aberta";
-            this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
+            this.consultaToolStripMenuItem.Click += new System.EventHandler(this.ConsultaToolStripMenuItem_Click);
             // 
             // relatórioToolStripMenuItem
             // 
@@ -203,7 +203,7 @@ namespace OrdemDeServico.Views
             this.tsbAterarSenha.Name = "tsbAterarSenha";
             this.tsbAterarSenha.Size = new System.Drawing.Size(80, 22);
             this.tsbAterarSenha.Text = "Alterar senha";
-            this.tsbAterarSenha.Click += new System.EventHandler(this.tsbAterarSenha_Click);
+            this.tsbAterarSenha.Click += new System.EventHandler(this.TsbAterarSenha_Click);
             // 
             // toolStripSeparator3
             // 
@@ -218,7 +218,7 @@ namespace OrdemDeServico.Views
             this.tsbSair.Name = "tsbSair";
             this.tsbSair.Size = new System.Drawing.Size(30, 22);
             this.tsbSair.Text = "Sair";
-            this.tsbSair.Click += new System.EventHandler(this.tsbSair_Click);
+            this.tsbSair.Click += new System.EventHandler(this.TsbSair_Click);
             // 
             // toolStripSeparator4
             // 
@@ -230,7 +230,7 @@ namespace OrdemDeServico.Views
             this.setorToolStripMenuItem.Name = "setorToolStripMenuItem";
             this.setorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.setorToolStripMenuItem.Text = "Setor";
-            this.setorToolStripMenuItem.Click += new System.EventHandler(this.setorToolStripMenuItem_Click);
+            this.setorToolStripMenuItem.Click += new System.EventHandler(this.SetorToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 

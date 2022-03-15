@@ -1,34 +1,27 @@
 ﻿using OrdemDeServico.Helpers;
 using OrdemDeServico.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OrdemDeServico.Views
 {
     public partial class FrmSenha : Form
     {
-        Atendente atendente;
+        private readonly Atendente _atendente;
         public FrmSenha(Atendente atendente)
         {
             InitializeComponent();
-            this.atendente = atendente;
+            _atendente = atendente;
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            if(Validador.CampoBranco(atendente.Nome, txtSenhaAtual.Text))
+            if(Validador.CampoBranco(_atendente.Nome, txtSenhaAtual.Text))
             {
                 if(Validador.ValidaSenha( txtNovaSenha.Text, txtConfirSenha.Text))
                 {
-                    atendente.Senha = txtConfirSenha.Text;
-                    CrudHelper.Inserir(atendente);
+                    _atendente.Senha = txtConfirSenha.Text;
+                    CrudHelper.Inserir(_atendente);
                     this.Close();
                 }
                 else
