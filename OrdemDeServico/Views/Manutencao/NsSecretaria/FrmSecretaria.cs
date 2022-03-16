@@ -7,7 +7,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSecretaria
 {
     public partial class FrmSecretaria : Form
     {
-        private Secretaria _secretaria;
+        private readonly Secretaria _secretaria;
         private List<Secretaria> secretarias;
         public FrmSecretaria(Secretaria secretaria)
         {

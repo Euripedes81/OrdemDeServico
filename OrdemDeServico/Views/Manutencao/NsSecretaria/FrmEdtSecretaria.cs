@@ -7,7 +7,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSecretaria
 {
     public partial class FrmEdtSecretaria : Form
     {
-        private Secretaria _secretaria;
+        private readonly Secretaria _secretaria;
         public FrmEdtSecretaria(Secretaria secretaria)
         {
             InitializeComponent();
@@ -21,7 +21,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSecretaria
             mtxtTelefone.Text = _secretaria.Telefone;
         }
         private void btnSalvar_Click(object sender, System.EventArgs e)
-        {
+        {            
             if (ValidadorCampoHelper.CampoBranco(txtNome.Text, txtDescricao.Text, mtxtTelefone.Text))
             {
                 if (MessageBox.Show("Deseja salvar os dados?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)

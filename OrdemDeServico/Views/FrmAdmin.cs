@@ -9,8 +9,8 @@ namespace OrdemDeServico.Views
 {
     public partial class FrmAdmin : Form
     {
-        Atendente atendente = new Atendente();
-        List<Atendente> atendentes = new List<Atendente>();
+        private Atendente atendente = new Atendente();
+        private List<Atendente> atendentes = new List<Atendente>();
         public FrmAdmin()
         {
             InitializeComponent();

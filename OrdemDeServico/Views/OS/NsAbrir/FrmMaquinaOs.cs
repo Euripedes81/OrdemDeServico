@@ -14,32 +14,31 @@ namespace OrdemDeServico.Views.OS.NsAbrir
 {
     public partial class FrmMaquinaOs : Form
     {
-        private TextBox txtMaquinaPatrimonio;
-        private TextBox txtMaquinaDescricao;
-        private Maquina maquina = new Maquina();
-        private List<Maquina> maquinas = new List<Maquina>();
-        private Setor setor;
+        private readonly TextBox _txtMaquinaPatrimonio;
+        private readonly TextBox _txtMaquinaDescricao;
+        private readonly Maquina _maquina;       
+       
         public FrmMaquinaOs(TextBox txtMaquinaPatrimonio, TextBox txtMaquinaDescricao, Maquina maquina)
         {
             InitializeComponent();
-            this.txtMaquinaPatrimonio = txtMaquinaPatrimonio;
-            this.txtMaquinaDescricao = txtMaquinaDescricao;
-            this.maquina = maquina;
+            _txtMaquinaPatrimonio = txtMaquinaPatrimonio;
+            _txtMaquinaDescricao = txtMaquinaDescricao;
+            _maquina = maquina;
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             if (txtPesquisar.Text != "")
             {
-                HandlerDataGridView.PesquisaDgv(dgv, txtPesquisar.Text, maquinas, setor);
+                HandlerDataGridView.PesquisaDgv(dgv, txtPesquisar.Text, new List<Maquina>(), new Setor());
             }
         }
         private void tsbAdicionar_Click(object sender, EventArgs e)
         {
-            if (HandlerDataGridView.ObterLinhaDgv(dgv, maquina))
+            if (HandlerDataGridView.ObterLinhaDgv(dgv, _maquina))
             {
-                txtMaquinaPatrimonio.Text = Convert.ToString(maquina.Patrimonio);
-                txtMaquinaDescricao.Text = maquina.Descricao;
+                _txtMaquinaPatrimonio.Text = Convert.ToString(_maquina.Patrimonio);
+                _txtMaquinaDescricao.Text = _maquina.Descricao;
                 this.Close(); 
             }
         }    
@@ -49,7 +48,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             timer1.Enabled = false;
             if (txtPesquisar.Text != "")
             {
-                HandlerDataGridView.PesquisaDgv(dgv, txtPesquisar.Text, maquinas, setor);
+                HandlerDataGridView.PesquisaDgv(dgv, txtPesquisar.Text, new List<Maquina>(), new Setor());
             }
         }
 

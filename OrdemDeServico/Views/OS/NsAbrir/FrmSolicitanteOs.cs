@@ -8,17 +8,15 @@ namespace OrdemDeServico.Views.OS.NsAbrir
 {
     public partial class FrmSolicitanteOs : Form
     {
-        private Solicitante solicitante = new Solicitante();
-        private List<Solicitante> solicitantes = new List<Solicitante>();
-        private Setor setor;
-        TextBox txtSolicitante;
-        TextBox txtDescricaoSolicitante;
+        private readonly Solicitante _solicitante;            
+        private readonly TextBox _txtSolicitante;
+        private readonly TextBox _txtDescricaoSolicitante;
         public FrmSolicitanteOs(TextBox txtSolicitante, TextBox txtDescricaoSolicitante, Solicitante solicitante)
         {
             InitializeComponent();
-            this.txtSolicitante = txtSolicitante;
-            this.txtDescricaoSolicitante = txtDescricaoSolicitante;
-            this.solicitante = solicitante;
+            _txtSolicitante = txtSolicitante;
+            _txtDescricaoSolicitante = txtDescricaoSolicitante;
+            _solicitante = solicitante;
         }
         public FrmSolicitanteOs()
         {
@@ -27,15 +25,15 @@ namespace OrdemDeServico.Views.OS.NsAbrir
 
         private void tsbAdicionar_Click(object sender, EventArgs e)
         {
-            HandlerDataGridView.ObterLinhaDgv(dgv, solicitante);
-            txtSolicitante.Text = solicitante.Nome;
-            txtDescricaoSolicitante.Text = solicitante.Descricao;
+            HandlerDataGridView.ObterLinhaDgv(dgv, _solicitante);
+            _txtSolicitante.Text = _solicitante.Nome;
+            _txtDescricaoSolicitante.Text = _solicitante.Descricao;
             this.Close();
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            HandlerDataGridView.PesquisaDgv(dgv, txtPesquisar.Text, solicitantes, setor);
+            HandlerDataGridView.PesquisaDgv(dgv, txtPesquisar.Text, new List<Solicitante>(), new Setor());
         }
        
     }

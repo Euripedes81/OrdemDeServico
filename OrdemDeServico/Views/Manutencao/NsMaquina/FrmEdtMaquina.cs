@@ -8,12 +8,12 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
 {
     public partial class FrmEdtMaquina : Form
     {
-        private Maquina maquina;
+        private readonly Maquina _maquina;
         private List<Setor> setores;
         public FrmEdtMaquina(Maquina maquina)
         {
             InitializeComponent();
-            this.maquina = maquina;
+            _maquina = maquina;
         }
         private void btnSalvar_Click_1(object sender, EventArgs e)
         {
@@ -25,11 +25,11 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
                     try
                     {
 
-                        maquina.Patrimonio = Convert.ToInt32(mtxtNumPatrimonio.Text);
-                        maquina.Tipo = txtTipo.Text;
-                        maquina.Descricao = txtDescricao.Text;
-                        maquina.SetorMqn.Id = setores[cbSetor.SelectedIndex].Id;
-                        InsertData.Inserir(maquina);
+                        _maquina.Patrimonio = Convert.ToInt32(mtxtNumPatrimonio.Text);
+                        _maquina.Tipo = txtTipo.Text;
+                        _maquina.Descricao = txtDescricao.Text;
+                        _maquina.SetorMqn.Id = setores[cbSetor.SelectedIndex].Id;
+                        InsertData.Inserir(_maquina);
                         Limpar();
                     }
                     catch (Exception)
@@ -44,10 +44,10 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
         private void FrmEdtMaquina_Load(object sender, EventArgs e)
         {
             CarregarComboBox();
-            mtxtNumPatrimonio.Text = Convert.ToString(maquina.Patrimonio);
-            txtTipo.Text = maquina.Tipo;
-            txtDescricao.Text = maquina.Descricao;
-            cbSetor.SelectedIndex = cbSetor.Items.IndexOf(maquina.SetorMqn.Nome);
+            mtxtNumPatrimonio.Text = Convert.ToString(_maquina.Patrimonio);
+            txtTipo.Text = _maquina.Tipo;
+            txtDescricao.Text = _maquina.Descricao;
+            cbSetor.SelectedIndex = cbSetor.Items.IndexOf(_maquina.SetorMqn.Nome);
         }
        
         private void Limpar()

@@ -7,19 +7,19 @@ namespace OrdemDeServico.Views.OS.NsAbrir
 {
     public partial class FrmRelatorioOsFechada : Form
     {
-        private OrdemServico ordemServico;
-        private FrmFechaOs frmFechaOs;
+        private OrdemServico _ordemServico;
+        private readonly FrmFechaOs _frmFechaOs;
         public FrmRelatorioOsFechada(OrdemServico ordemServico, FrmFechaOs frmFechaOs)
         {
             InitializeComponent();
-            this.ordemServico = ordemServico;
-            this.frmFechaOs = frmFechaOs;
+            _ordemServico = ordemServico;
+            _frmFechaOs = frmFechaOs;
             frmFechaOs.Close();
         }
         public FrmRelatorioOsFechada(OrdemServico ordemServico)
         {
             InitializeComponent();
-            this.ordemServico = ordemServico;            
+            this._ordemServico = ordemServico;            
         }
         private void FrmRelatorioOsFechada_Load(object sender, EventArgs e)
         {            
@@ -28,14 +28,14 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.rptvOsFechada.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             this.rptvOsFechada.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent;
             this.ordemServicoBindingSource.Clear();
-            ordemServico = SelectData.PesquisarOrdemServicoId(ordemServico.Id);
-            ordemServico.SolicitanteOs = SelectData.PesquisarSolicitanteId(ordemServico.SolicitanteOs.Id);
-            ordemServico.MaquinaOs = SelectData.PesquisarMaquinaId(ordemServico.MaquinaOs.Id);
-            ordemServico.SetorOs = SelectData.PesquisarSetorId(ordemServico.MaquinaOs.SetorMqn.Id);
-            ordemServico.SetorOs.SecretariaStr = SelectData.PesquisarSecretariaId(ordemServico.SetorOs.SecretariaStr.Id);
-            ordemServico.AtendenteOs = SelectData.PesquisarAtendenteId(ordemServico.AtendenteOs.Id);
+            _ordemServico = SelectData.PesquisarOrdemServicoId(_ordemServico.Id);
+            _ordemServico.SolicitanteOs = SelectData.PesquisarSolicitanteId(_ordemServico.SolicitanteOs.Id);
+            _ordemServico.MaquinaOs = SelectData.PesquisarMaquinaId(_ordemServico.MaquinaOs.Id);
+            _ordemServico.SetorOs = SelectData.PesquisarSetorId(_ordemServico.MaquinaOs.SetorMqn.Id);
+            _ordemServico.SetorOs.SecretariaStr = SelectData.PesquisarSecretariaId(_ordemServico.SetorOs.SecretariaStr.Id);
+            _ordemServico.AtendenteOs = SelectData.PesquisarAtendenteId(_ordemServico.AtendenteOs.Id);
             this.rptvOsFechada.RefreshReport();
-            this.ordemServicoBindingSource.Add(ordemServico);
+            this.ordemServicoBindingSource.Add(_ordemServico);
         }
     }
 }

@@ -14,11 +14,11 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
 {
     public partial class FrmRelatorioMaquina : Form
     {
-        public Maquina maquina;
+        private readonly Maquina _maquina;
         public FrmRelatorioMaquina(Maquina maquina )
         {
             InitializeComponent();
-            this.maquina = maquina;
+            _maquina = maquina;
         }
 
         private void FrmRelatorioMaquina_Load(object sender, EventArgs e)
@@ -29,9 +29,9 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
             this.reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent;            
             this.maquinaBindingSource.Clear();
-            maquina.SetorMqn = SelectData.PesquisarSetorId(maquina.SetorMqn.Id);
-            maquina.SetorMqn.SecretariaStr = SelectData.PesquisarSecretariaId(maquina.SetorMqn.SecretariaStr.Id);           
-            this.maquinaBindingSource.Add(maquina);
+            _maquina.SetorMqn = SelectData.PesquisarSetorId(_maquina.SetorMqn.Id);
+            _maquina.SetorMqn.SecretariaStr = SelectData.PesquisarSecretariaId(_maquina.SetorMqn.SecretariaStr.Id);           
+            this.maquinaBindingSource.Add(_maquina);
            
         }
     }

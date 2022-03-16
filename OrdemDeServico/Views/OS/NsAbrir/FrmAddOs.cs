@@ -9,11 +9,11 @@ namespace OrdemDeServico.Views.OS.NsAbrir
     {
         private Solicitante solicitante = new Solicitante();
         private Maquina maquina = new Maquina();
-        private Atendente atendente;
+        private readonly Atendente _atendente;
         public FrmAddOs(Atendente atendente)
         {
             InitializeComponent();
-            this.atendente = atendente;
+            _atendente = atendente;
         }
 
         private void tsbPesquisarSolicitante_Click(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             ordemServico.SetorOs = maquina.SetorMqn;
             ordemServico.Diagnostico = txtDiagnostico.Text;
             ordemServico.DataAbertura = DateTime.Now;
-            ordemServico.AtendenteOs = atendente;
+            ordemServico.AtendenteOs = _atendente;
             if (ValidadorCampoHelper.CampoBranco(txtSolicitante.Text, txtPatrimonio.Text, txtDiagnostico.Text ) && 
                 (MessageBox.Show("Deseja salvar essa O.S?", "",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {

@@ -8,20 +8,20 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
 {
     public partial class FrmEdtSetor : Form
     {
-        private Setor setor = new Setor();
+        private readonly Setor _setor;
         private List<Secretaria> secretarias;
         public FrmEdtSetor(Setor setor)
         {
             InitializeComponent();
-            this.setor = setor;
+            _setor = setor;
         }
         private void FrmEdtSetor_Load(object sender, EventArgs e)
         {
             CarregarComboBox();
-            txtId.Text = Convert.ToString(setor.Id);
-            txtNome.Text = setor.Nome;
-            txtDescricao.Text = setor.Descricao;
-            cbSecretaria.SelectedIndex = cbSecretaria.Items.IndexOf(setor.SecretariaStr.Nome);
+            txtId.Text = Convert.ToString(_setor.Id);
+            txtNome.Text = _setor.Nome;
+            txtDescricao.Text = _setor.Descricao;
+            cbSecretaria.SelectedIndex = cbSecretaria.Items.IndexOf(_setor.SecretariaStr.Nome);
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
@@ -32,11 +32,11 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
                 {
                     try
                     {
-                        setor.Id = Convert.ToInt32(txtId.Text);
-                        setor.Nome = txtNome.Text;
-                        setor.Descricao = txtDescricao.Text;
-                        setor.SecretariaStr.Id = secretarias[cbSecretaria.SelectedIndex].Id;
-                        InsertData.Inserir(setor);
+                        _setor.Id = Convert.ToInt32(txtId.Text);
+                        _setor.Nome = txtNome.Text;
+                        _setor.Descricao = txtDescricao.Text;
+                        _setor.SecretariaStr.Id = secretarias[cbSecretaria.SelectedIndex].Id;
+                        InsertData.Inserir(_setor);
                         this.Close();
                     }
                     catch (Exception)

@@ -9,7 +9,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
     public partial class FrmSetor : Form
     {
         private Setor setor = new Setor();
-        private List<Setor> setores = new List<Setor>();
+        private List<Setor> setores;
         private Secretaria secretaria;
         public FrmSetor()
         {
