@@ -2,7 +2,7 @@
 
 namespace OrdemDeServico.Helpers
 {
-    class Criador
+    class CriadorDataCridViewHelper
     {
         public static void CriaDataGridView(DataGridView dgv, string[] columnName, string[] headerText, int[] tamanhoCol)
         {
@@ -29,17 +29,6 @@ namespace OrdemDeServico.Helpers
             dgv.AllowUserToAddRows = false;
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
-        public static void FormataDateTimePicker(DateTimePicker dtpInicio, DateTimePicker dtpFim)
-        {
-            dtpInicio.Format = DateTimePickerFormat.Custom;
-            dtpInicio.CustomFormat = "__/__/__ ";
-            dtpFim.Format = DateTimePickerFormat.Custom;
-            dtpFim.CustomFormat = "__/__/__ ";
-        }
-        public static void SelecionaDateTimePicker(DateTimePicker dtp)
-        {
-            dtp.Format = DateTimePickerFormat.Custom;
-            dtp.CustomFormat = "dd/MM/yyyy";
-        }
+        
     }
 }

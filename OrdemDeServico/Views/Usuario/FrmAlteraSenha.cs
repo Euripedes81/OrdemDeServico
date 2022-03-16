@@ -27,7 +27,7 @@ namespace OrdemDeServico.Views.Usuario
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             atendente.Senha = txtSenha.Text;
-            CrudHelper.Inserir(atendente);
+            InsertData.Inserir(atendente);
             this.Close();
         }
                

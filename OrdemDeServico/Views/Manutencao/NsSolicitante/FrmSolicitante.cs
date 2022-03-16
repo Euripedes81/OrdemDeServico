@@ -25,13 +25,13 @@ namespace OrdemDeServico.Views.Manutencao.NsSolicitante
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar.Text, solicitantes, setor);
+            HandlerDataGridView.PesquisaDgv(dgv, txtPesquisar.Text, solicitantes, setor);
         }
 
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
-            if (AdicionaDgvHelper.ObterLinhaDgv(dgv, solicitante))
+            if (HandlerDataGridView.ObterLinhaDgv(dgv, solicitante))
             {
                 FrmEdtSolicitante frmEdtSolicitante = new FrmEdtSolicitante(solicitante);
                 frmEdtSolicitante.MdiParent = FrmPrincipal.ActiveForm;
@@ -41,21 +41,21 @@ namespace OrdemDeServico.Views.Manutencao.NsSolicitante
 
         private void tsbExcluir_Click(object sender, EventArgs e)
         {
-            if(AdicionaDgvHelper.ObterLinhaDgv(dgv, solicitante))
+            if(HandlerDataGridView.ObterLinhaDgv(dgv, solicitante))
             {
                 if (MessageBox.Show("Deseja excluir este registro?", "Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                      == DialogResult.Yes)
                 {
                     try
                     {
-                        CrudHelper.Excluir(solicitante);
+                        DeleteData.Excluir(solicitante);
                     }
                     catch (Exception)
                     {
 
-                        Mensagem.SolicitanteMsgExcluir();
+                        MensagemEntidades.SolicitanteMsgExcluir();
                     }
-                    AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar.Text, solicitantes, setor);
+                    HandlerDataGridView.PesquisaDgv(dgv, txtPesquisar.Text, solicitantes, setor);
                 }
             }
         }       

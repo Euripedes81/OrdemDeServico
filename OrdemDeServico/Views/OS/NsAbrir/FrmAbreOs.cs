@@ -40,7 +40,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         {
             //ordemServico = new OrdemServico();            
             
-            if (AdicionaDgvHelper.ObterLinhaDgvOsAberta(dgv, _ordemServico))
+            if (HandlerDataGridView.ObterLinhaDgvOsAberta(dgv, _ordemServico))
             {
                 if (_atendente.Id == _ordemServico.AtendenteOs.Id)
                 {
@@ -62,13 +62,13 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         {
             _ordemServico = new OrdemServico();
             
-            if (AdicionaDgvHelper.ObterLinhaDgvOsAberta(dgv, _ordemServico))
+            if (HandlerDataGridView.ObterLinhaDgvOsAberta(dgv, _ordemServico))
             {
                 if (_ordemServico.AtendenteOs.Id == _atendente.Id)
                 {
                     if (MessageBox.Show("Deseja excluir esta O.S?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        CrudHelper.Excluir(_ordemServico);
+                        DeleteData.Excluir(_ordemServico);
                     }
                 }
                 else
@@ -90,7 +90,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         {            
             if (txtPesquisarNome.ReadOnly == false)
             {
-                AdicionaDgvHelper.PesquisaDgvOsAberta(dgv, txtPesquisarNome.Text);
+                HandlerDataGridView.PesquisaDgvOsAberta(dgv, txtPesquisarNome.Text);
             }            
         }
        
@@ -101,7 +101,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             if (!string.IsNullOrWhiteSpace(txtPesquisarOs.Text))
             {
                 numeroOs = (int)Convert.ToInt64(txtPesquisarOs.Text);
-                AdicionaDgvHelper.PesquisaDgvOsAberta(dgv, numeroOs); 
+                HandlerDataGridView.PesquisaDgvOsAberta(dgv, numeroOs); 
             }
         }
 
@@ -121,7 +121,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         private void Visualizar()
         {
             _ordemServico = new OrdemServico();
-            if (AdicionaDgvHelper.ObterLinhaDgvOsAberta(dgv, _ordemServico))
+            if (HandlerDataGridView.ObterLinhaDgvOsAberta(dgv, _ordemServico))
             {
                 FrmRelatorioOsAberta frmRelatorioOsAberta = new FrmRelatorioOsAberta(_ordemServico);
                 //frmRelatorioOsAberta.MdiParent = FrmPrincipal.ActiveForm;

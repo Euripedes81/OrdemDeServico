@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace OrdemDeServico.Helpers
 {
-    class PesquisadorHelper
+    class SelectData
     {
         public static List<Secretaria> PesquisarSecretaria(string nome)
         {

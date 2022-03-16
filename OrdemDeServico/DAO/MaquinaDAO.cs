@@ -94,5 +94,15 @@ namespace OrdemDeServico.DAO
             dr.Close();
             return maquina;
         }
+
+        public List<Maquina> SelectNome(string nome)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

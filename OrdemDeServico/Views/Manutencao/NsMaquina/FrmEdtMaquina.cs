@@ -17,7 +17,7 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
         }
         private void btnSalvar_Click_1(object sender, EventArgs e)
         {
-            if (Validador.CampoBranco(mtxtNumPatrimonio.Text, txtDescricao.Text, cbSetor))
+            if (ValidadorCampoHelper.CampoBranco(mtxtNumPatrimonio.Text, txtDescricao.Text, cbSetor))
             {
                 if (MessageBox.Show("Deseja salvar os dados?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     == DialogResult.Yes)
@@ -29,13 +29,13 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
                         maquina.Tipo = txtTipo.Text;
                         maquina.Descricao = txtDescricao.Text;
                         maquina.SetorMqn.Id = setores[cbSetor.SelectedIndex].Id;
-                        CrudHelper.Inserir(maquina);
+                        InsertData.Inserir(maquina);
                         Limpar();
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
 
-                        Mensagem.MaquinaMsgAdicionar();
+                        MensagemEntidades.MaquinaMsgAdicionar();
                     }
                     
                 }
@@ -59,7 +59,7 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
         }
         private void CarregarComboBox()
         {
-            if ((setores = PesquisadorHelper.PesquisarSetor("")) != null)
+            if ((setores = SelectData.PesquisarSetor("")) != null)
             {
                 foreach (Setor setor in setores)
                 {

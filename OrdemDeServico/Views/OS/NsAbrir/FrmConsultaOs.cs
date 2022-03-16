@@ -23,7 +23,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         {
             if (txtPesquisarNome.ReadOnly == false)
             {
-                AdicionaDgvHelper.PesquisaDgvOsFechada(dgv, txtPesquisarNome.Text);
+                HandlerDataGridView.PesquisaDgvOsFechada(dgv, txtPesquisarNome.Text);
             }
         }
 
@@ -42,7 +42,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             if (!string.IsNullOrWhiteSpace(txtPesquisarOs.Text))
             {
                 numeroOs = (int)Convert.ToInt64(txtPesquisarOs.Text);
-                AdicionaDgvHelper.PesquisaDgvOsFechada(dgv, numeroOs);
+                HandlerDataGridView.PesquisaDgvOsFechada(dgv, numeroOs);
             }
         }
         private void txtPesquisaOs_KeyPress(object sender, KeyPressEventArgs e)
@@ -67,7 +67,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         private void Visualizar()
         {
             ordemServico = new OrdemServico();
-            if (AdicionaDgvHelper.ObterLinhaDgvOsFechada(dgv, ordemServico))
+            if (HandlerDataGridView.ObterLinhaDgvOsFechada(dgv, ordemServico))
             {
                 FrmRelatorioOsFechada frmRelatorioOsFechada = new FrmRelatorioOsFechada(ordemServico);
                 frmRelatorioOsFechada.Show();

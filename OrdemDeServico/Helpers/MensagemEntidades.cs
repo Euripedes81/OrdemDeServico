@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace OrdemDeServico.Helpers
 {
-    class Mensagem
+    class MensagemEntidades
     {
         public static void SecretariaMsgExcluir()
         {

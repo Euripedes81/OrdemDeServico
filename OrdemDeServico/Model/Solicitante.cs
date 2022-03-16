@@ -3,15 +3,13 @@
 namespace OrdemDeServico.Model
 {
     [Serializable]
-    public class Solicitante
-    {
-        public int Id { get; set; }
-        public string Nome { get; set; }
+    public class Solicitante : Servidor
+    {       
         public string Descricao { get; set; }
-        public Setor SetorSlc { get; set; }
+        public Setor SetorSolicitante { get; set; }
         public Solicitante()
         {
-            SetorSlc = new Setor();
+            SetorSolicitante = new Setor();
         }
     }
 }

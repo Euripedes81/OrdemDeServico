@@ -18,7 +18,7 @@ namespace OrdemDeServico.Views
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar.Text, atendentes);
+            HandlerDataGridView.PesquisaDgv(dgv, txtPesquisar.Text, atendentes);
         }
 
         private void tsbAdicionar_Click(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace OrdemDeServico.Views
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
-            if(AdicionaDgvHelper.ObterLinhaDgv(dgv, atendente))
+            if(HandlerDataGridView.ObterLinhaDgv(dgv, atendente))
             {
                 FrmAlteraSenha frmAlteraSenha = new FrmAlteraSenha(atendente);
                 frmAlteraSenha.ShowDialog();
@@ -38,7 +38,7 @@ namespace OrdemDeServico.Views
 
         private void tsbExcluir_Click(object sender, EventArgs e)
         {
-            if (AdicionaDgvHelper.ObterLinhaDgv(dgv, atendente))
+            if (HandlerDataGridView.ObterLinhaDgv(dgv, atendente))
             {
                 if (MessageBox.Show("Deseja excluir este registro?", "Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                      == DialogResult.Yes)
@@ -47,12 +47,12 @@ namespace OrdemDeServico.Views
                     {
                         try
                         {
-                            CrudHelper.Excluir(atendente);
-                            AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar.Text, atendentes);
+                            DeleteData.Excluir(atendente);
+                            HandlerDataGridView.PesquisaDgv(dgv, txtPesquisar.Text, atendentes);
                         }
                         catch (Exception )
                         {
-                            Mensagem.AtendenteMsgExcluir();
+                            MensagemEntidades.AtendenteMsgExcluir();
                         }
                     }
                     else

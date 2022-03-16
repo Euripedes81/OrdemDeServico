@@ -31,12 +31,12 @@ namespace OrdemDeServico.Views.OS.NsAbrir
         {
             if (txtPesquisar.Text != "")
             {
-                AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar.Text, maquinas, setor);
+                HandlerDataGridView.PesquisaDgv(dgv, txtPesquisar.Text, maquinas, setor);
             }
         }
         private void tsbAdicionar_Click(object sender, EventArgs e)
         {
-            if (AdicionaDgvHelper.ObterLinhaDgv(dgv, maquina))
+            if (HandlerDataGridView.ObterLinhaDgv(dgv, maquina))
             {
                 txtMaquinaPatrimonio.Text = Convert.ToString(maquina.Patrimonio);
                 txtMaquinaDescricao.Text = maquina.Descricao;
@@ -49,7 +49,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             timer1.Enabled = false;
             if (txtPesquisar.Text != "")
             {
-                AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar.Text, maquinas, setor);
+                HandlerDataGridView.PesquisaDgv(dgv, txtPesquisar.Text, maquinas, setor);
             }
         }
 

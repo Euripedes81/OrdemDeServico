@@ -1,13 +1,18 @@
 ﻿using OrdemDeServico.DAO;
 using OrdemDeServico.Model;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace OrdemDeServico.Helpers
 {
-    class CrudHelper
+    public class InsertData
     {
         public static void Inserir(Secretaria secretaria)
         {
-            SecretariaDAO secretariaDAO = new SecretariaDAO();
+            ICrud<Secretaria> secretariaDAO = new SecretariaDAO();
             if (secretaria.Id == 0)
             {
                 secretariaDAO.Insert(secretaria);
@@ -17,14 +22,9 @@ namespace OrdemDeServico.Helpers
                 secretariaDAO.Update(secretaria);
             }
         }
-        public static void Excluir(Secretaria secretaria)
-        {
-            SecretariaDAO secretariaDAO = new SecretariaDAO();
-            secretariaDAO.Delete(secretaria);
-        }
         public static void Inserir(Setor setor)
         {
-            SetorDAO setorDAO = new SetorDAO();
+            ICrud<Setor> setorDAO = new SetorDAO();
             if (setor.Id == 0)
             {
                 setorDAO.Insert(setor);
@@ -34,14 +34,9 @@ namespace OrdemDeServico.Helpers
                 setorDAO.Update(setor);
             }
         }
-        public static void Excluir(Setor setor)
-        {
-            SetorDAO setorDAO = new SetorDAO();
-            setorDAO.Delete(setor);
-        }
         public static void Inserir(Solicitante solicitante)
         {
-            SolicitanteDAO solicitanteDAO = new SolicitanteDAO();
+            ICrud<Solicitante> solicitanteDAO = new SolicitanteDAO();
             if (solicitante.Id == 0)
             {
                 solicitanteDAO.Insert(solicitante);
@@ -51,14 +46,10 @@ namespace OrdemDeServico.Helpers
                 solicitanteDAO.Update(solicitante);
             }
         }
-        public static void Excluir(Solicitante solicitante)
-        {
-            SolicitanteDAO solicitanteDAO = new SolicitanteDAO();
-            solicitanteDAO.Delete(solicitante);
-        }
+
         public static void Inserir(Maquina maquina)
         {
-            MaquinaDAO maquinaDAO = new MaquinaDAO();
+            ICrud<Maquina> maquinaDAO = new MaquinaDAO();
             if (maquina.Id == 0)
             {
                 maquinaDAO.Insert(maquina);
@@ -68,14 +59,9 @@ namespace OrdemDeServico.Helpers
                 maquinaDAO.Update(maquina);
             }
         }
-        public static void Excluir(Maquina solicitante)
-        {
-            MaquinaDAO maquinaDAO = new MaquinaDAO();
-            maquinaDAO.Delete(solicitante);
-        }
         public static void Inserir(OrdemServico ordemServico)
         {
-            OrdemServicoDAO ordemServicoDAO = new OrdemServicoDAO();
+            ICrud<OrdemServico> ordemServicoDAO = new OrdemServicoDAO();
             if (ordemServico.Id == 0)
             {
                 ordemServicoDAO.Insert(ordemServico);
@@ -85,14 +71,10 @@ namespace OrdemDeServico.Helpers
                 ordemServicoDAO.Update(ordemServico);
             }
         }
-        public static void Excluir(OrdemServico ordemServico)
-        {
-            OrdemServicoDAO ordemServicoDAO = new OrdemServicoDAO();
-            ordemServicoDAO.Delete(ordemServico);
-        }
+
         public static void Inserir(Atendente atendente)
         {
-            AtendenteDAO atendenteDAO = new AtendenteDAO();
+            ICrud<Atendente> atendenteDAO = new AtendenteDAO();
             if (atendente.Id == 0)
             {
                 atendenteDAO.Insert(atendente);
@@ -101,11 +83,6 @@ namespace OrdemDeServico.Helpers
             {
                 atendenteDAO.Update(atendente);
             }
-        }
-        public static void Excluir(Atendente atendente)
-        {
-            AtendenteDAO atendenteDAO = new AtendenteDAO();
-            atendenteDAO.Delete(atendente);
         }
     }
 }

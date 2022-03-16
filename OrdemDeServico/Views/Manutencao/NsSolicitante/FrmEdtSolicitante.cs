@@ -22,12 +22,12 @@ namespace OrdemDeServico.Views.Manutencao.NsSolicitante
             txtId.Text = Convert.ToString(solicitante.Id);
             txtNome.Text = solicitante.Nome;
             txtDescricao.Text = solicitante.Descricao;
-            cbSetor.SelectedIndex = cbSetor.Items.IndexOf(solicitante.SetorSlc.Nome);
+            cbSetor.SelectedIndex = cbSetor.Items.IndexOf(solicitante.SetorSolicitante.Nome);
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (Validador.CampoBranco(txtNome.Text, txtDescricao.Text, cbSetor))
+            if (ValidadorCampoHelper.CampoBranco(txtNome.Text, txtDescricao.Text, cbSetor))
             {
                 if (MessageBox.Show("Deseja salvar os dados?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     == DialogResult.Yes)
@@ -37,14 +37,14 @@ namespace OrdemDeServico.Views.Manutencao.NsSolicitante
                         solicitante.Id = Convert.ToInt32(txtId.Text);
                         solicitante.Nome = txtNome.Text;
                         solicitante.Descricao = txtDescricao.Text;
-                        solicitante.SetorSlc.Id = setores[cbSetor.SelectedIndex].Id;
-                        CrudHelper.Inserir(solicitante);
+                        solicitante.SetorSolicitante.Id = setores[cbSetor.SelectedIndex].Id;
+                        InsertData.Inserir(solicitante);
                         this.Close();
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
 
-                        Mensagem.SolicitanteMsgAdicionar();
+                        MensagemEntidades.SolicitanteMsgAdicionar();
                     }
                     Limpar();
                 }
@@ -58,7 +58,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSolicitante
         }
         private void CarregarComboBox()
         {
-            if ((setores = PesquisadorHelper.PesquisarSetor("")) != null)
+            if ((setores = SelectData.PesquisarSetor("")) != null)
             {
                 foreach (Setor  setor in setores)
                 {

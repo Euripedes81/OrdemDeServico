@@ -24,7 +24,7 @@ namespace OrdemDeServico.DAO
             comando.CommandText = "INSERT INTO solicitante (Nome, Descricao, IdSetor) VALUES (@Nome, @Descricao, @IdSetor) ";
             comando.Parameters.AddWithValue("Nome", solicitante.Nome);
             comando.Parameters.AddWithValue("Descricao", solicitante.Descricao);
-            comando.Parameters.AddWithValue("IdSetor", solicitante.SetorSlc.Id);
+            comando.Parameters.AddWithValue("IdSetor", solicitante.SetorSolicitante.Id);
             ConexaoBancoDAO.CRUD(comando);
         }
 
@@ -36,7 +36,7 @@ namespace OrdemDeServico.DAO
             comando.Parameters.AddWithValue("Id", solicitante.Id);
             comando.Parameters.AddWithValue("Nome", solicitante.Nome);
             comando.Parameters.AddWithValue("Descricao", solicitante.Descricao);
-            comando.Parameters.AddWithValue("IdSetor", solicitante.SetorSlc.Id);
+            comando.Parameters.AddWithValue("IdSetor", solicitante.SetorSolicitante.Id);
             ConexaoBancoDAO.CRUD(comando);
         }
 
@@ -56,7 +56,7 @@ namespace OrdemDeServico.DAO
                     solicitante.Id = Convert.ToInt32(dr["Id"]);
                     solicitante.Nome = Convert.ToString(dr["Nome"]);
                     solicitante.Descricao = Convert.ToString(dr["Descricao"]);
-                    solicitante.SetorSlc.Id = Convert.ToInt16(dr["IdSetor"]);
+                    solicitante.SetorSolicitante.Id = Convert.ToInt16(dr["IdSetor"]);
                     solicitantes.Add(solicitante);
                 }
             }
@@ -81,7 +81,7 @@ namespace OrdemDeServico.DAO
                 solicitante.Id = Convert.ToInt32(dr["Id"]);
                 solicitante.Nome = Convert.ToString(dr["Nome"]);
                 solicitante.Descricao = Convert.ToString(dr["Descricao"]);
-                solicitante.SetorSlc.Id = Convert.ToInt16(dr["IdSetor"]);                
+                solicitante.SetorSolicitante.Id = Convert.ToInt16(dr["IdSetor"]);                
             }
             else
             {
@@ -89,6 +89,11 @@ namespace OrdemDeServico.DAO
             }
             dr.Close();
             return solicitante;
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
         }
     }
 }

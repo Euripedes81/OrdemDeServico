@@ -22,7 +22,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSecretaria
         }
         private void btnSalvar_Click(object sender, System.EventArgs e)
         {
-            if (Validador.CampoBranco(txtNome.Text, txtDescricao.Text, mtxtTelefone.Text))
+            if (ValidadorCampoHelper.CampoBranco(txtNome.Text, txtDescricao.Text, mtxtTelefone.Text))
             {
                 if (MessageBox.Show("Deseja salvar os dados?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     == DialogResult.Yes)
@@ -33,13 +33,13 @@ namespace OrdemDeServico.Views.Manutencao.NsSecretaria
                         _secretaria.Nome = txtNome.Text;
                         _secretaria.Descricao = txtDescricao.Text;
                         _secretaria.Telefone = mtxtTelefone.Text;
-                        CrudHelper.Inserir(_secretaria);
+                        InsertData.Inserir(_secretaria);
                         this.Close();
                     }
                     catch (Exception)
                     {
 
-                        Mensagem.SecretariaMsgAdicionar();
+                        MensagemEntidades.SecretariaMsgAdicionar();
                     }
                     Limpar();
                 }

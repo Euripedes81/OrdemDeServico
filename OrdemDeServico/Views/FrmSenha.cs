@@ -16,12 +16,12 @@ namespace OrdemDeServico.Views
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            if(Validador.CampoBranco(_atendente.Nome, txtSenhaAtual.Text))
+            if(ValidadorCampoHelper.CampoBranco(_atendente.Nome, txtSenhaAtual.Text))
             {
-                if(Validador.ValidaSenha( txtNovaSenha.Text, txtConfirSenha.Text))
+                if(ValidadorCampoHelper.ValidaSenha( txtNovaSenha.Text, txtConfirSenha.Text))
                 {
                     _atendente.Senha = txtConfirSenha.Text;
-                    CrudHelper.Inserir(_atendente);
+                    InsertData.Inserir(_atendente);
                     this.Close();
                 }
                 else

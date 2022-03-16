@@ -14,7 +14,7 @@ namespace OrdemDeServico.Views.Usuario
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (Validador.CampoBranco(txtNome.Text, txtUsuario.Text, txtSenha.Text))
+            if (ValidadorCampoHelper.CampoBranco(txtNome.Text, txtUsuario.Text, txtSenha.Text))
             {
                 Atendente atendente = new Atendente();
                 atendente.Usuario = txtUsuario.Text;
@@ -22,12 +22,12 @@ namespace OrdemDeServico.Views.Usuario
                 atendente.Senha = txtSenha.Text;
                 try
                 {
-                    CrudHelper.Inserir(atendente);
+                    InsertData.Inserir(atendente);
                     Limpar();
                 }
                 catch (Exception)
                 {
-                    Mensagem.AtendenteMsgAdicionar();                   
+                    MensagemEntidades.AtendenteMsgAdicionar();                   
                 }
                 
             }

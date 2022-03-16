@@ -27,13 +27,13 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
         {
             if (txtPesquisar.Text != "")
             {
-                AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar.Text, maquinas, setor);
+                HandlerDataGridView.PesquisaDgv(dgv, txtPesquisar.Text, maquinas, setor);
             }            
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
-            if (AdicionaDgvHelper.ObterLinhaDgv(dgv, maquina))
+            if (HandlerDataGridView.ObterLinhaDgv(dgv, maquina))
             {
                 FrmEdtMaquina frmEdtMaquina = new FrmEdtMaquina(maquina);
                 frmEdtMaquina.MdiParent = FrmPrincipal.ActiveForm;
@@ -42,7 +42,7 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
         }
         private void dgv_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (AdicionaDgvHelper.ObterLinhaDgv(dgv, maquina))
+            if (HandlerDataGridView.ObterLinhaDgv(dgv, maquina))
             {
                 FrmRelatorioMaquina relatorioMaquina = new FrmRelatorioMaquina(maquina);
                 relatorioMaquina.ShowDialog();
@@ -51,20 +51,20 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
         }
         private void tsbExcluir_Click(object sender, EventArgs e)
         {
-            if(AdicionaDgvHelper.ObterLinhaDgv(dgv, maquina))
+            if(HandlerDataGridView.ObterLinhaDgv(dgv, maquina))
             {
                 if (MessageBox.Show("Deseja excluir este registro?", "Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                      == DialogResult.Yes)
                 {
                     try
                     {
-                        CrudHelper.Excluir(maquina);
-                        AdicionaDgvHelper.ObterLinhaDgv(dgv, maquina);
+                        DeleteData.Excluir(maquina);
+                        HandlerDataGridView.ObterLinhaDgv(dgv, maquina);
                     }
                     catch (Exception)
                     {
 
-                        Mensagem.MaquinaMsgExcluir();
+                        MensagemEntidades.MaquinaMsgExcluir();
                     }
                 }
             }
@@ -75,7 +75,7 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
             timer1.Enabled = false;
             if (txtPesquisar.Text != "")
             {
-                AdicionaDgvHelper.PesquisaDgv(dgv,txtPesquisar.Text, maquinas, setor);
+                HandlerDataGridView.PesquisaDgv(dgv,txtPesquisar.Text, maquinas, setor);
             }
         }
         private void txtPesquisar_TextChanged(object sender, EventArgs e)

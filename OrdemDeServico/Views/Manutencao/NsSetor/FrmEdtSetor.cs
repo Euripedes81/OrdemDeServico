@@ -25,7 +25,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (Validador.CampoBranco(txtNome.Text, txtDescricao.Text, cbSecretaria))
+            if (ValidadorCampoHelper.CampoBranco(txtNome.Text, txtDescricao.Text, cbSecretaria))
             {
                 if (MessageBox.Show("Deseja salvar os dados?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     == DialogResult.Yes)
@@ -36,13 +36,13 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
                         setor.Nome = txtNome.Text;
                         setor.Descricao = txtDescricao.Text;
                         setor.SecretariaStr.Id = secretarias[cbSecretaria.SelectedIndex].Id;
-                        CrudHelper.Inserir(setor);
+                        InsertData.Inserir(setor);
                         this.Close();
                     }
                     catch (Exception)
                     {
 
-                        Mensagem.SetorMsgAdicionar();
+                        MensagemEntidades.SetorMsgAdicionar();
                     }
                     Limpar();
                 }
@@ -56,7 +56,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
         }
         private void CarregarComboBox()
         {
-            if ((secretarias = PesquisadorHelper.PesquisarSecretaria("")) != null)
+            if ((secretarias = SelectData.PesquisarSecretaria("")) != null)
             {
                 foreach (Secretaria secretaria in secretarias)
                 {

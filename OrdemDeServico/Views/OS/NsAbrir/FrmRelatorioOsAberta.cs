@@ -22,11 +22,11 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             this.rprtvOsAberta.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             this.rprtvOsAberta.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent;
             this.ordemServicoBindingSource.Clear();
-            ordemServico = PesquisadorHelper.PesquisarOrdemServicoId(ordemServico.Id);
-            ordemServico.SolicitanteOs = PesquisadorHelper.PesquisarSolicitanteId(ordemServico.SolicitanteOs.Id);           
-            ordemServico.MaquinaOs = PesquisadorHelper.PesquisarMaquinaId(ordemServico.MaquinaOs.Id);
-            ordemServico.SetorOs = PesquisadorHelper.PesquisarSetorId(ordemServico.MaquinaOs.SetorMqn.Id);
-            ordemServico.SetorOs.SecretariaStr = PesquisadorHelper.PesquisarSecretariaId(ordemServico.SetorOs.SecretariaStr.Id);            
+            ordemServico = SelectData.PesquisarOrdemServicoId(ordemServico.Id);
+            ordemServico.SolicitanteOs = SelectData.PesquisarSolicitanteId(ordemServico.SolicitanteOs.Id);           
+            ordemServico.MaquinaOs = SelectData.PesquisarMaquinaId(ordemServico.MaquinaOs.Id);
+            ordemServico.SetorOs = SelectData.PesquisarSetorId(ordemServico.MaquinaOs.SetorMqn.Id);
+            ordemServico.SetorOs.SecretariaStr = SelectData.PesquisarSecretariaId(ordemServico.SetorOs.SecretariaStr.Id);            
             this.rprtvOsAberta.RefreshReport();
             this.ordemServicoBindingSource.Add(ordemServico);
                         

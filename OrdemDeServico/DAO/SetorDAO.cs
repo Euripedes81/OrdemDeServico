@@ -117,5 +117,10 @@ namespace OrdemDeServico.DAO
             dr.Close();
             return setores;
         }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace OrdemDeServico.Views.Relatorios
         }
         private void FrmSetorOsRelatorio_Load(object sender, EventArgs e)
         {
-            Criador.FormataDateTimePicker(dtpInicio, dtpFim);            
+            CriadorDateTimePickerHelper.FormataDateTimePicker(dtpInicio, dtpFim);            
             CarregarComboBox();
         }    
         private void btnGerarRelatorio_Click(object sender, EventArgs e)
@@ -29,15 +29,15 @@ namespace OrdemDeServico.Views.Relatorios
             this.ordemServicoBindingSource.Clear();
             foreach (var setor in setores)
             {
-                if ((ordemServicos = PesquisadorHelper.PesquisarOrdemServicos(setor.Id, dtpInicio.Value, dtpFim.Value)) != null)
+                if ((ordemServicos = SelectData.PesquisarOrdemServicos(setor.Id, dtpInicio.Value, dtpFim.Value)) != null)
                 {                    
                     foreach(var ordemServico in ordemServicos)
                     {                       
-                        ordemServico.SolicitanteOs = PesquisadorHelper.PesquisarSolicitanteId(ordemServico.SolicitanteOs.Id);
-                        ordemServico.MaquinaOs = PesquisadorHelper.PesquisarMaquinaId(ordemServico.MaquinaOs.Id);
-                        ordemServico.SetorOs = PesquisadorHelper.PesquisarSetorId(ordemServico.MaquinaOs.SetorMqn.Id);
-                        ordemServico.SetorOs.SecretariaStr = PesquisadorHelper.PesquisarSecretariaId(ordemServico.SetorOs.SecretariaStr.Id);
-                        ordemServico.AtendenteOs = PesquisadorHelper.PesquisarAtendenteId(ordemServico.AtendenteOs.Id);
+                        ordemServico.SolicitanteOs = SelectData.PesquisarSolicitanteId(ordemServico.SolicitanteOs.Id);
+                        ordemServico.MaquinaOs = SelectData.PesquisarMaquinaId(ordemServico.MaquinaOs.Id);
+                        ordemServico.SetorOs = SelectData.PesquisarSetorId(ordemServico.MaquinaOs.SetorMqn.Id);
+                        ordemServico.SetorOs.SecretariaStr = SelectData.PesquisarSecretariaId(ordemServico.SetorOs.SecretariaStr.Id);
+                        ordemServico.AtendenteOs = SelectData.PesquisarAtendenteId(ordemServico.AtendenteOs.Id);
                         this.ordemServicoBindingSource.Add(ordemServico);
                         this.rprtvSetor.RefreshReport();
                     }
@@ -46,7 +46,7 @@ namespace OrdemDeServico.Views.Relatorios
         }
         private void CarregarComboBox()
         {
-            if ((secretarias = PesquisadorHelper.PesquisarSecretaria("")) != null)
+            if ((secretarias = SelectData.PesquisarSecretaria("")) != null)
             {
                 foreach (Secretaria secretaria in secretarias)
                 {
@@ -61,7 +61,7 @@ namespace OrdemDeServico.Views.Relatorios
             cbSetor.Items.Clear();
             cbSetor.Text = "";
 
-            if ((setores = PesquisadorHelper.PesquisarSetoresId(secretarias[cbSecretaria.SelectedIndex].Id)) != null)
+            if ((setores = SelectData.PesquisarSetoresId(secretarias[cbSecretaria.SelectedIndex].Id)) != null)
             {
                 foreach (Setor setor in setores)
                 {
@@ -72,12 +72,12 @@ namespace OrdemDeServico.Views.Relatorios
 
         private void dtpInicio_ValueChanged(object sender, EventArgs e)
         {
-            Criador.SelecionaDateTimePicker(dtpInicio);
+            CriadorDateTimePickerHelper.SelecionaDateTimePicker(dtpInicio);
         }
 
         private void dtpFim_ValueChanged(object sender, EventArgs e)
         {
-            Criador.SelecionaDateTimePicker(dtpFim);
+            CriadorDateTimePickerHelper.SelecionaDateTimePicker(dtpFim);
         }
     }
 }

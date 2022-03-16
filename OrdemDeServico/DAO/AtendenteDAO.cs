@@ -133,6 +133,11 @@ namespace OrdemDeServico.DAO
                 return false;
             }
 
-        }       
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

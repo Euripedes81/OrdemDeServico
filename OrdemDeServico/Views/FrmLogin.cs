@@ -7,17 +7,19 @@ namespace OrdemDeServico.Views
 {
     public partial class FrmLogin : Form
     {
-        private Atendente atendente; 
+        private Atendente atendente;       
+        
         public FrmLogin()
         {
             InitializeComponent();
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
-        {
-            if ((atendente = PesquisadorHelper.PesquisarAtendenteNome(txtUsuario.Text)) != null)
-            {
-                if (PesquisadorHelper.PesquisarAtendenteSenha(atendente.Id, txtSenha.Text))
+        {           
+            if ((atendente = SelectData.PesquisarAtendenteNome(txtUsuario.Text)) != null)
+            {               
+
+                if (SelectData.PesquisarAtendenteSenha(atendente.Id, txtSenha.Text))
                 {
                     if (atendente.Id != 1)
                     {

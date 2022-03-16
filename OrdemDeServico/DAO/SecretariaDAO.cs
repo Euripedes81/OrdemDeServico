@@ -89,5 +89,10 @@ namespace OrdemDeServico.DAO
             }
             return secretaria;
         }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

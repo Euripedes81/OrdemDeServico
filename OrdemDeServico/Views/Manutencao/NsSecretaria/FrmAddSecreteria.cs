@@ -1,4 +1,5 @@
-﻿using OrdemDeServico.Helpers;
+﻿using OrdemDeServico.DAO;
+using OrdemDeServico.Helpers;
 using OrdemDeServico.Model;
 using System;
 using System.Windows.Forms;
@@ -14,7 +15,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSecretaria
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (Validador.CampoBranco(txtNome.Text, txtDescricao.Text, mtxtTelefone.Text))
+            if (ValidadorCampoHelper.CampoBranco(txtNome.Text, txtDescricao.Text, mtxtTelefone.Text))
             {
                 if (MessageBox.Show("Deseja salvar os dados?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     == DialogResult.Yes)
@@ -25,12 +26,12 @@ namespace OrdemDeServico.Views.Manutencao.NsSecretaria
                     secretaria.Telefone = mtxtTelefone.Text;
                     try
                     {
-                        CrudHelper.Inserir(secretaria);
+                        InsertData.Inserir(secretaria);                        
                     }
                     catch (Exception)
                     {
 
-                        Mensagem.SecretariaMsgAdicionar();
+                        MensagemEntidades.SecretariaMsgAdicionar();
                     }
                     Limpar();
                 }

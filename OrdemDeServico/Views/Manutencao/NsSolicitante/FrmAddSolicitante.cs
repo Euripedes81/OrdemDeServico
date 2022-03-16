@@ -19,7 +19,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSolicitante
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (Validador.CampoBranco(txtNome.Text, txtDescricao.Text, cbSetor))
+            if (ValidadorCampoHelper.CampoBranco(txtNome.Text, txtDescricao.Text, cbSetor))
             {
                 if (MessageBox.Show("Deseja salvar os dados?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     == DialogResult.Yes)
@@ -29,21 +29,21 @@ namespace OrdemDeServico.Views.Manutencao.NsSolicitante
                         Solicitante solicitante = new Solicitante();
                         solicitante.Nome = txtNome.Text;
                         solicitante.Descricao = txtDescricao.Text;
-                        solicitante.SetorSlc.Id = setores[cbSetor.SelectedIndex].Id;
-                        CrudHelper.Inserir(solicitante);
+                        solicitante.SetorSolicitante.Id = setores[cbSetor.SelectedIndex].Id;
+                        InsertData.Inserir(solicitante);
                         Limpar();
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
 
-                        Mensagem.SolicitanteMsgAdicionar();
+                        MensagemEntidades.SolicitanteMsgAdicionar();
                     }
                 }
             }
         }
         private void CarregarComboBox()
         {
-            if ((setores = PesquisadorHelper.PesquisarSetor("")) != null)
+            if ((setores = SelectData.PesquisarSetor("")) != null)
             {
                 foreach (Setor setor in setores)
                 {

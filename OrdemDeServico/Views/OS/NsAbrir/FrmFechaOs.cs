@@ -22,12 +22,12 @@ namespace OrdemDeServico.Views.OS.NsAbrir
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (Validador.CampoBranco(txtSolucao.Text))
+            if (ValidadorCampoHelper.CampoBranco(txtSolucao.Text))
             {
                 ordemServico.Solucao = txtSolucao.Text;
                 ordemServico.Observacao = txtObservacao.Text;
                 ordemServico.DataFechamento = DateTime.Now;
-                CrudHelper.Inserir(ordemServico);
+                InsertData.Inserir(ordemServico);
                 FrmRelatorioOsFechada frmRelatorioOsFechada = new FrmRelatorioOsFechada(ordemServico, this);
                 frmRelatorioOsFechada.Show();
             }

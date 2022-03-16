@@ -27,7 +27,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
 
         private void tsbAdicionar_Click(object sender, EventArgs e)
         {
-            AdicionaDgvHelper.ObterLinhaDgv(dgv, solicitante);
+            HandlerDataGridView.ObterLinhaDgv(dgv, solicitante);
             txtSolicitante.Text = solicitante.Nome;
             txtDescricaoSolicitante.Text = solicitante.Descricao;
             this.Close();
@@ -35,7 +35,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            AdicionaDgvHelper.PesquisaDgv(dgv, txtPesquisar.Text, solicitantes, setor);
+            HandlerDataGridView.PesquisaDgv(dgv, txtPesquisar.Text, solicitantes, setor);
         }
        
     }

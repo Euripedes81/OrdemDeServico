@@ -37,12 +37,12 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             ordemServico.Diagnostico = txtDiagnostico.Text;
             ordemServico.DataAbertura = DateTime.Now;
             ordemServico.AtendenteOs = atendente;
-            if (Validador.CampoBranco(txtSolicitante.Text, txtPatrimonio.Text, txtDiagnostico.Text ) && 
+            if (ValidadorCampoHelper.CampoBranco(txtSolicitante.Text, txtPatrimonio.Text, txtDiagnostico.Text ) && 
                 (MessageBox.Show("Deseja salvar essa O.S?", "",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
-                if(solicitante.SetorSlc.Id == maquina.SetorMqn.Id)
+                if(solicitante.SetorSolicitante.Id == maquina.SetorMqn.Id)
                 {
-                    CrudHelper.Inserir(ordemServico);
+                    InsertData.Inserir(ordemServico);
                     Limpar();
                 }
                 else

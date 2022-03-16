@@ -46,12 +46,12 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
                 {
                     try
                     {
-                        CrudHelper.Excluir(setor);
+                        DeleteData.Excluir(setor);
                     }
                     catch (Exception)
                     {
 
-                        Mensagem.SetorMsgExcluir();
+                        MensagemEntidades.SetorMsgExcluir();
                     }
                     PesquisaDgv();
                 }
@@ -63,16 +63,16 @@ namespace OrdemDeServico.Views.Manutencao.NsSetor
             string[] textoColuna = new string[] { "Id", "Nome", "Descrição", "Secretaria", "IdSecretaria" };
             int[] tamanho = new[] { 50, 250, 250, 250, 50 };
             bool[] visibilidade = new[] { true, true, true, true, false };
-            Criador.CriaDataGridView(dgv, nomeColuna, textoColuna, tamanho, visibilidade);
+            CriadorDataCridViewHelper.CriaDataGridView(dgv, nomeColuna, textoColuna, tamanho, visibilidade);
         }
         private void PesquisaDgv()
         {
             CriarDgv();
-            if ((setores = PesquisadorHelper.PesquisarSetor(txtPesquisar.Text)) != null)
+            if ((setores = SelectData.PesquisarSetor(txtPesquisar.Text)) != null)
             {
                 foreach (Setor setor in setores)
                 {
-                    if ((secretaria = PesquisadorHelper.PesquisarSecretariaId(setor.SecretariaStr.Id)) != null)
+                    if ((secretaria = SelectData.PesquisarSecretariaId(setor.SecretariaStr.Id)) != null)
                     {
 
                         setor.SecretariaStr = secretaria;
