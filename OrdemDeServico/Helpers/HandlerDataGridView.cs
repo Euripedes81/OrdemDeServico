@@ -30,6 +30,13 @@ namespace OrdemDeServico.Helpers
             int[] tamanho = new[] { 50, 250, 250 };           
             CriadorDataCridViewHelper.CriaDataGridView(dgv, nomeColuna, textoColuna, tamanho);
         }
+        private static void CriarDgvSecretaria(DataGridView dgv)
+        {
+            string[] nomeColuna = new string[] { "Id", "Nome", "Descricao", "Telefone" };
+            string[] textoColuna = new string[] { "Id", "Nome", "Descrição", "Telefone" };
+            int[] tamanho = new[] { 50, 250, 250, 100 };
+            CriadorDataCridViewHelper.CriaDataGridView(dgv, nomeColuna, textoColuna, tamanho);
+        }
         private static void CriarDgvOrdemServico(DataGridView dgv, string status)
         {
             if (status == "abertura")
@@ -51,13 +58,7 @@ namespace OrdemDeServico.Helpers
                 CriadorDataCridViewHelper.CriaDataGridView(dgv, nomeColuna, textoColuna, tamanho);
             }
         }
-        private static void CriarDgvSecretaria(DataGridView dgv)
-        {
-            string[] nomeColuna = new string[] { "Id", "Nome", "Descricao", "Telefone" };
-            string[] textoColuna = new string[] { "Id", "Nome", "Descrição", "Telefone" };
-            int[] tamanho = new[] { 50, 250, 250, 100 };
-            CriadorDataCridViewHelper.CriaDataGridView(dgv, nomeColuna, textoColuna, tamanho);
-        }
+       
         public static void PesquisaDgv(DataGridView dgv, string txtPesquisar, List<Secretaria> secretarias)
         {
             CriarDgvSecretaria(dgv);

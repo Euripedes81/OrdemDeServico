@@ -181,12 +181,7 @@ namespace OrdemDeServico.DAO
             dr.Close();
             return ordemServico;
         }
-
-        public List<OrdemServico> SelectNome(string nome)
-        {
-            throw new NotImplementedException();
-        }
-
+       
         public void Dispose()
         {
             throw new NotImplementedException();

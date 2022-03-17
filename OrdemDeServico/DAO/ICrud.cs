@@ -7,8 +7,6 @@ namespace OrdemDeServico.DAO
         void Insert(T obj);
         void Update(T obj);
         void Delete(T obj);
-        T SelectId(int id);
-        List<T> SelectNome(string nome);
-        
+        T SelectId(int id);       
     }
 }

@@ -37,8 +37,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             frmAddOs.Show();
         }
         private void tsbFecharOs_Click(object sender, EventArgs e)
-        {
-            //ordemServico = new OrdemServico();            
+        {            
             
             if (HandlerDataGridView.ObterLinhaDgvOsAberta(dgv, _ordemServico))
             {
@@ -123,8 +122,7 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             _ordemServico = new OrdemServico();
             if (HandlerDataGridView.ObterLinhaDgvOsAberta(dgv, _ordemServico))
             {
-                FrmRelatorioOsAberta frmRelatorioOsAberta = new FrmRelatorioOsAberta(_ordemServico);
-                //frmRelatorioOsAberta.MdiParent = FrmPrincipal.ActiveForm;
+                FrmRelatorioOsAberta frmRelatorioOsAberta = new FrmRelatorioOsAberta(_ordemServico);                
                 frmRelatorioOsAberta.Show();
             }
         }
