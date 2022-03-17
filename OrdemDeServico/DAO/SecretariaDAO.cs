@@ -46,26 +46,28 @@ namespace OrdemDeServico.DAO
             comando.CommandType = CommandType.Text;
             comando.CommandText = "SELECT * FROM secretaria WHERE Nome LIKE @Nome";
             comando.Parameters.AddWithValue("Nome", "%" + nome + "%");
-            MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
-            List<Secretaria> secretarias = new List<Secretaria>();
-            if (dr.HasRows)
+            using (MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando))
             {
-                while (dr.Read())
+                List<Secretaria> secretarias = new List<Secretaria>();
+                if (dr.HasRows)
                 {
-                    Secretaria secretaria = new Secretaria();
-                    secretaria.Id = Convert.ToInt32(dr["Id"]);
-                    secretaria.Nome = Convert.ToString(dr["Nome"]);
-                    secretaria.Descricao = Convert.ToString(dr["Descricao"]);
-                    secretaria.Telefone = Convert.ToString(dr["Telefone"]);
-                    secretarias.Add(secretaria);
+                    while (dr.Read())
+                    {
+                        Secretaria secretaria = new Secretaria();
+                        secretaria.Id = Convert.ToInt32(dr["Id"]);
+                        secretaria.Nome = Convert.ToString(dr["Nome"]);
+                        secretaria.Descricao = Convert.ToString(dr["Descricao"]);
+                        secretaria.Telefone = Convert.ToString(dr["Telefone"]);
+                        secretarias.Add(secretaria);
+                    }
                 }
-            }
-            else
-            {
+                else
+                {
 
+                }
+                dr.Close();
+                return secretarias;
             }
-            dr.Close();
-            return secretarias;
         }
         public Secretaria SelectId(int id)
         {
@@ -73,26 +75,24 @@ namespace OrdemDeServico.DAO
             comando.CommandType = CommandType.Text;
             comando.CommandText = "SELECT * FROM secretaria WHERE Id=@Id";
             comando.Parameters.AddWithValue("Id", id);
-            MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
-            Secretaria secretaria = new Secretaria();
-            if (dr.HasRows)
+            using (MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando))
             {
-                dr.Read();
-                secretaria.Id = Convert.ToInt32(dr["Id"]);
-                secretaria.Nome = Convert.ToString(dr["Nome"]);
-                secretaria.Descricao = Convert.ToString(dr["Descricao"]);
-                secretaria.Telefone = Convert.ToString(dr["Telefone"]);
+                Secretaria secretaria = new Secretaria();
+                if (dr.HasRows)
+                {
+                    dr.Read();
+                    secretaria.Id = Convert.ToInt32(dr["Id"]);
+                    secretaria.Nome = Convert.ToString(dr["Nome"]);
+                    secretaria.Descricao = Convert.ToString(dr["Descricao"]);
+                    secretaria.Telefone = Convert.ToString(dr["Telefone"]);
+                }
+                else
+                {
+                    secretaria = null;
+                }
+                return secretaria;
             }
-            else
-            {
-                secretaria = null;
-            }
-            return secretaria;
         }
 
-        public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

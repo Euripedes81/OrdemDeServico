@@ -2,7 +2,7 @@
 
 namespace OrdemDeServico.DAO
 {
-    interface ICrud<T> : System.IDisposable
+    interface ICrud<T>
     {
         void Insert(T obj);
         void Update(T obj);

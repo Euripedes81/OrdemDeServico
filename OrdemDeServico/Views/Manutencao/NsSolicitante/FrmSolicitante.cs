@@ -8,7 +8,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSolicitante
 {
     public partial class FrmSolicitante : Form
     {
-        private Solicitante solicitante;
+        private Solicitante solicitante = new Solicitante();
         private List<Solicitante> solicitantes = new List<Solicitante>();
         private Setor setor;
         public FrmSolicitante()

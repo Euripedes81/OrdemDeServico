@@ -1,9 +1,10 @@
 ﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 
 namespace OrdemDeServico.DAO
 {
-    class ConexaoBancoDAO
+    class ConexaoBancoDAO : IDisposable
     {
 
         public static MySqlConnection Conectar()
@@ -28,6 +29,12 @@ namespace OrdemDeServico.DAO
             comando.Connection = conexao;
             MySqlDataReader dr = comando.ExecuteReader(CommandBehavior.CloseConnection);
             return dr;
+        }
+
+        public void Dispose()
+        {
+            Conectar().Close();
+            Conectar().Dispose();
         }
     }
 }

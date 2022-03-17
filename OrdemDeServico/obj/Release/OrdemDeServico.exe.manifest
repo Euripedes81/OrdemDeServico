@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>C2uFzVZ5cUCH0L2q9CUzBO7LexnRIgKP9TgwII1us6c=</dsig:DigestValue>
+        <dsig:DigestValue>wrFPT7w305nC3V+fXDnn7Woby08JsCkF2xNchRugo58=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -679,14 +679,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OrdemDeServico.exe" size="1549288">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OrdemDeServico.exe" size="1549800">
       <assemblyIdentity name="OrdemDeServico" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fkh1QhEYT+gxe0uUNUavol0nutctUHwMIRQ7KyP1bQU=</dsig:DigestValue>
+        <dsig:DigestValue>CojLdeohb9LM/2Hq4tBwKj80ZldiEVASdD3QgfmVB7w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

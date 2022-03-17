@@ -244,7 +244,7 @@ namespace OrdemDeServico.Helpers
         public static bool ObterLinhaDgv(DataGridView dgv, Solicitante solicitante)
         {
             if (dgv.SelectedRows.Count > 0)
-            {
+            {                
                 solicitante.Id = Convert.ToInt32(dgv.CurrentRow.Cells[0].Value.ToString());
                 solicitante.Nome = dgv.CurrentRow.Cells[1].Value.ToString();
                 solicitante.Descricao = dgv.CurrentRow.Cells[2].Value.ToString();
@@ -275,7 +275,7 @@ namespace OrdemDeServico.Helpers
         public static bool ObterLinhaDgv(DataGridView dgv, Atendente atendente)
         {
             if (dgv.SelectedRows.Count > 0)
-            {
+            {                
                 atendente.Id = Convert.ToInt32(dgv.CurrentRow.Cells[0].Value.ToString());
                 atendente.Usuario = dgv.CurrentRow.Cells[1].Value.ToString();
                 atendente.Nome = dgv.CurrentRow.Cells[2].Value.ToString();               

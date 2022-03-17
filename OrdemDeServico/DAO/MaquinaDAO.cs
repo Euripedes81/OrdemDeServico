@@ -48,27 +48,29 @@ namespace OrdemDeServico.DAO
             comando.CommandType = CommandType.Text;
             comando.CommandText = "SELECT * FROM maquina WHERE Patrimonio like @Patrimonio";
             comando.Parameters.AddWithValue("Patrimonio", Patrimonio + "%");
-            MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
-            List<Maquina> maquinas = new List<Maquina>();
-            if (dr.HasRows)
+            using (MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando))
             {
-                while (dr.Read())
+                List<Maquina> maquinas = new List<Maquina>();
+                if (dr.HasRows)
                 {
-                    Maquina maquina = new Maquina();
-                    maquina.Id = Convert.ToInt32(dr["Id"]);
-                    maquina.Patrimonio = Convert.ToInt32(dr["Patrimonio"]);
-                    maquina.Tipo = Convert.ToString(dr["Tipo"]);
-                    maquina.Descricao = Convert.ToString(dr["Descricao"]);
-                    maquina.SetorMqn.Id = Convert.ToInt16(dr["IdSetor"]);
-                    maquinas.Add(maquina);
+                    while (dr.Read())
+                    {
+                        Maquina maquina = new Maquina();
+                        maquina.Id = Convert.ToInt32(dr["Id"]);
+                        maquina.Patrimonio = Convert.ToInt32(dr["Patrimonio"]);
+                        maquina.Tipo = Convert.ToString(dr["Tipo"]);
+                        maquina.Descricao = Convert.ToString(dr["Descricao"]);
+                        maquina.SetorMqn.Id = Convert.ToInt16(dr["IdSetor"]);
+                        maquinas.Add(maquina);
+                    }
                 }
+                else
+                {
+                    maquinas = null;
+                }
+                dr.Close();
+                return maquinas;
             }
-            else
-            {
-                maquinas = null;
-            }
-            dr.Close();
-            return maquinas;
         }
         public Maquina SelectId(int id)
         {
@@ -76,33 +78,26 @@ namespace OrdemDeServico.DAO
             comando.CommandType = CommandType.Text;
             comando.CommandText = "SELECT * FROM maquina WHERE Id=@Id";
             comando.Parameters.AddWithValue("Id", id);
-            MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
-            Maquina maquina = new Maquina();
-            if (dr.HasRows)
+            using (MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando))
             {
-                dr.Read();
-                maquina.Id = Convert.ToInt32(dr["Id"]);
-                maquina.Patrimonio = Convert.ToInt32(dr["Patrimonio"]);
-                maquina.Tipo = Convert.ToString(dr["Tipo"]);
-                maquina.Descricao = Convert.ToString(dr["Descricao"]);
-                maquina.SetorMqn.Id = Convert.ToInt16(dr["IdSetor"]);
+                Maquina maquina = new Maquina();
+                if (dr.HasRows)
+                {
+                    dr.Read();
+                    maquina.Id = Convert.ToInt32(dr["Id"]);
+                    maquina.Patrimonio = Convert.ToInt32(dr["Patrimonio"]);
+                    maquina.Tipo = Convert.ToString(dr["Tipo"]);
+                    maquina.Descricao = Convert.ToString(dr["Descricao"]);
+                    maquina.SetorMqn.Id = Convert.ToInt16(dr["IdSetor"]);
+                }
+                else
+                {
+                    maquina = null;
+                }
+                dr.Close();
+                return maquina;
             }
-            else
-            {
-                maquina = null;
-            }
-            dr.Close();
-            return maquina;
         }
 
-        public List<Maquina> SelectNome(string nome)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

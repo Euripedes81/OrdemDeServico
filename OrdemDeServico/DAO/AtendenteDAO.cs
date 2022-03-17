@@ -47,26 +47,28 @@ namespace OrdemDeServico.DAO
             comando.CommandType = CommandType.Text;
             comando.CommandText = "SELECT * FROM atendente WHERE Nome LIKE @Nome";
             comando.Parameters.AddWithValue("Nome", "%" + nome + "%");
-            MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
-            List<Atendente> atendentes = new List<Atendente>();
-            if (dr.HasRows)
+            using (MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando))
             {
-                while (dr.Read())
+                List<Atendente> atendentes = new List<Atendente>();
+                if (dr.HasRows)
                 {
-                    Atendente atendente = new Atendente();
-                    atendente.Id = Convert.ToInt32(dr["Id"]);
-                    atendente.Usuario = Convert.ToString(dr["Usuario"]);
-                    atendente.Nome = Convert.ToString(dr["Nome"]);
-                    atendente.Senha = Convert.ToString(dr["Senha"]);
-                    atendentes.Add(atendente);
+                    while (dr.Read())
+                    {
+                        Atendente atendente = new Atendente();
+                        atendente.Id = Convert.ToInt32(dr["Id"]);
+                        atendente.Usuario = Convert.ToString(dr["Usuario"]);
+                        atendente.Nome = Convert.ToString(dr["Nome"]);
+                        atendente.Senha = Convert.ToString(dr["Senha"]);
+                        atendentes.Add(atendente);
+                    }
                 }
+                else
+                {
+                    atendentes = null;
+                }
+                dr.Close();
+                return atendentes;
             }
-            else
-            {
-                atendentes = null;
-            }
-            dr.Close();
-            return atendentes;
         }
         public Atendente SelectId(int id)
         {
@@ -74,22 +76,24 @@ namespace OrdemDeServico.DAO
             comando.CommandType = CommandType.Text;
             comando.CommandText = "SELECT * FROM atendente WHERE Id=@Id";
             comando.Parameters.AddWithValue("Id", id);
-            MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
-            Atendente atendente = new Atendente();
-            if (dr.HasRows)
+            using (MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando))
             {
-                dr.Read();
-                atendente.Id = Convert.ToInt32(dr["Id"]);
-                atendente.Usuario = Convert.ToString(dr["Usuario"]);
-                atendente.Nome = Convert.ToString(dr["Nome"]);
-                atendente.Senha = Convert.ToString(dr["Senha"]);
+                Atendente atendente = new Atendente();
+                if (dr.HasRows)
+                {
+                    dr.Read();
+                    atendente.Id = Convert.ToInt32(dr["Id"]);
+                    atendente.Usuario = Convert.ToString(dr["Usuario"]);
+                    atendente.Nome = Convert.ToString(dr["Nome"]);
+                    atendente.Senha = Convert.ToString(dr["Senha"]);
+                }
+                else
+                {
+                    atendente = null;
+                }
+                dr.Close();
+                return atendente;
             }
-            else
-            {
-                atendente = null;
-            }
-            dr.Close();
-            return atendente;
         }
         public Atendente SelectUsuarioExiste(string usuario)
         {
@@ -97,22 +101,24 @@ namespace OrdemDeServico.DAO
             comando.CommandType = CommandType.Text;
             comando.CommandText = "SELECT * FROM atendente WHERE Usuario=@Usuario";
             comando.Parameters.AddWithValue("Usuario", usuario);
-            MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
-            Atendente atendente = new Atendente();
-            if (dr.HasRows)
+            using (MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando))
             {
-                dr.Read();
-                atendente.Id = Convert.ToInt32(dr["Id"]);
-                atendente.Usuario = Convert.ToString(dr["Usuario"]);
-                atendente.Nome = Convert.ToString(dr["Nome"]);
-                atendente.Senha = Convert.ToString(dr["Senha"]);
+                Atendente atendente = new Atendente();
+                if (dr.HasRows)
+                {
+                    dr.Read();
+                    atendente.Id = Convert.ToInt32(dr["Id"]);
+                    atendente.Usuario = Convert.ToString(dr["Usuario"]);
+                    atendente.Nome = Convert.ToString(dr["Nome"]);
+                    atendente.Senha = Convert.ToString(dr["Senha"]);
+                }
+                else
+                {
+                    atendente = null;
+                }
+                dr.Close();
+                return atendente;
             }
-            else
-            {
-                atendente = null;
-            }
-            dr.Close();
-            return atendente;
 
         }
         public bool SelectUsuarioSenha(int id, string senha)
@@ -122,21 +128,19 @@ namespace OrdemDeServico.DAO
             comando.CommandText = "SELECT * FROM atendente WHERE Id=@Id and Senha=sha1(@Senha)";
             comando.Parameters.AddWithValue("Id", id);
             comando.Parameters.AddWithValue("Senha", senha);
-            MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
-            Atendente atendente = new Atendente();
-            if (dr.HasRows)
+            using (MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando))
             {
-                return true;
-            }
-            else
-            {
-                return false;
+                Atendente atendente = new Atendente();
+                if (dr.HasRows)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
 
-        }
-        public void Dispose()
-        {
-            throw new NotImplementedException();
         }
     }
 }

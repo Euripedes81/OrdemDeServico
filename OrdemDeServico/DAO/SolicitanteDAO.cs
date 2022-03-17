@@ -46,26 +46,28 @@ namespace OrdemDeServico.DAO
             comando.CommandType = CommandType.Text;
             comando.CommandText = "SELECT * FROM solicitante WHERE Nome LIKE @Nome";
             comando.Parameters.AddWithValue("Nome", "%" + nome + "%");
-            MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
-            List<Solicitante> solicitantes = new List<Solicitante>();
-            if (dr.HasRows)
+            using (MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando))
             {
-                while (dr.Read())
+                List<Solicitante> solicitantes = new List<Solicitante>();
+                if (dr.HasRows)
                 {
-                    Solicitante solicitante = new Solicitante();
-                    solicitante.Id = Convert.ToInt32(dr["Id"]);
-                    solicitante.Nome = Convert.ToString(dr["Nome"]);
-                    solicitante.Descricao = Convert.ToString(dr["Descricao"]);
-                    solicitante.SetorSolicitante.Id = Convert.ToInt16(dr["IdSetor"]);
-                    solicitantes.Add(solicitante);
+                    while (dr.Read())
+                    {
+                        Solicitante solicitante = new Solicitante();
+                        solicitante.Id = Convert.ToInt32(dr["Id"]);
+                        solicitante.Nome = Convert.ToString(dr["Nome"]);
+                        solicitante.Descricao = Convert.ToString(dr["Descricao"]);
+                        solicitante.SetorSolicitante.Id = Convert.ToInt16(dr["IdSetor"]);
+                        solicitantes.Add(solicitante);
+                    }
                 }
+                else
+                {
+                    solicitantes = null;
+                }
+                dr.Close();
+                return solicitantes;
             }
-            else
-            {
-                solicitantes = null;
-            }
-            dr.Close();
-            return solicitantes;
         }
         public Solicitante SelectId(int id)
         {
@@ -73,27 +75,25 @@ namespace OrdemDeServico.DAO
             comando.CommandType = CommandType.Text;
             comando.CommandText = "SELECT * FROM solicitante WHERE Id=@Id";
             comando.Parameters.AddWithValue("Id", id);
-            MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
-            Solicitante solicitante = new Solicitante();
-            if (dr.HasRows)
+            using (MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando))
             {
-                dr.Read();
-                solicitante.Id = Convert.ToInt32(dr["Id"]);
-                solicitante.Nome = Convert.ToString(dr["Nome"]);
-                solicitante.Descricao = Convert.ToString(dr["Descricao"]);
-                solicitante.SetorSolicitante.Id = Convert.ToInt16(dr["IdSetor"]);                
+                Solicitante solicitante = new Solicitante();
+                if (dr.HasRows)
+                {
+                    dr.Read();
+                    solicitante.Id = Convert.ToInt32(dr["Id"]);
+                    solicitante.Nome = Convert.ToString(dr["Nome"]);
+                    solicitante.Descricao = Convert.ToString(dr["Descricao"]);
+                    solicitante.SetorSolicitante.Id = Convert.ToInt16(dr["IdSetor"]);
+                }
+                else
+                {
+                    solicitante = null;
+                }
+                dr.Close();
+                return solicitante;
             }
-            else
-            {
-                solicitante = null;
-            }
-            dr.Close();
-            return solicitante;
         }
 
-        public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

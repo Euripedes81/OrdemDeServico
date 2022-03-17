@@ -54,65 +54,69 @@ namespace OrdemDeServico.DAO
             comando.CommandType = CommandType.Text;
             comando.CommandText = "SELECT * FROM ordemdeservico WHERE Id like @Id";
             comando.Parameters.AddWithValue("Id", id + "%");
-            MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
-            List<OrdemServico> ordemServicos = new List<OrdemServico>();
-            if (dr.HasRows)
+            using (MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando))
             {
-                while (dr.Read())
+                List<OrdemServico> ordemServicos = new List<OrdemServico>();
+                if (dr.HasRows)
                 {
-                    OrdemServico ordemServico = new OrdemServico();
-                    ordemServico.Id = Convert.ToInt32(dr["Id"]);
-                    ordemServico.SolicitanteOs.Id = Convert.ToInt32(dr["IdSolicitante"]);
-                    ordemServico.MaquinaOs.Id = Convert.ToInt32(dr["IdMaquina"]);                    
-                    ordemServico.SetorOs.Id = Convert.ToInt32(dr["IdSetor"]);
-                    ordemServico.DataAbertura = Convert.ToDateTime(dr["DataAbertura"]);
-                    ordemServico.Diagnostico = Convert.ToString(dr["Diagnostico"]);
-                    ordemServico.DataFechamento = Convert.ToDateTime(dr["DataFechamento"]);
-                    ordemServico.Solucao = Convert.ToString(dr["Solucao"]);
-                    ordemServico.Observacao = Convert.ToString(dr["Observacao"]);
-                    ordemServico.AtendenteOs.Id = Convert.ToInt32(dr["IdAtendente"]);
-                    ordemServicos.Add(ordemServico);
+                    while (dr.Read())
+                    {
+                        OrdemServico ordemServico = new OrdemServico();
+                        ordemServico.Id = Convert.ToInt32(dr["Id"]);
+                        ordemServico.SolicitanteOs.Id = Convert.ToInt32(dr["IdSolicitante"]);
+                        ordemServico.MaquinaOs.Id = Convert.ToInt32(dr["IdMaquina"]);
+                        ordemServico.SetorOs.Id = Convert.ToInt32(dr["IdSetor"]);
+                        ordemServico.DataAbertura = Convert.ToDateTime(dr["DataAbertura"]);
+                        ordemServico.Diagnostico = Convert.ToString(dr["Diagnostico"]);
+                        ordemServico.DataFechamento = Convert.ToDateTime(dr["DataFechamento"]);
+                        ordemServico.Solucao = Convert.ToString(dr["Solucao"]);
+                        ordemServico.Observacao = Convert.ToString(dr["Observacao"]);
+                        ordemServico.AtendenteOs.Id = Convert.ToInt32(dr["IdAtendente"]);
+                        ordemServicos.Add(ordemServico);
+                    }
                 }
+                else
+                {
+                    ordemServicos = null;
+                }
+                dr.Close();
+                return ordemServicos;
             }
-            else
-            {
-                ordemServicos = null;
-            }
-            dr.Close();
-            return ordemServicos;
         }
         public List<OrdemServico> SelectIdSolicitante(int idSolicitante)
         {
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
             comando.CommandText = "SELECT * FROM ordemdeservico WHERE IdSolicitante=@IdSolicitante";
-            comando.Parameters.AddWithValue("IdSolicitante", idSolicitante);            
-            MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
-            List<OrdemServico> ordemServicos = new List<OrdemServico>();
-            if (dr.HasRows)
+            comando.Parameters.AddWithValue("IdSolicitante", idSolicitante);
+            using (MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando))
             {
-                while (dr.Read())
+                List<OrdemServico> ordemServicos = new List<OrdemServico>();
+                if (dr.HasRows)
                 {
-                    OrdemServico ordemServico = new OrdemServico();
-                    ordemServico.Id = Convert.ToInt32(dr["Id"]);
-                    ordemServico.SolicitanteOs.Id = Convert.ToInt32(dr["IdSolicitante"]);
-                    ordemServico.MaquinaOs.Id = Convert.ToInt32(dr["IdMaquina"]);
-                    ordemServico.SetorOs.Id = Convert.ToInt32(dr["IdSetor"]);
-                    ordemServico.Diagnostico = Convert.ToString(dr["Diagnostico"]);
-                    ordemServico.DataAbertura = Convert.ToDateTime(dr["DataAbertura"]);
-                    ordemServico.Solucao = Convert.ToString(dr["Solucao"]);
-                    ordemServico.DataFechamento = Convert.ToDateTime(dr["DataFechamento"]);
-                    ordemServico.Observacao = Convert.ToString(dr["Observacao"]);
-                    ordemServico.AtendenteOs.Id = Convert.ToInt32(dr["IdAtendente"]);
-                    ordemServicos.Add(ordemServico);
+                    while (dr.Read())
+                    {
+                        OrdemServico ordemServico = new OrdemServico();
+                        ordemServico.Id = Convert.ToInt32(dr["Id"]);
+                        ordemServico.SolicitanteOs.Id = Convert.ToInt32(dr["IdSolicitante"]);
+                        ordemServico.MaquinaOs.Id = Convert.ToInt32(dr["IdMaquina"]);
+                        ordemServico.SetorOs.Id = Convert.ToInt32(dr["IdSetor"]);
+                        ordemServico.Diagnostico = Convert.ToString(dr["Diagnostico"]);
+                        ordemServico.DataAbertura = Convert.ToDateTime(dr["DataAbertura"]);
+                        ordemServico.Solucao = Convert.ToString(dr["Solucao"]);
+                        ordemServico.DataFechamento = Convert.ToDateTime(dr["DataFechamento"]);
+                        ordemServico.Observacao = Convert.ToString(dr["Observacao"]);
+                        ordemServico.AtendenteOs.Id = Convert.ToInt32(dr["IdAtendente"]);
+                        ordemServicos.Add(ordemServico);
+                    }
                 }
+                else
+                {
+                    ordemServicos = null;
+                }
+                dr.Close();
+                return ordemServicos;
             }
-            else
-            {
-                ordemServicos = null;
-            }
-            dr.Close();
-            return ordemServicos;
         }
         public List<OrdemServico> SelectIdSolicitante(int idSolicitante, DateTime dtInicio, DateTime dtFim)
         {
@@ -123,13 +127,49 @@ namespace OrdemDeServico.DAO
             comando.Parameters.AddWithValue("IdSolicitante", idSolicitante);
             comando.Parameters.AddWithValue("dtInicio", dtInicio);
             comando.Parameters.AddWithValue("dtFim", dtFim);
-            MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
-            List<OrdemServico> ordemServicos = new List<OrdemServico>();
-            if (dr.HasRows)
+            using (MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando))
             {
-                while (dr.Read())
+                List<OrdemServico> ordemServicos = new List<OrdemServico>();
+                if (dr.HasRows)
                 {
-                    OrdemServico ordemServico = new OrdemServico();
+                    while (dr.Read())
+                    {
+                        OrdemServico ordemServico = new OrdemServico();
+                        ordemServico.Id = Convert.ToInt32(dr["Id"]);
+                        ordemServico.SolicitanteOs.Id = Convert.ToInt32(dr["IdSolicitante"]);
+                        ordemServico.MaquinaOs.Id = Convert.ToInt32(dr["IdMaquina"]);
+                        ordemServico.SetorOs.Id = Convert.ToInt32(dr["IdSetor"]);
+                        ordemServico.Diagnostico = Convert.ToString(dr["Diagnostico"]);
+                        ordemServico.DataAbertura = Convert.ToDateTime(dr["DataAbertura"]);
+                        ordemServico.Solucao = Convert.ToString(dr["Solucao"]);
+                        ordemServico.DataFechamento = Convert.ToDateTime(dr["DataFechamento"]);
+                        ordemServico.Observacao = Convert.ToString(dr["Observacao"]);
+                        ordemServico.AtendenteOs.Id = Convert.ToInt32(dr["IdAtendente"]);
+                        ordemServicos.Add(ordemServico);
+                    }
+                }
+                else
+                {
+                    ordemServicos = null;
+                }
+                dr.Close();
+                return ordemServicos;
+            }
+        }
+
+
+        public OrdemServico SelectId(int numeroOs)
+        {
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = "SELECT * FROM ordemdeservico WHERE Id=@Id";
+            comando.Parameters.AddWithValue("Id", numeroOs);
+            using (MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando))
+            {
+                OrdemServico ordemServico = new OrdemServico();
+                if (dr.HasRows)
+                {
+                    dr.Read();
                     ordemServico.Id = Convert.ToInt32(dr["Id"]);
                     ordemServico.SolicitanteOs.Id = Convert.ToInt32(dr["IdSolicitante"]);
                     ordemServico.MaquinaOs.Id = Convert.ToInt32(dr["IdMaquina"]);
@@ -140,51 +180,15 @@ namespace OrdemDeServico.DAO
                     ordemServico.DataFechamento = Convert.ToDateTime(dr["DataFechamento"]);
                     ordemServico.Observacao = Convert.ToString(dr["Observacao"]);
                     ordemServico.AtendenteOs.Id = Convert.ToInt32(dr["IdAtendente"]);
-                    ordemServicos.Add(ordemServico);
                 }
+                else
+                {
+                    ordemServico = null;
+                }
+                dr.Close();
+                return ordemServico;
             }
-            else
-            {
-                ordemServicos = null;
-            }
-            dr.Close();
-            return ordemServicos;
         }
 
-
-        public OrdemServico SelectId(int numeroOs)
-        {
-            MySqlCommand comando = new MySqlCommand();
-            comando.CommandType = CommandType.Text;
-            comando.CommandText = "SELECT * FROM ordemdeservico WHERE Id=@Id";
-            comando.Parameters.AddWithValue("Id", numeroOs);
-            MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando);
-            OrdemServico ordemServico = new OrdemServico();
-            if (dr.HasRows)
-            {
-                dr.Read();
-                ordemServico.Id = Convert.ToInt32(dr["Id"]);
-                ordemServico.SolicitanteOs.Id = Convert.ToInt32(dr["IdSolicitante"]);
-                ordemServico.MaquinaOs.Id = Convert.ToInt32(dr["IdMaquina"]);
-                ordemServico.SetorOs.Id = Convert.ToInt32(dr["IdSetor"]);
-                ordemServico.Diagnostico = Convert.ToString(dr["Diagnostico"]);
-                ordemServico.DataAbertura = Convert.ToDateTime(dr["DataAbertura"]);
-                ordemServico.Solucao = Convert.ToString(dr["Solucao"]);
-                ordemServico.DataFechamento = Convert.ToDateTime(dr["DataFechamento"]);
-                ordemServico.Observacao = Convert.ToString(dr["Observacao"]);
-                ordemServico.AtendenteOs.Id = Convert.ToInt32(dr["IdAtendente"]);
-            }
-            else
-            {
-                ordemServico = null;
-            }
-            dr.Close();
-            return ordemServico;
-        }
-       
-        public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
