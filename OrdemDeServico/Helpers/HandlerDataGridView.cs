@@ -51,6 +51,24 @@ namespace OrdemDeServico.Helpers
                 CriadorDataCridViewHelper.CriaDataGridView(dgv, nomeColuna, textoColuna, tamanho);
             }
         }
+        private static void CriarDgvSecretaria(DataGridView dgv)
+        {
+            string[] nomeColuna = new string[] { "Id", "Nome", "Descricao", "Telefone" };
+            string[] textoColuna = new string[] { "Id", "Nome", "Descrição", "Telefone" };
+            int[] tamanho = new[] { 50, 250, 250, 100 };
+            CriadorDataCridViewHelper.CriaDataGridView(dgv, nomeColuna, textoColuna, tamanho);
+        }
+        public static void PesquisaDgv(DataGridView dgv, string txtPesquisar, List<Secretaria> secretarias)
+        {
+            CriarDgvSecretaria(dgv);
+            if((secretarias = SelectData.PesquisarSecretaria(txtPesquisar)) != null)
+            {
+                foreach(Secretaria secretaria in secretarias)
+                {
+                    dgv.Rows.Add(secretaria.Id, secretaria.Nome, secretaria.Descricao, secretaria.Telefone);
+                }
+            }
+        }
         public static void PesquisaDgv(DataGridView dgv, string txtPesquisar, List<Maquina> maquinas, Setor setor )
         {
             CriarDgvMaquina(dgv);
@@ -231,6 +249,21 @@ namespace OrdemDeServico.Helpers
                 solicitante.Descricao = dgv.CurrentRow.Cells[2].Value.ToString();
                 solicitante.SetorSolicitante.Nome = dgv.CurrentRow.Cells[3].Value.ToString();
                 solicitante.SetorSolicitante.Id = Convert.ToInt32(dgv.CurrentRow.Cells[4].Value);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static bool ObterLinhaDgv(DataGridView dgv, Secretaria secretaria)
+        {
+            if (dgv.SelectedRows.Count > 0)
+            {
+                secretaria.Id = Convert.ToInt32(dgv.CurrentRow.Cells[0].Value.ToString());
+                secretaria.Nome = dgv.CurrentRow.Cells[1].Value.ToString();
+                secretaria.Descricao = dgv.CurrentRow.Cells[2].Value.ToString();
+                secretaria.Telefone = dgv.CurrentRow.Cells[3].Value.ToString();                
                 return true;
             }
             else

@@ -35,9 +35,7 @@ namespace OrdemDeServico.Views.Manutencao.NsSecretaria
                     }
                     Limpar();
                 }
-
             }
-
         }
         private void Limpar()
         {
