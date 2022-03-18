@@ -68,7 +68,7 @@ namespace OrdemDeServico.DAO
                 {
                     maquinas = null;
                 }
-                dr.Close();
+               
                 return maquinas;
             }
         }
@@ -94,7 +94,7 @@ namespace OrdemDeServico.DAO
                 {
                     maquina = null;
                 }
-                dr.Close();
+                
                 return maquina;
             }
         }

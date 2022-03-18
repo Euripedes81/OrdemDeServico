@@ -65,7 +65,7 @@ namespace OrdemDeServico.DAO
                 {
                     setores = null;
                 }
-                dr.Close();
+                
                 return setores;
             }
         }
@@ -90,7 +90,7 @@ namespace OrdemDeServico.DAO
                 {
                     setor = null;
                 }
-                dr.Close();
+                
                 return setor;
             }
         }
@@ -119,7 +119,7 @@ namespace OrdemDeServico.DAO
                 {
                     setores = null;
                 }
-                dr.Close();
+               
                 return setores;
             }
         }

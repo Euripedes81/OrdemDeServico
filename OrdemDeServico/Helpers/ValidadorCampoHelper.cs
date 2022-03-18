@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace OrdemDeServico.Helpers
 {
-    static class ValidadorCampoHelper
+    public static class ValidadorCampoHelper
     {
         public static bool ValidaSenha(string novaSenha, string confirmarSenha)
         {

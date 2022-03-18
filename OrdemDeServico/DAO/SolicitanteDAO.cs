@@ -65,7 +65,7 @@ namespace OrdemDeServico.DAO
                 {
                     solicitantes = null;
                 }
-                dr.Close();
+                
                 return solicitantes;
             }
         }
@@ -90,7 +90,7 @@ namespace OrdemDeServico.DAO
                 {
                     solicitante = null;
                 }
-                dr.Close();
+                
                 return solicitante;
             }
         }

@@ -66,7 +66,7 @@ namespace OrdemDeServico.DAO
                 {
                     atendentes = null;
                 }
-                dr.Close();
+                
                 return atendentes;
             }
         }
@@ -91,7 +91,7 @@ namespace OrdemDeServico.DAO
                 {
                     atendente = null;
                 }
-                dr.Close();
+                
                 return atendente;
             }
         }
@@ -116,7 +116,7 @@ namespace OrdemDeServico.DAO
                 {
                     atendente = null;
                 }
-                dr.Close();
+               
                 return atendente;
             }
 

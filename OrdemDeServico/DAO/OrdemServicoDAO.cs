@@ -79,7 +79,7 @@ namespace OrdemDeServico.DAO
                 {
                     ordemServicos = null;
                 }
-                dr.Close();
+               
                 return ordemServicos;
             }
         }
@@ -114,7 +114,7 @@ namespace OrdemDeServico.DAO
                 {
                     ordemServicos = null;
                 }
-                dr.Close();
+               
                 return ordemServicos;
             }
         }
@@ -152,7 +152,7 @@ namespace OrdemDeServico.DAO
                 {
                     ordemServicos = null;
                 }
-                dr.Close();
+               
                 return ordemServicos;
             }
         }
@@ -185,7 +185,7 @@ namespace OrdemDeServico.DAO
                 {
                     ordemServico = null;
                 }
-                dr.Close();
+               
                 return ordemServico;
             }
         }

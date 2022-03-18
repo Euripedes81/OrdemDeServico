@@ -65,7 +65,7 @@ namespace OrdemDeServico.DAO
                 {
 
                 }
-                dr.Close();
+               
                 return secretarias;
             }
         }
