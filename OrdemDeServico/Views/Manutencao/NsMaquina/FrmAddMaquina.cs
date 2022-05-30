@@ -27,13 +27,12 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
                     == DialogResult.Yes)
                 {
                     try
-                    {
-                        TipoMaquina tipo = (TipoMaquina)cbTipoMaquina.SelectedIndex;                        
+                    {                                      
                         Maquina maquina = new Maquina();
                         maquina.Patrimonio = Convert.ToInt32(mtxtNumPatrimonio.Text);
-                        maquina.Tipo = Convert.ToString(tipo);
-                        maquina.Descricao = txtDescricao.Text;
+                        maquina.Tipo = cbTipoMaquina.Items[cbTipoMaquina.SelectedIndex].ToString();
                         maquina.SetorMqn.Id = setores[cbSetor.SelectedIndex].Id;
+                        maquina.Descricao = txtDescricao.Text;
                         InsertData.Inserir(maquina);
                         Limpar();
                     }
@@ -54,7 +53,7 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
                 }                
                 foreach(var tipoMaquina in Enum.GetNames(typeof(TipoMaquina)))
                 {
-                    cbTipoMaquina.Items.Add(tipoMaquina);
+                    cbTipoMaquina.Items.Add(tipoMaquina.ToString().Replace("_", " "));
                 }
             }
 

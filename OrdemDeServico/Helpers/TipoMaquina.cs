@@ -1,10 +1,10 @@
 ﻿namespace OrdemDeServico.Helpers
 {
-    enum TipoMaquina
+    public enum TipoMaquina 
     {
-        COMPUTADOR_DESKTOP,
-        COMPUTADOR_NOTEBOOK,
-        IMPRESSORA_DESKJET,
-        IMPRESSORA_LASERJET
+        COMPUTADOR_DESKTOP = 1,
+        COMPUTADOR_NOTEBOOK = 2,
+        IMPRESSORA_DESKJET = 3,
+        IMPRESSORA_LASERJET = 4
     }
 }

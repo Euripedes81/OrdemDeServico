@@ -22,7 +22,13 @@ D:\Usuario\repos\OrdemDeServico\OrdemDeServico\bin\Debug\System.Runtime.Compiler
 D:\Usuario\repos\OrdemDeServico\OrdemDeServico\bin\Debug\Ubiety.Dns.Core.dll
 D:\Usuario\repos\OrdemDeServico\OrdemDeServico\bin\Debug\Zstandard.Net.dll
 D:\Usuario\repos\OrdemDeServico\OrdemDeServico\bin\Debug\EnvDTE.dll
+D:\Usuario\repos\OrdemDeServico\OrdemDeServico\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+D:\Usuario\repos\OrdemDeServico\OrdemDeServico\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
 D:\Usuario\repos\OrdemDeServico\OrdemDeServico\bin\Debug\stdole.dll
+D:\Usuario\repos\OrdemDeServico\OrdemDeServico\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+D:\Usuario\repos\OrdemDeServico\OrdemDeServico\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+D:\Usuario\repos\OrdemDeServico\OrdemDeServico\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+D:\Usuario\repos\OrdemDeServico\OrdemDeServico\bin\Debug\Microsoft.MSXML.dll
 D:\Usuario\repos\OrdemDeServico\OrdemDeServico\bin\Debug\Google.Protobuf.pdb
 D:\Usuario\repos\OrdemDeServico\OrdemDeServico\bin\Debug\Google.Protobuf.xml
 D:\Usuario\repos\OrdemDeServico\OrdemDeServico\bin\Debug\K4os.Compression.LZ4.xml
@@ -73,8 +79,6 @@ D:\Usuario\repos\OrdemDeServico\OrdemDeServico\bin\Debug\pt\Microsoft.ReportView
 D:\Usuario\repos\OrdemDeServico\OrdemDeServico\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Usuario\repos\OrdemDeServico\OrdemDeServico\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Usuario\repos\OrdemDeServico\OrdemDeServico\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-D:\Usuario\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.csproj.AssemblyReference.cache
-D:\Usuario\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.csproj.SuggestedBindingRedirects.cache
 D:\Usuario\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Properties.Resources.resources
 D:\Usuario\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.FrmAdmin.resources
 D:\Usuario\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.Views.FrmLogin.resources
@@ -111,3 +115,4 @@ D:\Usuario\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.applicat
 D:\Usuario\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.csproj.CopyComplete
 D:\Usuario\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.exe
 D:\Usuario\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.pdb
+D:\Usuario\repos\OrdemDeServico\OrdemDeServico\obj\Debug\OrdemDeServico.csproj.AssemblyReference.cache

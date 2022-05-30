@@ -39,7 +39,7 @@ namespace OrdemDeServico.DAO
         {            
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "UPDATE ordemdeservico SET Solucao=@Solucao, DataFechamento=@DataFechamento, Observacao=@Observacao, IdAtendente=@IdAtendente   WHERE Id=@Id";
+            comando.CommandText = "UPDATE ordemdeservico SET Solucao=@Solucao, DataFechamento=@DataFechamento, Observacao=@Observacao, IdAtendente=@IdAtendente  WHERE Id=@Id";
             comando.Parameters.AddWithValue("Id", ordemServico.Id);
             comando.Parameters.AddWithValue("Solucao", ordemServico.Solucao);
             comando.Parameters.AddWithValue("DataFechamento", ordemServico.DataFechamento);
