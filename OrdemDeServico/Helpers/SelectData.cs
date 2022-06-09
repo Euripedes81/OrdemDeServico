@@ -98,6 +98,13 @@ namespace OrdemDeServico.Helpers
             ordemServicos = ordemServicoDAO.SelectIdSolicitante(idSolicitante, dtInicio, dtFim);
             return ordemServicos;
         }
+        public static List<OrdemServico> PesquisarOrdemServicoIdSetor(int idSetor, DateTime dtInicio, DateTime dtFim)
+        {
+            List<OrdemServico> ordemServicos;
+            OrdemServicoDAO ordemServicoDAO = new OrdemServicoDAO();
+            ordemServicos = ordemServicoDAO.SelectIdSetor(idSetor, dtInicio, dtFim);
+            return ordemServicos;
+        }
         public static OrdemServico PesquisarOrdemServicoId(int numeroOs)
         {
             OrdemServico ordemServico;

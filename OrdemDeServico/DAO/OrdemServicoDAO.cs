@@ -156,7 +156,44 @@ namespace OrdemDeServico.DAO
                 return ordemServicos;
             }
         }
+        public List<OrdemServico> SelectIdSetor(int idSetor, DateTime dtInicio, DateTime dtFim)
+        {
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = "SELECT * FROM ordemdeservico WHERE IdSetor=@IdSetor and DataFechamento >= @dtInicio " +
+                "and DataFechamento <= @dtFim";
+            comando.Parameters.AddWithValue("IdSetor", idSetor);
+            comando.Parameters.AddWithValue("dtInicio", dtInicio);
+            comando.Parameters.AddWithValue("dtFim", dtFim);
+            using (MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando))
+            {
+                List<OrdemServico> ordemServicos = new List<OrdemServico>();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        OrdemServico ordemServico = new OrdemServico();
+                        ordemServico.Id = Convert.ToInt32(dr["Id"]);
+                        ordemServico.SolicitanteOs.Id = Convert.ToInt32(dr["IdSolicitante"]);
+                        ordemServico.MaquinaOs.Id = Convert.ToInt32(dr["IdMaquina"]);
+                        ordemServico.SetorOs.Id = Convert.ToInt32(dr["IdSetor"]);
+                        ordemServico.Diagnostico = Convert.ToString(dr["Diagnostico"]);
+                        ordemServico.DataAbertura = Convert.ToDateTime(dr["DataAbertura"]);
+                        ordemServico.Solucao = Convert.ToString(dr["Solucao"]);
+                        ordemServico.DataFechamento = Convert.ToDateTime(dr["DataFechamento"]);
+                        ordemServico.Observacao = Convert.ToString(dr["Observacao"]);
+                        ordemServico.AtendenteOs.Id = Convert.ToInt32(dr["IdAtendente"]);
+                        ordemServicos.Add(ordemServico);
+                    }
+                }
+                else
+                {
+                    ordemServicos = null;
+                }
 
+                return ordemServicos;
+            }
+        }
 
         public OrdemServico SelectId(int numeroOs)
         {

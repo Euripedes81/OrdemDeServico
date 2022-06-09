@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="OrdemDeServico.exe.manifest" size="51608">
+    <dependentAssembly dependencyType="install" codebase="OrdemDeServico.exe.manifest" size="46124">
       <assemblyIdentity name="OrdemDeServico.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZxC+3XhtAubLaqCi6Tef5QOqVERv/JBI3gsmcs1W6os=</dsig:DigestValue>
+        <dsig:DigestValue>drrMWOJfp1T/E0fK1CNHXGudFWSym/zgkeLvw1cCWaE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

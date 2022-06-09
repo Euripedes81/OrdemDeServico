@@ -27,19 +27,42 @@ namespace OrdemDeServico.Views.Relatorios
             this.rprtvSetor.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             this.rprtvSetor.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent;
             this.ordemServicoBindingSource.Clear();
-            foreach (var setor in setores)
+
+            if (cbSecretaria.SelectedIndex >= 0)
             {
-                if ((ordemServicos = SelectData.PesquisarOrdemServicos(setor.Id, dtpInicio.Value, dtpFim.Value)) != null)
-                {                    
-                    foreach(var ordemServico in ordemServicos)
-                    {                       
-                        ordemServico.SolicitanteOs = SelectData.PesquisarSolicitanteId(ordemServico.SolicitanteOs.Id);
-                        ordemServico.MaquinaOs = SelectData.PesquisarMaquinaId(ordemServico.MaquinaOs.Id);
-                        ordemServico.SetorOs = SelectData.PesquisarSetorId(ordemServico.MaquinaOs.SetorMqn.Id);
-                        ordemServico.SetorOs.SecretariaStr = SelectData.PesquisarSecretariaId(ordemServico.SetorOs.SecretariaStr.Id);
-                        ordemServico.AtendenteOs = SelectData.PesquisarAtendenteId(ordemServico.AtendenteOs.Id);
-                        this.ordemServicoBindingSource.Add(ordemServico);
-                        this.rprtvSetor.RefreshReport();
+                if (cbSetor.SelectedIndex >= 0)
+                {
+                    if ((ordemServicos = SelectData.PesquisarOrdemServicoIdSetor(setores[cbSetor.SelectedIndex].Id, dtpInicio.Value, dtpFim.Value)) != null)
+                    {
+                        foreach (var ordemServico in ordemServicos)
+                        {
+                            ordemServico.SolicitanteOs = SelectData.PesquisarSolicitanteId(ordemServico.SolicitanteOs.Id);
+                            ordemServico.MaquinaOs = SelectData.PesquisarMaquinaId(ordemServico.MaquinaOs.Id);
+                            ordemServico.SetorOs = SelectData.PesquisarSetorId(ordemServico.SetorOs.Id);
+                            ordemServico.SetorOs.SecretariaStr = SelectData.PesquisarSecretariaId(ordemServico.SetorOs.SecretariaStr.Id);
+                            ordemServico.AtendenteOs = SelectData.PesquisarAtendenteId(ordemServico.AtendenteOs.Id);
+                            this.ordemServicoBindingSource.Add(ordemServico);
+                            this.rprtvSetor.RefreshReport();
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (var setor in setores)
+                    {
+                        if ((ordemServicos = SelectData.PesquisarOrdemServicoIdSetor(setor.Id, dtpInicio.Value, dtpFim.Value)) != null)
+                        {
+                            foreach (var ordemServico in ordemServicos)
+                            {
+                                ordemServico.SolicitanteOs = SelectData.PesquisarSolicitanteId(ordemServico.SolicitanteOs.Id);
+                                ordemServico.MaquinaOs = SelectData.PesquisarMaquinaId(ordemServico.MaquinaOs.Id);
+                                ordemServico.SetorOs = SelectData.PesquisarSetorId(ordemServico.SetorOs.Id);
+                                ordemServico.SetorOs.SecretariaStr = SelectData.PesquisarSecretariaId(ordemServico.SetorOs.SecretariaStr.Id);
+                                ordemServico.AtendenteOs = SelectData.PesquisarAtendenteId(ordemServico.AtendenteOs.Id);
+                                this.ordemServicoBindingSource.Add(ordemServico);
+                                this.rprtvSetor.RefreshReport();
+                            }
+                        }
                     }
                 } 
             }
