@@ -70,6 +70,13 @@ namespace OrdemDeServico.Helpers
             maquinas = maquinaDAO.SelectNome(patrimonio);
             return maquinas;
         }
+        public static List<Maquina> PesquisarTudoMaquinaPatrimonio()
+        {
+            List<Maquina> maquinas;
+            MaquinaDAO maquinaDAO = new MaquinaDAO();
+            maquinas = maquinaDAO.SelectTudo();
+            return maquinas;
+        }
         public static Maquina PesquisarMaquinaId(int id)
         {
             Maquina maquina;

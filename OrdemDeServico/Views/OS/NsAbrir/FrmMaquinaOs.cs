@@ -32,6 +32,10 @@ namespace OrdemDeServico.Views.OS.NsAbrir
             {
                 HandlerDataGridView.PesquisaDgv(dgv, txtPesquisar.Text, new List<Maquina>(), new Setor());
             }
+            else
+            {
+                HandlerDataGridView.PesquisaDgvTudoMaquina(dgv, new List<Maquina>(), new Setor());
+            }
         }
         private void tsbAdicionar_Click(object sender, EventArgs e)
         {

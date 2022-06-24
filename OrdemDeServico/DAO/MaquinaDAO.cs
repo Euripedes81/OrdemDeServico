@@ -72,6 +72,36 @@ namespace OrdemDeServico.DAO
                 return maquinas;
             }
         }
+
+        public List<Maquina> SelectTudo()
+        {
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = "SELECT * FROM maquina";            
+            using (MySqlDataReader dr = ConexaoBancoDAO.Selecionar(comando))
+            {
+                List<Maquina> maquinas = new List<Maquina>();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        Maquina maquina = new Maquina();
+                        maquina.Id = Convert.ToInt32(dr["Id"]);
+                        maquina.Patrimonio = Convert.ToInt32(dr["Patrimonio"]);
+                        maquina.Tipo = Convert.ToString(dr["Tipo"]);
+                        maquina.Descricao = Convert.ToString(dr["Descricao"]);
+                        maquina.SetorMqn.Id = Convert.ToInt16(dr["IdSetor"]);
+                        maquinas.Add(maquina);
+                    }
+                }
+                else
+                {
+                    maquinas = null;
+                }
+
+                return maquinas;
+            }
+        }
         public Maquina SelectId(int id)
         {
             MySqlCommand comando = new MySqlCommand();

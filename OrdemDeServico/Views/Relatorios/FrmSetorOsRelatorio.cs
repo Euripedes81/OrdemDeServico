@@ -34,16 +34,7 @@ namespace OrdemDeServico.Views.Relatorios
                 {
                     if ((ordemServicos = SelectData.PesquisarOrdemServicoIdSetor(setores[cbSetor.SelectedIndex].Id, dtpInicio.Value, dtpFim.Value)) != null)
                     {
-                        foreach (var ordemServico in ordemServicos)
-                        {
-                            ordemServico.SolicitanteOs = SelectData.PesquisarSolicitanteId(ordemServico.SolicitanteOs.Id);
-                            ordemServico.MaquinaOs = SelectData.PesquisarMaquinaId(ordemServico.MaquinaOs.Id);
-                            ordemServico.SetorOs = SelectData.PesquisarSetorId(ordemServico.SetorOs.Id);
-                            ordemServico.SetorOs.SecretariaStr = SelectData.PesquisarSecretariaId(ordemServico.SetorOs.SecretariaStr.Id);
-                            ordemServico.AtendenteOs = SelectData.PesquisarAtendenteId(ordemServico.AtendenteOs.Id);
-                            this.ordemServicoBindingSource.Add(ordemServico);
-                            this.rprtvSetor.RefreshReport();
-                        }
+                        GerarRelatorio(ordemServicos);
                     }
                 }
                 else
@@ -52,16 +43,7 @@ namespace OrdemDeServico.Views.Relatorios
                     {
                         if ((ordemServicos = SelectData.PesquisarOrdemServicoIdSetor(setor.Id, dtpInicio.Value, dtpFim.Value)) != null)
                         {
-                            foreach (var ordemServico in ordemServicos)
-                            {
-                                ordemServico.SolicitanteOs = SelectData.PesquisarSolicitanteId(ordemServico.SolicitanteOs.Id);
-                                ordemServico.MaquinaOs = SelectData.PesquisarMaquinaId(ordemServico.MaquinaOs.Id);
-                                ordemServico.SetorOs = SelectData.PesquisarSetorId(ordemServico.SetorOs.Id);
-                                ordemServico.SetorOs.SecretariaStr = SelectData.PesquisarSecretariaId(ordemServico.SetorOs.SecretariaStr.Id);
-                                ordemServico.AtendenteOs = SelectData.PesquisarAtendenteId(ordemServico.AtendenteOs.Id);
-                                this.ordemServicoBindingSource.Add(ordemServico);
-                                this.rprtvSetor.RefreshReport();
-                            }
+                            GerarRelatorio(ordemServicos);
                         }
                     }
                 } 
@@ -90,6 +72,20 @@ namespace OrdemDeServico.Views.Relatorios
                 {
                     cbSetor.Items.Add(setor.ToString());
                 }
+            }
+        }
+
+        private void GerarRelatorio(List<OrdemServico> ordemServicos)
+        {
+            foreach (var ordemServico in ordemServicos)
+            {
+                ordemServico.SolicitanteOs = SelectData.PesquisarSolicitanteId(ordemServico.SolicitanteOs.Id);
+                ordemServico.MaquinaOs = SelectData.PesquisarMaquinaId(ordemServico.MaquinaOs.Id);
+                ordemServico.SetorOs = SelectData.PesquisarSetorId(ordemServico.SetorOs.Id);
+                ordemServico.SetorOs.SecretariaStr = SelectData.PesquisarSecretariaId(ordemServico.SetorOs.SecretariaStr.Id);
+                ordemServico.AtendenteOs = SelectData.PesquisarAtendenteId(ordemServico.AtendenteOs.Id);
+                this.ordemServicoBindingSource.Add(ordemServico);
+                this.rprtvSetor.RefreshReport();
             }
         }
 

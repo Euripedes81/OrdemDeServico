@@ -70,12 +70,33 @@ namespace OrdemDeServico.Helpers
                 }
             }
         }
-        public static void PesquisaDgv(DataGridView dgv, string txtPesquisar, List<Maquina> maquinas, Setor setor )
+        public static void PesquisaDgv(DataGridView dgv, string txtPesquisa, List<Maquina> maquinas, Setor setor )
         {
             CriarDgvMaquina(dgv);
 
-            int patrimonio = Convert.ToInt32(txtPesquisar);
+            int patrimonio = Convert.ToInt32(txtPesquisa);
             if ((maquinas = SelectData.PesquisarMaquinaPatrimonio(patrimonio)) != null)
+            {
+                foreach (Maquina maquina in maquinas)
+                {
+                    if ((setor = SelectData.PesquisarSetorId(maquina.SetorMqn.Id)) != null)
+                    {
+                        maquina.SetorMqn = setor;
+                        if ((maquina.SetorMqn.SecretariaStr = SelectData.PesquisarSecretariaId(maquina.SetorMqn.SecretariaStr.Id)) != null)
+                        {
+                            dgv.Rows.Add(maquina.Id, maquina.Patrimonio, maquina.Tipo, maquina.Descricao, maquina.SetorMqn.Nome,
+                                maquina.SetorMqn.Id, maquina.SetorMqn.SecretariaStr.Nome);
+                        }
+
+                    }
+                }
+            }
+        }
+        public static void PesquisaDgvTudoMaquina(DataGridView dgv , List<Maquina> maquinas, Setor setor)
+        {
+            CriarDgvMaquina(dgv);
+           
+            if ((maquinas = SelectData.PesquisarTudoMaquinaPatrimonio()) != null)
             {
                 foreach (Maquina maquina in maquinas)
                 {

@@ -28,7 +28,11 @@ namespace OrdemDeServico.Views.Manutencao.NsMaquina
             if (txtPesquisar.Text != "")
             {
                 HandlerDataGridView.PesquisaDgv(dgv, txtPesquisar.Text, maquinas, setor);
-            }            
+            }
+            else
+            {
+                HandlerDataGridView.PesquisaDgvTudoMaquina(dgv, maquinas, setor);
+            }
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)
